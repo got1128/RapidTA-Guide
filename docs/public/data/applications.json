@@ -1,0 +1,57 @@
+[
+ {
+   "ID": "A001",
+   "Main Category": "Food",
+   "Subcategory": "Bakery",
+   "Subclass": "Baking fats",
+   "Products": "Margarine",
+   "Test mode": "Distance (c)",
+   "Type of action": "Extrusion",
+   "Probe or Fixture": "Forward extrusion rig",
+   "file": "/files/A001.pdf"
+ },
+ {
+   "ID": "A002",
+   "Main Category": "Food",
+   "Subcategory": "Bakery",
+   "Subclass": "Biscuits/Cookies",
+   "Products": "Biscuits/Cookies",
+   "Test mode": "Distance (c)",
+   "Type of action": "Penetration",
+   "Probe or Fixture": "φ2 mm cylinder probe.",
+   "file": "/files/A002.pdf"
+ },
+ {
+   "ID": "A003",
+   "Main Category": "Food",
+   "Subcategory": "Bakery",
+   "Subclass": "Biscuits/Cookies",
+   "Products": "Biscuits",
+   "Test mode": "Distance (c)",
+   "Type of action": "Cutting",
+   "Probe or Fixture": "Blade of warner bratzler",
+   "file": "/files/A003.pdf"
+ },
+ {
+   "ID": "A004",
+   "Main Category": "Food",
+   "Subcategory": "Bakery",
+   "Subclass": "Biscuits/Cookies",
+   "Products": "Chocolate coated wafer biscuits",
+   "Test mode": "Distance (c)",
+   "Type of action": "Cutting",
+   "Probe or Fixture": "Blade of warner bratzler",
+   "file": "/files/A004.pdf"
+ },
+ {
+   "ID": "A005",
+   "Main Category": "Food",
+   "Subcategory": "Bakery",
+   "Subclass": "Biscuits/Cookies",
+   "Products": "Biscuits/Cookies",
+   "Test mode": "Distance (c)",
+   "Type of action": "Bending",
+   "Probe or Fixture": "Three-point bending rig",
+   "file": "/files/A005.pdf"
+ }
+]
