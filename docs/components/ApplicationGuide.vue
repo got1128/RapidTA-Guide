@@ -111,7 +111,7 @@ const loading = ref(true)
 onMounted(async () => {
   try {
     console.log('🔄 開始載入 JSON...')
-    const res = await fetch('/data/applications.json');
+    const res = await fetch('../data/applications.json');
     
     if (!res.ok) {
       throw new Error(`HTTP ${res.status}: ${res.statusText}`)
