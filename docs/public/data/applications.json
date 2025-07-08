@@ -8,7 +8,7 @@
     "Test mode": "Distance (c)",
     "Type of action": "Extrusion",
     "Probe or Fixture": "Forward extrusion rig",
-    "file": "/files/A001.pdf"
+    "file": "../files/A001.pdf"
   },
   {
     "ID": "A002",
@@ -19,7 +19,7 @@
     "Test mode": "Distance (c)",
     "Type of action": "Penetration",
     "Probe or Fixture": "φ2 mm cylinder probe.",
-    "file": "/files/A002.pdf"
+    "file": "../files/A002.pdf"
   },
   {
     "ID": "A003",
@@ -30,7 +30,7 @@
     "Test mode": "Distance (c)",
     "Type of action": "Cutting",
     "Probe or Fixture": "Blade of warner bratzler",
-    "file": "/files/A003.pdf"
+    "file": "../files/A003.pdf"
   },
   {
     "ID": "A004",
@@ -41,7 +41,7 @@
     "Test mode": "Distance (c)",
     "Type of action": "Cutting",
     "Probe or Fixture": "Blade of warner bratzler",
-    "file": "/files/A004.pdf"
+    "file": "../files/A004.pdf"
   },
   {
     "ID": "A005",
@@ -52,7 +52,7 @@
     "Test mode": "Distance (c)",
     "Type of action": "Bending",
     "Probe or Fixture": "Three-point bending rig",
-    "file": "/files/A005.pdf"
+    "file": "../files/A005.pdf"
   },
   {
     "ID": "A006",
@@ -63,7 +63,7 @@
     "Test mode": "Distance (c)",
     "Type of action": "Penetration",
     "Probe or Fixture": "Dough hardness rig",
-    "file": "/files/A006.pdf"
+    "file": "../files/A006.pdf"
   },
   {
     "ID": "A007",
@@ -74,7 +74,7 @@
     "Test mode": "Distance (c)",
     "Type of action": "Penetration",
     "Probe or Fixture": "φ36 mm cylinder probe.",
-    "file": "/files/A007.pdf"
+    "file": "../files/A007.pdf"
   },
   {
     "ID": "A008",
@@ -85,7 +85,7 @@
     "Test mode": "Strain (c)",
     "Type of action": "Penetration",
     "Probe or Fixture": "φ36 mm cylinder probe.",
-    "file": "/files/A008.pdf"
+    "file": "../files/A008.pdf"
   },
   {
     "ID": "A009",
@@ -96,7 +96,7 @@
     "Test mode": "Strain (c)",
     "Type of action": "Compression",
     "Probe or Fixture": "V-shaped toast bread rig",
-    "file": "/files/A009.pdf"
+    "file": "../files/A009.pdf"
   },
   {
     "ID": "A010",
@@ -107,7 +107,7 @@
     "Test mode": "Distance (t)",
     "Type of action": "Tension",
     "Probe or Fixture": "Dough extensibility rig",
-    "file": "/files/A010.pdf"
+    "file": "../files/A010.pdf"
   },
   {
     "ID": "A011",
@@ -118,7 +118,7 @@
     "Test mode": "Adhesion/Creep",
     "Type of action": "Adhesion/Creep",
     "Probe or Fixture": "Dough adhesion rig",
-    "file": "/files/A011.pdf"
+    "file": "../files/A011.pdf"
   },
   {
     "ID": "A012",
@@ -129,7 +129,7 @@
     "Test mode": "Adhesion/Creep",
     "Type of action": "Adhesion/Creep",
     "Probe or Fixture": "Dough hardness rig",
-    "file": "/files/A012.pdf"
+    "file": "../files/A012.pdf"
   },
   {
     "ID": "A013",
@@ -140,7 +140,7 @@
     "Test mode": "Distance (c)",
     "Type of action": "Cutting",
     "Probe or Fixture": "Blade of warner bratzler",
-    "file": "/files/A013.pdf"
+    "file": "../files/A013.pdf"
   },
   {
     "ID": "A014",
@@ -151,7 +151,7 @@
     "Test mode": "Strain (c) + hold",
     "Type of action": "Relexation",
     "Probe or Fixture": "φ36 mm cylinder probe.",
-    "file": "/files/A014.pdf"
+    "file": "../files/A014.pdf"
   },
   {
     "ID": "A015",
@@ -162,7 +162,7 @@
     "Test mode": "Strain (c)",
     "Type of action": "Penetration",
     "Probe or Fixture": "φ36 mm cylinder probe.",
-    "file": "/files/A015.pdf"
+    "file": "../files/A015.pdf"
   },
   {
     "ID": "A016",
@@ -173,7 +173,7 @@
     "Test mode": "Distance (c)",
     "Type of action": "Cutting",
     "Probe or Fixture": "Blade of warner bratzler",
-    "file": "/files/A016.pdf"
+    "file": "../files/A016.pdf"
   },
   {
     "ID": "A017",
@@ -184,7 +184,7 @@
     "Test mode": "Distance (c)",
     "Type of action": "Compression",
     "Probe or Fixture": "Ottawa Cell (Red color mean no such fixture so far)",
-    "file": "/files/A017.pdf"
+    "file": "../files/A017.pdf"
   },
   {
     "ID": "A018",
@@ -195,7 +195,7 @@
     "Test mode": "Distance (t)",
     "Type of action": "Tension",
     "Probe or Fixture": "Dough extensibility rig",
-    "file": "/files/A018.pdf"
+    "file": "../files/A018.pdf"
   },
   {
     "ID": "A019",
@@ -206,7 +206,7 @@
     "Test mode": "Distance (c)",
     "Type of action": "Penetration",
     "Probe or Fixture": "φ36 mm cylinder probe",
-    "file": "/files/A019.pdf"
+    "file": "../files/A019.pdf"
   },
   {
     "ID": "A020",
@@ -217,7 +217,7 @@
     "Test mode": "Distance (c)",
     "Type of action": "Burst",
     "Probe or Fixture": "Dough Penetration rig/ Platform",
-    "file": "/files/A020.pdf"
+    "file": "../files/A020.pdf"
   },
   {
     "ID": "A021",
@@ -228,7 +228,7 @@
     "Test mode": "Distance (c)",
     "Type of action": "Burst",
     "Probe or Fixture": "Dough Penetration rig/ Platform",
-    "file": "/files/A021.pdf"
+    "file": "../files/A021.pdf"
   },
   {
     "ID": "A022",
@@ -239,7 +239,7 @@
     "Test mode": "Distance (c)",
     "Type of action": "Burst",
     "Probe or Fixture": "Film Penetration (SP05) Rig/ Platform",
-    "file": "/files/A022.pdf"
+    "file": "../files/A022.pdf"
   },
   {
     "ID": "A023",
@@ -250,7 +250,7 @@
     "Test mode": "Distance (t)",
     "Type of action": "Tension",
     "Probe or Fixture": "Double c-clamp fixture",
-    "file": "/files/A023.pdf"
+    "file": "../files/A023.pdf"
   },
   {
     "ID": "A024",
@@ -261,7 +261,7 @@
     "Test mode": "Distance (c)",
     "Type of action": "Burst",
     "Probe or Fixture": "Dough Penetration rig/ Platform",
-    "file": "/files/A024.pdf"
+    "file": "../files/A024.pdf"
   },
   {
     "ID": "A025",
@@ -272,7 +272,7 @@
     "Test mode": "Distance (c)",
     "Type of action": "Penetration",
     "Probe or Fixture": "φ18 mm cylinder probe.",
-    "file": "/files/A025.pdf"
+    "file": "../files/A025.pdf"
   },
   {
     "ID": "A026",
@@ -283,7 +283,7 @@
     "Test mode": "TPA_distance",
     "Type of action": "Penetration /TPA",
     "Probe or Fixture": "φ 25 mm cylinder probe.Acrylic",
-    "file": "/files/A026.pdf"
+    "file": "../files/A026.pdf"
   },
   {
     "ID": "A027",
@@ -294,7 +294,7 @@
     "Test mode": "Distance (c)",
     "Type of action": "Penetration",
     "Probe or Fixture": "φ 25 mm cylinder probe.Acrylic",
-    "file": "/files/A027.pdf"
+    "file": "../files/A027.pdf"
   },
   {
     "ID": "A028",
@@ -305,7 +305,7 @@
     "Test mode": "Distance (c)",
     "Type of action": "Bending",
     "Probe or Fixture": "Three-point bending rig",
-    "file": "/files/A028.pdf"
+    "file": "../files/A028.pdf"
   },
   {
     "ID": "A029",
@@ -316,7 +316,7 @@
     "Test mode": "Distance (c)",
     "Type of action": "Penetration",
     "Probe or Fixture": "Potato chips crispness rig",
-    "file": "/files/A029.pdf"
+    "file": "../files/A029.pdf"
   },
   {
     "ID": "A030",
@@ -327,7 +327,7 @@
     "Test mode": "Distance (c)",
     "Type of action": "Burst",
     "Probe or Fixture": "Middle hole fixing rig",
-    "file": "/files/A030.pdf"
+    "file": "../files/A030.pdf"
   },
   {
     "ID": "A031",
@@ -338,7 +338,7 @@
     "Test mode": "Distance (c)",
     "Type of action": "Penetration",
     "Probe or Fixture": "φ 25 mm cylinder probe.Acrylic",
-    "file": "/files/A031.pdf"
+    "file": "../files/A031.pdf"
   },
   {
     "ID": "A032",
@@ -349,7 +349,7 @@
     "Test mode": "Distance (c)",
     "Type of action": "Relexation",
     "Probe or Fixture": "φ18 mm cylinder probe.",
-    "file": "/files/A032.pdf"
+    "file": "../files/A032.pdf"
   },
   {
     "ID": "A033",
@@ -360,7 +360,7 @@
     "Test mode": "Distance (c)",
     "Type of action": "Penetration",
     "Probe or Fixture": "φ 25 mm cylinder probe.Acrylic",
-    "file": "/files/A033.pdf"
+    "file": "../files/A033.pdf"
   },
   {
     "ID": "A034",
@@ -371,7 +371,7 @@
     "Test mode": "TPA_distance",
     "Type of action": "TPA",
     "Probe or Fixture": "φ 25 mm cylinder probe.Acrylic",
-    "file": "/files/A034.pdf"
+    "file": "../files/A034.pdf"
   },
   {
     "ID": "A035",
@@ -382,7 +382,7 @@
     "Test mode": "Distance (c)",
     "Type of action": "Cutting",
     "Probe or Fixture": "Kramer shear cell - 5 blades",
-    "file": "/files/A035.pdf"
+    "file": "../files/A035.pdf"
   },
   {
     "ID": "A036",
@@ -393,7 +393,7 @@
     "Test mode": "Distance (c)",
     "Type of action": "Cutting",
     "Probe or Fixture": "Kramer shear cell - 5 blades",
-    "file": "/files/A036.pdf"
+    "file": "../files/A036.pdf"
   },
   {
     "ID": "A037",
@@ -404,7 +404,7 @@
     "Test mode": "Distance (c)",
     "Type of action": "Extrusion",
     "Probe or Fixture": "Ottawa Cell",
-    "file": "/files/A037.pdf"
+    "file": "../files/A037.pdf"
   },
   {
     "ID": "A038",
@@ -415,7 +415,7 @@
     "Test mode": "Distance (c)",
     "Type of action": "Extrusion",
     "Probe or Fixture": "Ottawa Cell",
-    "file": "/files/A038.pdf"
+    "file": "../files/A038.pdf"
   },
   {
     "ID": "A039",
@@ -426,7 +426,7 @@
     "Test mode": "Distance (c)",
     "Type of action": "Penetration",
     "Probe or Fixture": "φ2 mm cylinder probe",
-    "file": "/files/A039.pdf"
+    "file": "../files/A039.pdf"
   },
   {
     "ID": "A040",
@@ -437,6 +437,699 @@
     "Test mode": "Distance (c)",
     "Type of action": "Burst",
     "Probe or Fixture": "Film Penetration (SP05) rig/ Platform",
-    "file": "/files/A040.pdf"
+    "file": "../files/A040.pdf"
+  },
+  {
+    "ID": "A041",
+    "Main Category": "Food",
+    "Subcategory": "Confectionery",
+    "Subclass": "Caramel",
+    "Products": "Caramel",
+    "Test mode": "Distance (c)",
+    "Type of action": "Adhesion/Creep",
+    "Probe or Fixture": "φ20 mm spherical probe",
+    "file": "../files/A041.pdf"
+  },
+  {
+    "ID": "A042",
+    "Main Category": "Food",
+    "Subcategory": "Confectionery",
+    "Subclass": "Chewy confectionery",
+    "Products": "Chewy confectionery",
+    "Test mode": "Distance (c)",
+    "Type of action": "Penetration",
+    "Probe or Fixture": "φ6 mm cylinder probe",
+    "file": "../files/A042.pdf"
+  },
+  {
+    "ID": "A043",
+    "Main Category": "Food",
+    "Subcategory": "Confectionery",
+    "Subclass": "Chocolate",
+    "Products": "Chocolate",
+    "Test mode": "Distance (c)",
+    "Type of action": "Penetration",
+    "Probe or Fixture": "φ2 mm cylinder probe",
+    "file": "../files/A043.pdf"
+  },
+  {
+    "ID": "A044",
+    "Main Category": "Food",
+    "Subcategory": "Confectionery",
+    "Subclass": "Chocolate filled caramel",
+    "Products": "Chocolate filled caramel",
+    "Test mode": "Distance (c)",
+    "Type of action": "Penetration",
+    "Probe or Fixture": "φ2 mm cylinder probe",
+    "file": "../files/A044.pdf"
+  },
+  {
+    "ID": "A045",
+    "Main Category": "Food",
+    "Subcategory": "Confectionery",
+    "Subclass": "Chocolate spread",
+    "Products": "Chocolate spread",
+    "Test mode": "Distance (c)",
+    "Type of action": "Penetration",
+    "Probe or Fixture": "Butter spreadability rig",
+    "file": "../files/A045.pdf"
+  },
+  {
+    "ID": "A046",
+    "Main Category": "Food",
+    "Subcategory": "Confectionery",
+    "Subclass": "Chewing gum",
+    "Products": "Chewing gum tablets",
+    "Test mode": "Distance (c)",
+    "Type of action": "Cutting",
+    "Probe or Fixture": "Sharpness test rig",
+    "file": "../files/A046.pdf"
+  },
+  {
+    "ID": "A047",
+    "Main Category": "Food",
+    "Subcategory": "Confectionery",
+    "Subclass": "Chewing gum",
+    "Products": "Chewing gum",
+    "Test mode": "Distance (t)",
+    "Type of action": "Tension",
+    "Probe or Fixture": "Dough extensibility rig",
+    "file": "../files/A047.pdf"
+  },
+  {
+    "ID": "A048",
+    "Main Category": "Food",
+    "Subcategory": "Confectionery",
+    "Subclass": "Chewing gum",
+    "Products": "Rubber base pellets",
+    "Test mode": "Distance (c)",
+    "Type of action": "Penetration",
+    "Probe or Fixture": "φ2 mm cylinder probe",
+    "file": "../files/A048.pdf"
+  },
+  {
+    "ID": "A049",
+    "Main Category": "Food",
+    "Subcategory": "Confectionery",
+    "Subclass": "Chewing gum",
+    "Products": "Chewing gum tablets",
+    "Test mode": "Distance (c)",
+    "Type of action": "Penetration",
+    "Probe or Fixture": "φ2 mm cylinder probe",
+    "file": "../files/A049.pdf"
+  },
+  {
+    "ID": "A050",
+    "Main Category": "Food",
+    "Subcategory": "Confectionery",
+    "Subclass": "Chewing gum",
+    "Products": "Chewing gum bones",
+    "Test mode": "Distance (t)",
+    "Type of action": "Tension",
+    "Probe or Fixture": "Double c-clamp fixture",
+    "file": "../files/A050.pdf"
+  },
+  {
+    "ID": "A051",
+    "Main Category": "Food",
+    "Subcategory": "Confectionery",
+    "Subclass": "Chewing gum",
+    "Products": "Chewing gum sticks",
+    "Test mode": "Distance (c)",
+    "Type of action": "Cutting",
+    "Probe or Fixture": "Three-point bending rig",
+    "file": "../files/A051.pdf"
+  },
+  {
+    "ID": "A052",
+    "Main Category": "Food",
+    "Subcategory": "Confectionery",
+    "Subclass": "Chewing gum",
+    "Products": "Chewing gum sticks",
+    "Test mode": "Distance (c)",
+    "Type of action": "Penetration",
+    "Probe or Fixture": "φ2 mm cylinder probe",
+    "file": "../files/A052.pdf"
+  },
+  {
+    "ID": "A053",
+    "Main Category": "Food",
+    "Subcategory": "Confectionery",
+    "Subclass": "Fondant",
+    "Products": "Fondant",
+    "Test mode": "Distance (c)",
+    "Type of action": "Penetration",
+    "Probe or Fixture": "φ4 mm cylinder probe",
+    "file": "../files/A053.pdf"
+  },
+  {
+    "ID": "A054",
+    "Main Category": "Food",
+    "Subcategory": "Confectionery",
+    "Subclass": "Gummy confectionery",
+    "Products": "Gummy confectionery",
+    "Test mode": "Strain (c)",
+    "Type of action": "Compression",
+    "Probe or Fixture": "φ36 mm cylinder probe.",
+    "file": "../files/A054.pdf"
+  },
+  {
+    "ID": "A055",
+    "Main Category": "Food",
+    "Subcategory": "Confectionery",
+    "Subclass": "Halva",
+    "Products": "Halva",
+    "Test mode": "Distance (c)",
+    "Type of action": "Penetration",
+    "Probe or Fixture": "φ10 mm cylinder probe_polyethylene",
+    "file": "../files/A055.pdf"
+  },
+  {
+    "ID": "A056",
+    "Main Category": "Food",
+    "Subcategory": "Confectionery",
+    "Subclass": "Lemon curd",
+    "Products": "Lemon curd",
+    "Test mode": "Distance (c)",
+    "Type of action": "Extrusion",
+    "Probe or Fixture": "Butter spreadability rig",
+    "file": "../files/A056.pdf"
+  },
+  {
+    "ID": "A057",
+    "Main Category": "Food",
+    "Subcategory": "Confectionery",
+    "Subclass": "Marmalade",
+    "Products": "Marmalade",
+    "Test mode": "Distance (c)",
+    "Type of action": "Penetration",
+    "Probe or Fixture": "φ3 mm cylinder probe",
+    "file": "../files/A057.pdf"
+  },
+  {
+    "ID": "A058",
+    "Main Category": "Food",
+    "Subcategory": "Confectionery",
+    "Subclass": "Marzipan",
+    "Products": "Marzipan",
+    "Test mode": "Distance (c)",
+    "Type of action": "Penetration",
+    "Probe or Fixture": "φ6 mm cylinder probe",
+    "file": "../files/A058.pdf"
+  },
+  {
+    "ID": "A059",
+    "Main Category": "Food",
+    "Subcategory": "Confectionery",
+    "Subclass": "Syrup",
+    "Products": "Syrup vs. Honey vs. Treacle",
+    "Test mode": "Adhesion/Creep",
+    "Type of action": "Adhesion/Creep",
+    "Probe or Fixture": "φ36 mm cylinder probe.",
+    "file": "../files/A059.pdf"
+  },
+  {
+    "ID": "A060",
+    "Main Category": "Food",
+    "Subcategory": "Dairy",
+    "Subclass": "Butter & margarine",
+    "Products": "Butter & margarine",
+    "Test mode": "Distance (c)",
+    "Type of action": "Cutting",
+    "Probe or Fixture": "Wire butter cutter",
+    "file": "../files/A060.pdf"
+  },
+  {
+    "ID": "A061",
+    "Main Category": "Food",
+    "Subcategory": "Dairy",
+    "Subclass": "Butter & margarine",
+    "Products": "Margarine",
+    "Test mode": "Distance (c)",
+    "Type of action": "Penetration",
+    "Probe or Fixture": "φ5 mm cylinder probe",
+    "file": "../files/A061.pdf"
+  },
+  {
+    "ID": "A062",
+    "Main Category": "Food",
+    "Subcategory": "Dairy",
+    "Subclass": "Butter & margarine",
+    "Products": "Margarine",
+    "Test mode": "Distance (c)",
+    "Type of action": "Extrusion",
+    "Probe or Fixture": "45° Conical probe_acrylic",
+    "file": "../files/A062.pdf"
+  },
+  {
+    "ID": "A063",
+    "Main Category": "Food",
+    "Subcategory": "Dairy",
+    "Subclass": "Butter & margarine",
+    "Products": "Margarine",
+    "Test mode": "Distance (c)",
+    "Type of action": "Extrusion",
+    "Probe or Fixture": "Forward extrusion rig",
+    "file": "../files/A063.pdf"
+  },
+  {
+    "ID": "A064",
+    "Main Category": "Food",
+    "Subcategory": "Dairy",
+    "Subclass": "Butter & margarine",
+    "Products": "Margarine",
+    "Test mode": "Distance (c)",
+    "Type of action": "Extrusion",
+    "Probe or Fixture": "Butter spreadability rig",
+    "file": "../files/A064.pdf"
+  },
+  {
+    "ID": "A065",
+    "Main Category": "Food",
+    "Subcategory": "Dairy",
+    "Subclass": "Cheese",
+    "Products": "Cream cheese",
+    "Test mode": "Distance (c)",
+    "Type of action": "Penetration",
+    "Probe or Fixture": "φ5 mm cylinder probe",
+    "file": "../files/A065.pdf"
+  },
+  {
+    "ID": "A066",
+    "Main Category": "Food",
+    "Subcategory": "Dairy",
+    "Subclass": "Cheese",
+    "Products": "Cheese spread",
+    "Test mode": "Distance (c)",
+    "Type of action": "Penetration",
+    "Probe or Fixture": "Butter spreadability rig",
+    "file": "../files/A066.pdf"
+  },
+  {
+    "ID": "A067",
+    "Main Category": "Food",
+    "Subcategory": "Dairy",
+    "Subclass": "Cheese",
+    "Products": "Cheese spread triangles",
+    "Test mode": "Distance (c)",
+    "Type of action": "Penetration",
+    "Probe or Fixture": "φ1 inch spherical probe_stainless",
+    "file": "../files/A067.pdf"
+  },
+  {
+    "ID": "A068",
+    "Main Category": "Food",
+    "Subcategory": "Dairy",
+    "Subclass": "Cheese",
+    "Products": "Cheese",
+    "Test mode": "Distance (c)",
+    "Type of action": "Penetration",
+    "Probe or Fixture": "Dual wedge rig",
+    "file": "../files/A068.pdf"
+  },
+  {
+    "ID": "A069",
+    "Main Category": "Food",
+    "Subcategory": "Dairy",
+    "Subclass": "Cheese",
+    "Products": "Processed cheddar cheese",
+    "Test mode": "Distance (c)",
+    "Type of action": "Cutting",
+    "Probe or Fixture": "Wire butter cutter",
+    "file": "../files/A069.pdf"
+  },
+  {
+    "ID": "A070",
+    "Main Category": "Food",
+    "Subcategory": "Dairy",
+    "Subclass": "Cheese",
+    "Products": "Soft cheese",
+    "Test mode": "Distance (c)",
+    "Type of action": "Penetration",
+    "Probe or Fixture": "φ1 inch spherical probe_stainless",
+    "file": "../files/A070.pdf"
+  },
+  {
+    "ID": "A071",
+    "Main Category": "Food",
+    "Subcategory": "Dairy",
+    "Subclass": "Cheese",
+    "Products": "Cheese",
+    "Test mode": "Distance (t)",
+    "Type of action": "Tension",
+    "Probe or Fixture": "Cheese string rig",
+    "file": "../files/A071.pdf"
+  },
+  {
+    "ID": "A072",
+    "Main Category": "Food",
+    "Subcategory": "Dairy",
+    "Subclass": "Creme fraiche",
+    "Products": "Creme fraiche",
+    "Test mode": "Distance (c)",
+    "Type of action": "Extrusion",
+    "Probe or Fixture": "Back extrusion rig",
+    "file": "../files/A072.pdf"
+  },
+  {
+    "ID": "A073",
+    "Main Category": "Food",
+    "Subcategory": "Dairy",
+    "Subclass": "Fromage frais",
+    "Products": "Fromage frais",
+    "Test mode": "Distance (c)",
+    "Type of action": "Penetration",
+    "Probe or Fixture": "φ25 mm cylinder probe.",
+    "file": "../files/A073.pdf"
+  },
+  {
+    "ID": "A074",
+    "Main Category": "Food",
+    "Subcategory": "Dairy",
+    "Subclass": "Ice cream",
+    "Products": "Ice cream",
+    "Test mode": "Distance (c)",
+    "Type of action": "Cutting",
+    "Probe or Fixture": "Blade of warner bratzler",
+    "file": "../files/A074.pdf"
+  },
+  {
+    "ID": "A075",
+    "Main Category": "Food",
+    "Subcategory": "Dairy",
+    "Subclass": "Ice cream",
+    "Products": "Ice cream",
+    "Test mode": "Distance (c)",
+    "Type of action": "Penetration",
+    "Probe or Fixture": "Multi-Penetration fixture (needle)",
+    "file": "../files/A075.pdf"
+  },
+  {
+    "ID": "A076",
+    "Main Category": "Food",
+    "Subcategory": "Dairy",
+    "Subclass": "Mayonnaise",
+    "Products": "Mayonnaise",
+    "Test mode": "Distance (c)",
+    "Type of action": "Penetration",
+    "Probe or Fixture": "φ25 mm cylinder probe.",
+    "file": "../files/A076.pdf"
+  },
+  {
+    "ID": "A077",
+    "Main Category": "Food",
+    "Subcategory": "Dairy",
+    "Subclass": "Mayonnaise",
+    "Products": "Mayonnaise",
+    "Test mode": "Distance (c)",
+    "Type of action": "Extrusion",
+    "Probe or Fixture": "Back extrusion rig",
+    "file": "../files/A077.pdf"
+  },
+  {
+    "ID": "A078",
+    "Main Category": "Food",
+    "Subcategory": "Dairy",
+    "Subclass": "Mousse",
+    "Products": "Mousse",
+    "Test mode": "Distance (c)",
+    "Type of action": "Penetration",
+    "Probe or Fixture": "φ25 mm cylinder probe.",
+    "file": "../files/A078.pdf"
+  },
+  {
+    "ID": "A079",
+    "Main Category": "Food",
+    "Subcategory": "Dairy",
+    "Subclass": "Yoghurt",
+    "Products": "Yoghurt",
+    "Test mode": "Distance (c)",
+    "Type of action": "Extrusion",
+    "Probe or Fixture": "Back extrusion rig",
+    "file": "../files/A079.pdf"
+  },
+  {
+    "ID": "A080",
+    "Main Category": "Food",
+    "Subcategory": "Fruit & vegetables",
+    "Subclass": "Apples",
+    "Products": "Apples",
+    "Test mode": "Distance (c)",
+    "Type of action": "Compression",
+    "Probe or Fixture": "φ 75 mm compression plate",
+    "file": "../files/A080.pdf"
+  },
+  {
+    "ID": "A081",
+    "Main Category": "Food",
+    "Subcategory": "Fruit & vegetables",
+    "Subclass": "Beans",
+    "Products": "Baked Beans",
+    "Test mode": "Distance (c)",
+    "Type of action": "Extrusion",
+    "Probe or Fixture": "A/OTC, 17-bladed Extrusion Plate",
+    "file": "../files/A081.pdf"
+  },
+  {
+    "ID": "A082",
+    "Main Category": "Food",
+    "Subcategory": "Fruit & vegetables",
+    "Subclass": "Corn",
+    "Products": "Hydrated sweetcorn",
+    "Test mode": "Distance (c)",
+    "Type of action": "Cutting",
+    "Probe or Fixture": "10-bladed Kramer Shear Cell",
+    "file": "../files/A082.pdf"
+  },
+  {
+    "ID": "A083",
+    "Main Category": "Food",
+    "Subcategory": "Fruit & vegetables",
+    "Subclass": "Corn",
+    "Products": "Hydrated sweetcorn",
+    "Test mode": "Strain (c)",
+    "Type of action": "Cutting",
+    "Probe or Fixture": "Simulated incisors rig",
+    "file": "../files/A083.pdf"
+  },
+  {
+    "ID": "A084",
+    "Main Category": "Food",
+    "Subcategory": "Fruit & vegetables",
+    "Subclass": "Dates",
+    "Products": "Dried pitted dates",
+    "Test mode": "Distance (c)",
+    "Type of action": "Cutting",
+    "Probe or Fixture": "Extended Craft Knife",
+    "file": "../files/A084.pdf"
+  },
+  {
+    "ID": "A085",
+    "Main Category": "Food",
+    "Subcategory": "Fruit & vegetables",
+    "Subclass": "Grapes",
+    "Products": "Grapes",
+    "Test mode": "Distance (c)",
+    "Type of action": "Penetration",
+    "Probe or Fixture": "φ 2 mm cylinder probe",
+    "file": "../files/A085.pdf"
+  },
+  {
+    "ID": "A086",
+    "Main Category": "Food",
+    "Subcategory": "Fruit & vegetables",
+    "Subclass": "Jam/ Fruit preserve",
+    "Products": "Jam/ Fruit preserve",
+    "Test mode": "Distance (c)",
+    "Type of action": "Penetration",
+    "Probe or Fixture": "Multi-Penetration fixture (needle)",
+    "file": "../files/A086.pdf"
+  },
+  {
+    "ID": "A087",
+    "Main Category": "Food",
+    "Subcategory": "Fruit & vegetables",
+    "Subclass": "Jam/ Fruit preserve",
+    "Products": "Marmalade",
+    "Test mode": "Distance (c)",
+    "Type of action": "Penetration",
+    "Probe or Fixture": "φ25 mm cylinder probe.",
+    "file": "../files/A087.pdf"
+  },
+  {
+    "ID": "A088",
+    "Main Category": "Food",
+    "Subcategory": "Fruit & vegetables",
+    "Subclass": "Nori",
+    "Products": "Nori",
+    "Test mode": "Distance (c)",
+    "Type of action": "Burst",
+    "Probe or Fixture": "Film Penetration (SP05) rig",
+    "file": "../files/A088.pdf"
+  },
+  {
+    "ID": "A089",
+    "Main Category": "Food",
+    "Subcategory": "Fruit & vegetables",
+    "Subclass": "Olives",
+    "Products": "Pitted olives",
+    "Test mode": "Distance (c)",
+    "Type of action": "Cutting",
+    "Probe or Fixture": "Kramer shear cell - 5 blades",
+    "file": "../files/A089.pdf"
+  },
+  {
+    "ID": "A090",
+    "Main Category": "Food",
+    "Subcategory": "Fruit & vegetables",
+    "Subclass": "Peaches",
+    "Products": "Peaches",
+    "Test mode": "Distance (c)",
+    "Type of action": "Cutting",
+    "Probe or Fixture": "Blade of warner bratzler",
+    "file": "../files/A090.pdf"
+  },
+  {
+    "ID": "A091",
+    "Main Category": "Food",
+    "Subcategory": "Fruit & vegetables",
+    "Subclass": "Peas",
+    "Products": "Peas",
+    "Test mode": "Distance (c)",
+    "Type of action": "Penetration",
+    "Probe or Fixture": "Multiple Pea Test Rig",
+    "file": "../files/A091.pdf"
+  },
+  {
+    "ID": "A092",
+    "Main Category": "Food",
+    "Subcategory": "Fruit & vegetables",
+    "Subclass": "Peas",
+    "Products": "Peas",
+    "Test mode": "Distance (c)",
+    "Type of action": "Cutting",
+    "Probe or Fixture": "10-bladed Kramer Shear Cell",
+    "file": "../files/A092.pdf"
+  },
+  {
+    "ID": "A093",
+    "Main Category": "Food",
+    "Subcategory": "Fruit & vegetables",
+    "Subclass": "Pears",
+    "Products": "Pears",
+    "Test mode": "Distance (c)",
+    "Type of action": "Penetration",
+    "Probe or Fixture": "φ 2 mm cylinder probe",
+    "file": "../files/A093.pdf"
+  },
+  {
+    "ID": "A094",
+    "Main Category": "Food",
+    "Subcategory": "Fruit & vegetables",
+    "Subclass": "Peppers",
+    "Products": "Peppers",
+    "Test mode": "Distance (c)",
+    "Type of action": "Penetration",
+    "Probe or Fixture": "φ 3 mm cylinder probe",
+    "file": "../files/A094.pdf"
+  },
+  {
+    "ID": "A095",
+    "Main Category": "Food",
+    "Subcategory": "Fruit & vegetables",
+    "Subclass": "Potatoes",
+    "Products": "Potato",
+    "Test mode": "Distance (c)",
+    "Type of action": "Cutting",
+    "Probe or Fixture": "Blade of warner bratzler",
+    "file": "../files/A095.pdf"
+  },
+  {
+    "ID": "A096",
+    "Main Category": "Food",
+    "Subcategory": "Fruit & vegetables",
+    "Subclass": "Potatoes",
+    "Products": "Potato salad",
+    "Test mode": "Distance (c)",
+    "Type of action": "Extrusion",
+    "Probe or Fixture": "Ottawa Cell",
+    "file": "../files/A096.pdf"
+  },
+  {
+    "ID": "A097",
+    "Main Category": "Food",
+    "Subcategory": "Fruit & vegetables",
+    "Subclass": "Potatoes",
+    "Products": "Instant mashed potato",
+    "Test mode": "Distance (c)",
+    "Type of action": "Extrusion",
+    "Probe or Fixture": "Ottawa Cell",
+    "file": "../files/A097.pdf"
+  },
+  {
+    "ID": "A098",
+    "Main Category": "Food",
+    "Subcategory": "Fruit & vegetables",
+    "Subclass": "Potatoes",
+    "Products": "Chips/French fries",
+    "Test mode": "Distance (c)",
+    "Type of action": "Penetration",
+    "Probe or Fixture": "Fires Multi-Penetration rig",
+    "file": "../files/A098.pdf"
+  },
+  {
+    "ID": "A099",
+    "Main Category": "Food",
+    "Subcategory": "Fruit & vegetables",
+    "Subclass": "Raspberries",
+    "Products": "Raspberries",
+    "Test mode": "Distance (c)",
+    "Type of action": "Extrusion",
+    "Probe or Fixture": "Ottawa Cell",
+    "file": "../files/A099.pdf"
+  },
+  {
+    "ID": "A100",
+    "Main Category": "Food",
+    "Subcategory": "Fruit & vegetables",
+    "Subclass": "Spinach",
+    "Products": "Leaf spinach",
+    "Test mode": "Distance (c)",
+    "Type of action": "Burst",
+    "Probe or Fixture": "Film Penetration (SP05) rig",
+    "file": "../files/A100.pdf"
+  },
+  {
+    "ID": "A101",
+    "Main Category": "Food",
+    "Subcategory": "Fruit & vegetables",
+    "Subclass": "Strawberries",
+    "Products": "Strawberries",
+    "Test mode": "Distance (c)",
+    "Type of action": "Extrusion",
+    "Probe or Fixture": "Ottawa Cell",
+    "file": "../files/A101.pdf"
+  },
+  {
+    "ID": "A102",
+    "Main Category": "Food",
+    "Subcategory": "Fruit & vegetables",
+    "Subclass": "Tofu",
+    "Products": "Tofu",
+    "Test mode": "Distance (c)",
+    "Type of action": "Cutting",
+    "Probe or Fixture": "Blade of warner bratzler",
+    "file": "../files/A102.pdf"
+  },
+  {
+    "ID": "A103",
+    "Main Category": "Food",
+    "Subcategory": "Fruit & vegetables",
+    "Subclass": "Tomatoes",
+    "Products": "Diced tomatoes",
+    "Test mode": "Distance (c)",
+    "Type of action": "Cutting",
+    "Probe or Fixture": "Kramer shear cell - 5 blades",
+    "file": "../files/A103.pdf"
   }
 ]
