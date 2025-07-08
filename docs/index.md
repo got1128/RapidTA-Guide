@@ -1,3 +1,4 @@
+<PasswordProtection>
 # 🚀 歡迎來到 RapidTA 應用指南
 
 
@@ -11,4 +12,4 @@
 👉 前往 [影片](/guide/video) 查看完整列表。
 
 👉 前往 [實驗動作](/guide/typeofaction) 查看完整列表。
-
+</PasswordProtection>
