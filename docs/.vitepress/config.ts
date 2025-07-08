@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import './style/tailwind.css'
 
 export default defineConfig({
     title: 'RapidTA 應用指南',
@@ -31,7 +32,7 @@ export default defineConfig({
         socialLinks: [
             { icon: 'github', link: 'https://github.com/got1128/RapidTA-Guide.git' }
         ],
-
-
     }
+
+   
 })

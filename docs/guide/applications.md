@@ -4,5 +4,5 @@
   
 
 <ClientOnly>
-  <ApplicationGuide />
+  <ApplicationGuide_en />
 </ClientOnly>
