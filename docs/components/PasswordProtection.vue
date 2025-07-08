@@ -9,7 +9,7 @@
           <input 
             v-for="(digit, index) in digits" 
             :key="index"
-            v-model="digits[index]"
+            :value="digits[index]"
             @input="handleInput(index, $event)"
             @keydown="handleKeydown($event, index)"
             :ref="el => inputRefs[index] = el"
@@ -88,6 +88,9 @@ const handleInput = (index, event) => {
     digits.value[index] = numericValue
   }
   
+  // 確保輸入框顯示正確的值
+  event.target.value = digits.value[index]
+  
   // 自動跳到下一個輸入框
   if (numericValue && index < 3) {
     nextTick(() => {
@@ -140,13 +143,14 @@ const validatePassword = () => {
   position: fixed;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 9999;
+  overflow: hidden;
 }
 
 .password-container {
@@ -195,12 +199,23 @@ const validatePassword = () => {
   font-size: 24px;
   font-weight: bold;
   transition: all 0.3s ease;
+  background: white;
+  color: #333;
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+}
+
+.digit-input::-webkit-outer-spin-button,
+.digit-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .digit-input:focus {
   outline: none;
   border-color: #667eea;
   box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  background: white;
 }
 
 .digit-input.error {
@@ -261,9 +276,10 @@ const validatePassword = () => {
 }
 
 /* 響應式設計 */
-@media (max-width: 480px) {
+@media (max-width: 768px) {
   .password-box {
     padding: 30px 20px;
+    margin: 20px;
   }
   
   .digit-input {
@@ -274,6 +290,41 @@ const validatePassword = () => {
   
   .input-group {
     gap: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .password-box {
+    padding: 25px 15px;
+    margin: 15px;
+  }
+  
+  .digit-input {
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+  }
+  
+  .input-group {
+    gap: 8px;
+  }
+}
+
+/* 確保在所有設備上都能正常顯示 */
+@media (min-width: 769px) {
+  .password-overlay {
+    display: flex !important;
+  }
+  
+  .password-box {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  .digit-input {
+    display: inline-block !important;
+    visibility: visible !important;
   }
 }
 </style>
