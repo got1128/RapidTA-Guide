@@ -1,5 +1,4 @@
 import { defineConfig } from 'vitepress'
-import './style/tailwind.css'
 
 export default defineConfig({
     title: 'RapidTA 應用指南',
