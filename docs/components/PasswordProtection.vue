@@ -3,7 +3,7 @@
     <div class="password-container">
       <div class="password-box">
         <h2>🔒 內容保護</h2>
-        <p>請輸入4個數字，總和等於*</p>
+        <p>請輸入4個數字，總和等於16</p>
         
         <div class="input-group">
           <input 
@@ -24,7 +24,7 @@
         </div>
         
         <div v-if="hasError" class="error-message">
-          總和必須等於*，請重新輸入
+          總和必須等於16，請重新輸入
         </div>
         
         <div class="sum-display">
@@ -201,6 +201,7 @@ const validatePassword = () => {
   transition: all 0.3s ease;
   background: white;
   color: #333;
+  appearance: none;
   -webkit-appearance: none;
   -moz-appearance: textfield;
 }

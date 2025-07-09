@@ -13,11 +13,12 @@
       v-model="searchText"
       type="text"
       placeholder="🔍 Search by title or category..."
-      class="w-full p-2 border border-gray-300 rounded shadow"
+      class="w-full p-4 border border-gray-300 rounded shadow"
     />
 
     <!-- Filter Dropdowns -->
     <div class="flex flex-wrap gap-4">
+      <!--
       <select v-model="selectedCategory" class="p-2 border rounded">
         <option value="">All Main Categories</option>
         <option
@@ -27,7 +28,7 @@
         >
           {{ category }}
         </option>
-      </select>
+      </select>-->
 
       <select v-model="selectedSubcategory" class="p-2 border rounded">
         <option value="">All Subcategories</option>
