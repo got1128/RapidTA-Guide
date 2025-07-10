@@ -1,100 +1,233 @@
 <template>
-  <div class="space-y-6">
-    <!-- Debug Info -->
-    <div class="bg-gray-100 p-4 rounded mb-4">
-      <h4 class="font-bold">Debug Info:</h4>
-      <p>Data Load Status: {{ loading ? 'Loading...' : 'Loaded' }}</p>
-      <p>Total Records: {{ data.length }}</p>
-      <p>Filtered Records: {{ filteredItems.length }}</p>
-    </div>
-
-    <!-- Search Field -->
-    <input
-      v-model="searchText"
-      type="text"
-      placeholder="🔍 Search by title or category..."
-      class="w-full p-4 border border-gray-300 rounded shadow"
-    />
-
-    <!-- Filter Dropdowns -->
-    <div class="flex flex-wrap gap-4">
-      <!--
-      <select v-model="selectedCategory" class="p-2 border rounded">
-        <option value="">All Main Categories</option>
-        <option
-          v-for="category in mainCategories"
-          :key="category"
-          :value="category"
+  <div class="subcategory-classifier">
+    <!-- 頭部控制區 -->
+    <div class="header-controls">
+      <div class="search-section">
+        <input
+          v-model="searchText"
+          type="text"
+          placeholder="🔍 搜尋分類或產品..."
+          class="search-input"
+        />
+      </div>
+      
+      <div class="view-controls">
+        <button 
+          @click="viewMode = 'tree'" 
+          :class="{ active: viewMode === 'tree' }"
+          class="view-btn"
         >
-          {{ category }}
-        </option>
-      </select>-->
-
-      <select v-model="selectedSubcategory" class="p-2 border rounded">
-        <option value="">All Subcategories</option>
-        <option
-          v-for="subcategory in subcategories"
-          :key="subcategory"
-          :value="subcategory"
+          📁 樹狀結構
+        </button>
+        <button 
+          @click="viewMode = 'grid'" 
+          :class="{ active: viewMode === 'grid' }"
+          class="view-btn"
         >
-          {{ subcategory }}
-        </option>
-      </select>
-
-      <select v-model="selectedActionType" class="p-2 border rounded">
-        <option value="">All Action Types</option>
-        <option
-          v-for="actionType in actionTypes"
-          :key="actionType"
-          :value="actionType"
-        >
-          {{ actionType }}
-        </option>
-      </select>
-    </div>
-
-    <!-- Loading -->
-    <div v-if="loading" class="text-center py-8">
-      <p>Loading data...</p>
-    </div>
-
-    <!-- No Data -->
-    <div v-else-if="data.length === 0" class="text-center py-8">
-      <p class="text-red-600">⚠️ No data found. Please check the JSON file path.</p>
-    </div>
-
-    <!-- Results -->
-    <div v-else class="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
-      <div
-        v-for="item in filteredItems"
-        :key="item.id"
-        class="border rounded-lg shadow bg-white p-4"
-      >
-        <h3 class="text-lg font-bold text-blue-700">{{ item.title }}</h3>
-        <div class="text-sm text-gray-600 space-y-1">
-          <p>📂 {{ item.mainCategory }} > {{ item.subcategory }} > {{ item.subclass }}</p>
-          <p>🔧 Test Mode: {{ item.testMode }}</p>
-          <p>⚡ Action Type: {{ item.actionType }}</p>
-          <p>🔍 Probe/Fixture: {{ item.probe }}</p>
-        </div>
-
-        <details class="mt-2">
-          <summary class="text-blue-500 cursor-pointer hover:underline">
-            ▶ Click to Preview PDF
-          </summary>
-          <iframe
-            :src="item.file"
-            width="100%"
-            height="500"
-            class="mt-2 rounded border"
-          ></iframe>
-        </details>
+          📊 網格模式
+        </button>
       </div>
     </div>
 
-    <!-- No Matching Results -->
-    <div v-if="!loading && data.length > 0 && filteredItems.length === 0" class="text-center py-8">
-      <p class="text-gray-600">😔 No matching results found</p>
+    <!-- 載入狀態 -->
+    <div v-if="loading" class="loading">
+      <p>載入分類資料中...</p>
+    </div>
+
+    <!-- 統計資訊 -->
+    <div v-if="!loading" class="statistics">
+      <div class="stat-item">
+        <span class="stat-label">總分類數:</span>
+        <span class="stat-value">{{ subcategoryGroups.length }}</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">總產品數:</span>
+        <span class="stat-value">{{ data.length }}</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-label">符合搜尋:</span>
+        <span class="stat-value">{{ filteredGroups.length }}</span>
+      </div>
+    </div>
+
+    <!-- 樹狀結構模式 -->
+    <div v-if="viewMode === 'tree' && !loading" class="tree-view">
+      <div 
+        v-for="group in filteredGroups" 
+        :key="group.subcategory"
+        class="category-group"
+      >
+        <div 
+          class="category-header"
+          @click="toggleCategory(group.subcategory)"
+        >
+          <span class="category-icon">
+            {{ expandedCategories.has(group.subcategory) ? '📂' : '📁' }}
+          </span>
+          <h3 class="category-title">{{ group.subcategory }}</h3>
+          <span class="category-count">({{ group.items.length }})</span>
+          <span class="expand-icon">
+            {{ expandedCategories.has(group.subcategory) ? '▼' : '▶' }}
+          </span>
+        </div>
+
+        <div 
+          v-if="expandedCategories.has(group.subcategory)"
+          class="category-content"
+        >
+          <!-- 子分類統計 -->
+          <div class="subcategory-stats">
+            <div class="stat-row">
+              <span class="stat-label">主分類:</span>
+              <span class="stat-tags">
+                <span 
+                  v-for="category in group.mainCategories" 
+                  :key="category"
+                  class="tag"
+                >
+                  {{ category }}
+                </span>
+              </span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">子類別:</span>
+              <span class="stat-tags">
+                <span 
+                  v-for="subclass in group.subclasses" 
+                  :key="subclass"
+                  class="tag"
+                >
+                  {{ subclass }}
+                </span>
+              </span>
+            </div>
+          </div>
+
+          <!-- 產品列表 -->
+          <div class="products-list">
+            <div 
+              v-for="item in group.items" 
+              :key="item.id"
+              class="product-item"
+              @click="showProductDetail(item)"
+            >
+              <div class="product-info">
+                <h4 class="product-title">{{ item.title }}</h4>
+                <div class="product-meta">
+                  <span class="meta-item">🏷️ {{ item.subclass }}</span>
+                  <span class="meta-item">⚙️ {{ item.testMode }}</span>
+                  <span class="meta-item">🔧 {{ item.actionType }}</span>
+                </div>
+              </div>
+              <button class="detail-btn">詳細</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 網格模式 -->
+    <div v-if="viewMode === 'grid' && !loading" class="grid-view">
+      <div 
+        v-for="group in filteredGroups" 
+        :key="group.subcategory"
+        class="category-card"
+      >
+        <div class="card-header">
+          <h3 class="card-title">{{ group.subcategory }}</h3>
+          <span class="card-count">{{ group.items.length }} 項目</span>
+        </div>
+        
+        <div class="card-stats">
+          <div class="stat-grid">
+            <div class="stat-cell">
+              <div class="stat-label">主分類</div>
+              <div class="stat-value">{{ group.mainCategories.length }}</div>
+            </div>
+            <div class="stat-cell">
+              <div class="stat-label">子類別</div>
+              <div class="stat-value">{{ group.subclasses.length }}</div>
+            </div>
+            <div class="stat-cell">
+              <div class="stat-label">測試模式</div>
+              <div class="stat-value">{{ group.testModes.length }}</div>
+            </div>
+            <div class="stat-cell">
+              <div class="stat-label">操作類型</div>
+              <div class="stat-value">{{ group.actionTypes.length }}</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-actions">
+          <button 
+            @click="showCategoryDetail(group)"
+            class="action-btn primary"
+          >
+            查看詳細
+          </button>
+          <button 
+            @click="expandCategory(group.subcategory)"
+            class="action-btn secondary"
+          >
+            {{ expandedCategories.has(group.subcategory) ? '收起' : '展開' }}
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- 產品詳細彈窗 -->
+    <div v-if="selectedProduct" class="modal-overlay" @click="closeModal">
+      <div class="modal-content" @click.stop>
+        <div class="modal-header">
+          <h3>{{ selectedProduct.title }}</h3>
+          <button @click="closeModal" class="close-btn">✕</button>
+        </div>
+        
+        <div class="modal-body">
+          <div class="detail-grid">
+            <div class="detail-item">
+              <span class="detail-label">主分類:</span>
+              <span class="detail-value">{{ selectedProduct.mainCategory }}</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">子分類:</span>
+              <span class="detail-value">{{ selectedProduct.subcategory }}</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">子類別:</span>
+              <span class="detail-value">{{ selectedProduct.subclass }}</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">測試模式:</span>
+              <span class="detail-value">{{ selectedProduct.testMode }}</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">操作類型:</span>
+              <span class="detail-value">{{ selectedProduct.actionType }}</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">探針/夾具:</span>
+              <span class="detail-value">{{ selectedProduct.probe }}</span>
+            </div>
+          </div>
+
+          <div class="pdf-section">
+            <h4>實驗方法文件</h4>
+            <div class="pdf-viewer">
+              <iframe
+                :src="selectedProduct.file"
+                frameborder="0"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 無資料狀態 -->
+    <div v-if="!loading && filteredGroups.length === 0" class="no-data">
+      <p>😔 找不到符合條件的分類</p>
     </div>
   </div>
 </template>
@@ -102,27 +235,22 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 
+// 響應式數據
 const data = ref([])
-const searchText = ref('')
-const selectedCategory = ref('')
-const selectedSubcategory = ref('')
-const selectedActionType = ref('')
 const loading = ref(true)
+const searchText = ref('')
+const viewMode = ref('tree')
+const expandedCategories = ref(new Set())
+const selectedProduct = ref(null)
 
+// 載入數據
 onMounted(async () => {
   try {
-    console.log('🔄 Starting to load JSON...')
     const res = await fetch('../data/applications.json')
-    
-    if (!res.ok) {
-      throw new Error(`HTTP ${res.status}: ${res.statusText}`)
-    }
+    if (!res.ok) throw new Error(`HTTP ${res.status}`)
     
     const json = await res.json()
-    console.log('✅ Successfully loaded JSON:', json)
-    console.log('📊 Number of records:', json.length)
-    
-    const transformedData = json.map(item => ({
+    data.value = json.map(item => ({
       id: item.ID,
       title: item.Products,
       mainCategory: item['Main Category'],
@@ -133,62 +261,562 @@ onMounted(async () => {
       probe: item['Probe or Fixture'],
       file: item.file
     }))
-    
-    console.log('🔄 Transformed data:', transformedData)
-    data.value = transformedData
-    loading.value = false
-  } catch (e) {
-    console.error('❌ Failed to load JSON:', e)
+  } catch (error) {
+    console.error('載入資料失敗:', error)
+  } finally {
     loading.value = false
   }
 })
 
-const mainCategories = computed(() => {
-  return [...new Set(data.value.map((item) => item.mainCategory))].sort()
-})
-
-const subcategories = computed(() => {
-  return [...new Set(data.value.map((item) => item.subcategory))].sort()
-})
-
-const actionTypes = computed(() => {
-  return [...new Set(data.value.map((item) => item.actionType))].sort()
-})
-
-const filteredItems = computed(() => {
-  return data.value.filter((item) => {
-    const title = item.title || ''
-    const mainCategory = item.mainCategory || ''
-    const subcategory = item.subcategory || ''
-    const actionType = item.actionType || ''
-    const probe = item.probe || ''
+// 按Subcategory分組
+const subcategoryGroups = computed(() => {
+  const groups = {}
+  
+  data.value.forEach(item => {
+    const subcategory = item.subcategory || '未分類'
     
-    const matchesText =
-      title.toLowerCase().includes(searchText.value.toLowerCase()) ||
-      mainCategory.toLowerCase().includes(searchText.value.toLowerCase()) ||
-      subcategory.toLowerCase().includes(searchText.value.toLowerCase()) ||
-      actionType.toLowerCase().includes(searchText.value.toLowerCase()) ||
-      probe.toLowerCase().includes(searchText.value.toLowerCase())
+    if (!groups[subcategory]) {
+      groups[subcategory] = {
+        subcategory,
+        items: [],
+        mainCategories: new Set(),
+        subclasses: new Set(),
+        testModes: new Set(),
+        actionTypes: new Set()
+      }
+    }
+    
+    groups[subcategory].items.push(item)
+    groups[subcategory].mainCategories.add(item.mainCategory)
+    groups[subcategory].subclasses.add(item.subclass)
+    groups[subcategory].testModes.add(item.testMode)
+    groups[subcategory].actionTypes.add(item.actionType)
+  })
+  
+  return Object.values(groups).map(group => ({
+    ...group,
+    mainCategories: Array.from(group.mainCategories),
+    subclasses: Array.from(group.subclasses),
+    testModes: Array.from(group.testModes),
+    actionTypes: Array.from(group.actionTypes)
+  }))
+})
 
-    const matchesCategory = selectedCategory.value
-      ? item.mainCategory === selectedCategory.value
-      : true
-
-    const matchesSubcategory = selectedSubcategory.value
-      ? item.subcategory === selectedSubcategory.value
-      : true
-
-    const matchesActionType = selectedActionType.value
-      ? item.actionType === selectedActionType.value
-      : true
-
-    return matchesText && matchesCategory && matchesSubcategory && matchesActionType
+// 篩選後的分組
+const filteredGroups = computed(() => {
+  if (!searchText.value) return subcategoryGroups.value
+  
+  return subcategoryGroups.value.filter(group => {
+    const search = searchText.value.toLowerCase()
+    return (
+      group.subcategory.toLowerCase().includes(search) ||
+      group.items.some(item => 
+        item.title.toLowerCase().includes(search) ||
+        item.mainCategory.toLowerCase().includes(search) ||
+        item.subclass.toLowerCase().includes(search)
+      )
+    )
   })
 })
+
+// 方法
+const toggleCategory = (subcategory) => {
+  if (expandedCategories.value.has(subcategory)) {
+    expandedCategories.value.delete(subcategory)
+  } else {
+    expandedCategories.value.add(subcategory)
+  }
+}
+
+const expandCategory = (subcategory) => {
+  toggleCategory(subcategory)
+}
+
+const showProductDetail = (product) => {
+  selectedProduct.value = product
+}
+
+const showCategoryDetail = (group) => {
+  toggleCategory(group.subcategory)
+}
+
+const closeModal = () => {
+  selectedProduct.value = null
+}
 </script>
 
 <style scoped>
-details > summary {
-  list-style: none;
+.subcategory-classifier {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  font-family: 'Microsoft JhengHei', 'Segoe UI', Arial, sans-serif;
+}
+
+/* 頭部控制區 */
+.header-controls {
+  background: var(--vp-c-bg-soft);
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 20px;
+  border: 1px solid var(--vp-c-border);
+}
+
+.search-section {
+  margin-bottom: 15px;
+}
+
+.search-input {
+  width: 100%;
+  padding: 12px 16px;
+  font-size: 16px;
+  border: 2px solid var(--vp-c-border);
+  border-radius: 8px;
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-1);
+  transition: border-color 0.3s ease;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: var(--vp-c-brand);
+}
+
+.view-controls {
+  display: flex;
+  gap: 10px;
+}
+
+.view-btn {
+  padding: 8px 16px;
+  border: 2px solid var(--vp-c-border);
+  border-radius: 6px;
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-1);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.view-btn.active {
+  background: var(--vp-c-brand);
+  color: white;
+  border-color: var(--vp-c-brand);
+}
+
+.view-btn:hover {
+  border-color: var(--vp-c-brand);
+}
+
+/* 載入狀態 */
+.loading {
+  text-align: center;
+  padding: 40px;
+  color: var(--vp-c-text-2);
+}
+
+/* 統計資訊 */
+.statistics {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+  padding: 15px;
+  background: var(--vp-c-bg-soft);
+  border-radius: 8px;
+  border: 1px solid var(--vp-c-border);
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.stat-label {
+  color: var(--vp-c-text-2);
+  font-size: 14px;
+}
+
+.stat-value {
+  font-weight: bold;
+  color: var(--vp-c-brand);
+}
+
+/* 樹狀結構模式 
+.tree-view {
+  space-y: 15px;
+}*/
+
+.category-group {
+  background: var(--vp-c-bg-soft);
+  border-radius: 12px;
+  border: 1px solid var(--vp-c-border);
+  margin-bottom: 15px;
+}
+
+.category-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.category-header:hover {
+  background: var(--vp-c-bg-mute);
+}
+
+.category-icon {
+  font-size: 20px;
+}
+
+.category-title {
+  flex: 1;
+  margin: 0;
+  color: var(--vp-c-text-1);
+  font-size: 18px;
+}
+
+.category-count {
+  color: var(--vp-c-text-2);
+  font-size: 14px;
+}
+
+.expand-icon {
+  color: var(--vp-c-text-2);
+  font-size: 12px;
+}
+
+.category-content {
+  padding: 0 20px 20px 20px;
+}
+
+.subcategory-stats {
+  margin-bottom: 15px;
+  padding: 15px;
+  background: var(--vp-c-bg);
+  border-radius: 8px;
+  border: 1px solid var(--vp-c-border);
+}
+
+.stat-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+}
+
+.stat-row:last-child {
+  margin-bottom: 0;
+}
+
+.stat-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+
+.tag {
+  background: var(--vp-c-brand-soft);
+  color: var(--vp-c-brand);
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.products-list {
+  display: grid;
+  gap: 10px;
+}
+
+.product-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px;
+  background: var(--vp-c-bg);
+  border-radius: 8px;
+  border: 1px solid var(--vp-c-border);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.product-item:hover {
+  border-color: var(--vp-c-brand);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.product-info {
+  flex: 1;
+}
+
+.product-title {
+  margin: 0 0 5px 0;
+  color: var(--vp-c-text-1);
+  font-size: 16px;
+}
+
+.product-meta {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.meta-item {
+  font-size: 12px;
+  color: var(--vp-c-text-2);
+}
+
+.detail-btn {
+  background: var(--vp-c-brand);
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.detail-btn:hover {
+  background: var(--vp-c-brand-dark);
+}
+
+/* 網格模式 */
+.grid-view {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.category-card {
+  background: var(--vp-c-bg-soft);
+  border-radius: 12px;
+  border: 1px solid var(--vp-c-border);
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.category-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+}
+
+.card-header {
+  margin-bottom: 15px;
+  border-bottom: 1px solid var(--vp-c-border);
+  padding-bottom: 10px;
+}
+
+.card-title {
+  margin: 0;
+  color: var(--vp-c-text-1);
+  font-size: 18px;
+}
+
+.card-count {
+  color: var(--vp-c-text-2);
+  font-size: 14px;
+}
+
+.card-stats {
+  margin-bottom: 15px;
+}
+
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.stat-cell {
+  text-align: center;
+  padding: 10px;
+  background: var(--vp-c-bg);
+  border-radius: 6px;
+  border: 1px solid var(--vp-c-border);
+}
+
+.stat-cell .stat-label {
+  display: block;
+  font-size: 12px;
+  color: var(--vp-c-text-2);
+  margin-bottom: 5px;
+}
+
+.stat-cell .stat-value {
+  font-size: 18px;
+  font-weight: bold;
+  color: var(--vp-c-brand);
+}
+
+.card-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.action-btn {
+  flex: 1;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.action-btn.primary {
+  background: var(--vp-c-brand);
+  color: white;
+}
+
+.action-btn.primary:hover {
+  background: var(--vp-c-brand-dark);
+}
+
+.action-btn.secondary {
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-1);
+  border: 1px solid var(--vp-c-border);
+}
+
+.action-btn.secondary:hover {
+  background: var(--vp-c-bg-mute);
+}
+
+/* 彈窗模態 */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: var(--vp-c-bg);
+  border-radius: 12px;
+  max-width: 800px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  border: 1px solid var(--vp-c-border);
+}
+
+.modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  border-bottom: 1px solid var(--vp-c-border);
+}
+
+.modal-header h3 {
+  margin: 0;
+  color: var(--vp-c-text-1);
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  color: var(--vp-c-text-2);
+  padding: 5px;
+}
+
+.close-btn:hover {
+  color: var(--vp-c-text-1);
+}
+
+.modal-body {
+  padding: 20px;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.detail-label {
+  font-weight: bold;
+  color: var(--vp-c-text-1);
+  font-size: 14px;
+}
+
+.detail-value {
+  color: var(--vp-c-text-2);
+  font-size: 14px;
+}
+
+.pdf-section h4 {
+  margin: 0 0 10px 0;
+  color: var(--vp-c-text-1);
+}
+
+.pdf-viewer {
+  width: 100%;
+  height: 400px;
+  border: 1px solid var(--vp-c-border);
+  border-radius: 8px;
+}
+
+.pdf-viewer iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 8px;
+}
+
+.no-data {
+  text-align: center;
+  padding: 40px;
+  color: var(--vp-c-text-2);
+}
+
+/* 響應式設計 */
+@media (max-width: 768px) {
+  .view-controls {
+    flex-direction: column;
+  }
+  
+  .statistics {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .stat-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .product-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .product-meta {
+    flex-direction: column;
+    gap: 5px;
+  }
+  
+  .modal-content {
+    width: 95%;
+  }
+  
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
 }
 </style>

@@ -22,11 +22,11 @@ export default defineConfig({
                 text: 'Application',
                 items: [
                     { text: 'ALL', link: '/guide/applications' },
-                    { text: 'Bakery', link: '/guide/food/Bakery' },
-                    { text: 'Cereal', link: '/guide/food/Cereal' },
-                    { text: 'Confectionery', link: '/guide/food/Confectionery' },
-                    { text: 'Dairy', link: '/guide/food/Dairy' },
-                    { text: 'Fruit & Vegetables', link: '/guide/food/Fruit & vegetables' }
+                    { text: 'Bakery', link: '/guide/Bakery' },
+                    { text: 'Cereal', link: '/guide/Cereal' },
+                    { text: 'Confectionery', link: '/guide/Confectionery' },
+                    { text: 'Dairy', link: '/guide/Dairy' },
+                    { text: 'Fruit & Vegetables', link: '/guide/Fruit & vegetables' }
                 ]
             },
             { text: 'Accessories', link: '/guide/accessories' },
@@ -36,16 +36,16 @@ export default defineConfig({
         ],
 
         sidebar: {
-            '/guide/food/Bakery': [
+            '/guide/applications': [
                 {
                     text: "RapidTA Guide",
                     items: [
                         { text: "ALL", link: "/guide/applications"},
-                        { text: "Bakery", link: "/guide/food/Bakery"},
-                        { text: "Cereal", link: "/guide/food/Cereal"},
-                        { text: "Confectionery", link: "/guide/food/Confectionery"},
-                        { text: "Dairy", link: "/guide/food/Dairy"},
-                        { text: "Fruit & Vegetables", link: "/guide/food/Fruit & vegetables"},
+                        { text: "Bakery", link: "/guide/Bakery"},
+                        { text: "Cereal", link: "/guide/Cereal"},
+                        { text: "Confectionery", link: "/guide/Confectionery"},
+                        { text: "Dairy", link: "/guide/Dairy"},
+                        { text: "Fruit & Vegetables", link: "/guide/Fruit & vegetables"},
                     ]
                 }
             ]
