@@ -2,8 +2,8 @@
   <div v-if="!isAuthenticated" class="password-overlay">
     <div class="password-container">
       <div class="password-box">
-        <h2>🔒 內容保護</h2>
-        <p>請輸入4個數字，總和等於16</p>
+        <h2>🔒 Content protection</h2>
+        <p>Please enter 4 numbers that sum to the same amount*</p>
         
         <div class="input-group">
           <input 
@@ -24,11 +24,11 @@
         </div>
         
         <div v-if="hasError" class="error-message">
-          總和必須等於16，請重新輸入
+          The total must be equal to *, please re-enter
         </div>
         
         <div class="sum-display">
-          當前總和: {{ currentSum }}
+          Current total: {{ currentSum }}
         </div>
         
         <button 
@@ -37,7 +37,7 @@
           class="submit-btn"
           :class="{ 'disabled': !allDigitsFilled }"
         >
-          確認
+          Confirm
         </button>
       </div>
     </div>
