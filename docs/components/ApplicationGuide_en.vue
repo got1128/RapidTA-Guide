@@ -29,6 +29,7 @@
       </div>
     </div>
 
+    
     <!-- 載入狀態 -->
     <div v-if="loading" class="loading">
       <p>載入分類資料中...</p>
@@ -38,16 +39,39 @@
     <div v-if="!loading" class="statistics">
       <div class="stat-item">
         <span class="stat-label">總分類數:</span>
-        <span class="stat-value">{{ subcategoryGroups.length }}</span>
+        <span class="stat-value">{{ currentGroups.length }}</span>
       </div>
       <div class="stat-item">
         <span class="stat-label">總產品數:</span>
-        <span class="stat-value">{{ data.length }}</span>
+        <span class="stat-value">{{ currentTotalProducts }}</span>
       </div>
       <div class="stat-item">
         <span class="stat-label">符合搜尋:</span>
         <span class="stat-value">{{ filteredGroups.length }}</span>
       </div>
+    </div>
+<!-- 麵包屑導航 -->
+    <div v-if="drilldownStack.length > 0" class="breadcrumb">
+      <button 
+        @click="clearDrilldown"
+        class="breadcrumb-btn"
+      >
+        🏠 全部分類
+      </button>
+      <span class="breadcrumb-separator">▶</span>
+      <span 
+        v-for="(item, index) in drilldownStack" 
+        :key="index"
+        class="breadcrumb-item"
+      >
+        <button 
+          @click="drilldownToLevel(index)"
+          class="breadcrumb-btn"
+        >
+          {{ item.name }}
+        </button>
+        <span v-if="index < drilldownStack.length - 1" class="breadcrumb-separator">▶</span>
+      </span>
     </div>
 
     <!-- 樹狀結構模式 -->
@@ -83,7 +107,8 @@
                 <span 
                   v-for="category in group.mainCategories" 
                   :key="category"
-                  class="tag"
+                  class="tag clickable-tag"
+                  @click="drilldownByMainCategory(category)"
                 >
                   {{ category }}
                 </span>
@@ -95,12 +120,40 @@
                 <span 
                   v-for="subclass in group.subclasses" 
                   :key="subclass"
-                  class="tag"
+                  class="tag clickable-tag"
+                  @click="drilldownBySubclass(subclass)"
                 >
                   {{ subclass }}
                 </span>
               </span>
             </div>
+            <!-- 子分類統計 
+            <div class="stat-row">
+              <span class="stat-label">測試模式:</span>
+              <span class="stat-tags">
+                <span 
+                  v-for="testMode in group.testModes" 
+                  :key="testMode"
+                  class="tag clickable-tag"
+                  @click="drilldownByTestMode(testMode)"
+                >
+                  {{ testMode }}
+                </span>
+              </span>
+            </div>
+            <div class="stat-row">
+              <span class="stat-label">操作類型:</span>
+              <span class="stat-tags">
+                <span 
+                  v-for="actionType in group.actionTypes" 
+                  :key="actionType"
+                  class="tag clickable-tag"
+                  @click="drilldownByActionType(actionType)"
+                >
+                  {{ actionType }}
+                </span>
+              </span>
+            </div>-->
           </div>
 
           <!-- 產品列表 -->
@@ -109,7 +162,6 @@
               v-for="item in group.items" 
               :key="item.id"
               class="product-item"
-              @click="showProductDetail(item)"
             >
               <div class="product-info">
                 <h4 class="product-title">{{ item.title }}</h4>
@@ -119,7 +171,12 @@
                   <span class="meta-item">🔧 {{ item.actionType }}</span>
                 </div>
               </div>
-              <button class="detail-btn">詳細</button>
+              <button 
+                @click="showProductDetail(item)"
+                class="detail-btn"
+              >
+                詳細
+              </button>
             </div>
           </div>
         </div>
@@ -214,11 +271,39 @@
 
           <div class="pdf-section">
             <h4>實驗方法文件</h4>
-            <div class="pdf-viewer">
-              <iframe
-                :src="selectedProduct.file"
-                frameborder="0"
-              ></iframe>
+            
+            <!-- 手機版：顯示下載連結 -->
+            <div v-if="isMobile" class="mobile-pdf-actions">
+              <a 
+                :href="selectedProduct.file" 
+                target="_blank"
+                class="pdf-download-btn"
+              >
+                📄 開啟PDF文件
+              </a>
+              <p class="pdf-notice">
+                💡 在手機上點擊上方按鈕開啟PDF文件
+              </p>
+            </div>
+            
+            <!-- 桌面版：顯示內嵌PDF -->
+            <div v-else class="desktop-pdf-viewer">
+              <div class="pdf-viewer">
+                <iframe
+                  :src="selectedProduct.file"
+                  frameborder="0"
+                  :title="`${selectedProduct.title} 實驗方法文件`"
+                ></iframe>
+              </div>
+              <div class="pdf-actions">
+                <a 
+                  :href="selectedProduct.file" 
+                  target="_blank"
+                  class="pdf-open-btn"
+                >
+                  🔗 在新視窗開啟
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -228,12 +313,15 @@
     <!-- 無資料狀態 -->
     <div v-if="!loading && filteredGroups.length === 0" class="no-data">
       <p>😔 找不到符合條件的分類</p>
+      <button v-if="drilldownStack.length > 0" @click="clearDrilldown" class="reset-btn">
+        🔄 重置篩選
+      </button>
     </div>
   </div>
 </template>
 
 <script setup>
-import { ref, computed, onMounted } from 'vue'
+import { ref, computed, onMounted, onUnmounted } from 'vue'
 
 // 響應式數據
 const data = ref([])
@@ -242,9 +330,39 @@ const searchText = ref('')
 const viewMode = ref('tree')
 const expandedCategories = ref(new Set())
 const selectedProduct = ref(null)
+const isMobile = ref(false)
+const drilldownStack = ref([]) // 鑽取堆疊
+
+// 檢測是否為手機設備
+const checkMobileDevice = () => {
+  const userAgent = navigator.userAgent.toLowerCase()
+  const mobileKeywords = ['mobile', 'android', 'iphone', 'ipad', 'ipod', 'blackberry', 'windows phone']
+  
+  // 檢查用戶代理
+  const isMobileUA = mobileKeywords.some(keyword => userAgent.includes(keyword))
+  
+  // 檢查螢幕寬度
+  const isMobileWidth = window.innerWidth <= 768
+  
+  // 檢查觸控支援
+  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0
+  
+  return isMobileUA || (isMobileWidth && isTouchDevice)
+}
+
+// 監聽視窗大小變化
+const handleResize = () => {
+  isMobile.value = checkMobileDevice()
+}
 
 // 載入數據
 onMounted(async () => {
+  // 初始化手機檢測
+  isMobile.value = checkMobileDevice()
+  
+  // 監聽視窗大小變化
+  window.addEventListener('resize', handleResize)
+  
   try {
     const res = await fetch('../data/applications.json')
     if (!res.ok) throw new Error(`HTTP ${res.status}`)
@@ -268,11 +386,41 @@ onMounted(async () => {
   }
 })
 
-// 按Subcategory分組
+// 清理事件監聽器
+onUnmounted(() => {
+  window.removeEventListener('resize', handleResize)
+})
+
+// 根據鑽取堆疊過濾數據
+const filteredData = computed(() => {
+  let filtered = data.value
+  
+  // 依據鑽取堆疊進行過濾
+  for (const filter of drilldownStack.value) {
+    filtered = filtered.filter(item => {
+      switch (filter.type) {
+        case 'mainCategory':
+          return item.mainCategory === filter.value
+        case 'subclass':
+          return item.subclass === filter.value
+        case 'testMode':
+          return item.testMode === filter.value
+        case 'actionType':
+          return item.actionType === filter.value
+        default:
+          return true
+      }
+    })
+  }
+  
+  return filtered
+})
+
+// 按Subcategory分組（使用過濾後的數據）
 const subcategoryGroups = computed(() => {
   const groups = {}
   
-  data.value.forEach(item => {
+  filteredData.value.forEach(item => {
     const subcategory = item.subcategory || '未分類'
     
     if (!groups[subcategory]) {
@@ -302,11 +450,17 @@ const subcategoryGroups = computed(() => {
   }))
 })
 
-// 篩選後的分組
+// 當前顯示的分組
+const currentGroups = computed(() => subcategoryGroups.value)
+
+// 當前總產品數
+const currentTotalProducts = computed(() => filteredData.value.length)
+
+// 篩選後的分組（基於搜尋）
 const filteredGroups = computed(() => {
-  if (!searchText.value) return subcategoryGroups.value
+  if (!searchText.value) return currentGroups.value
   
-  return subcategoryGroups.value.filter(group => {
+  return currentGroups.value.filter(group => {
     const search = searchText.value.toLowerCase()
     return (
       group.subcategory.toLowerCase().includes(search) ||
@@ -319,7 +473,48 @@ const filteredGroups = computed(() => {
   })
 })
 
-// 方法
+// 鑽取方法
+const drilldownByMainCategory = (mainCategory) => {
+  drilldownStack.value.push({
+    type: 'mainCategory',
+    value: mainCategory,
+    name: `主分類: ${mainCategory}`
+  })
+}
+
+const drilldownBySubclass = (subclass) => {
+  drilldownStack.value.push({
+    type: 'subclass',
+    value: subclass,
+    name: `子類別: ${subclass}`
+  })
+}
+
+const drilldownByTestMode = (testMode) => {
+  drilldownStack.value.push({
+    type: 'testMode',
+    value: testMode,
+    name: `測試模式: ${testMode}`
+  })
+}
+
+const drilldownByActionType = (actionType) => {
+  drilldownStack.value.push({
+    type: 'actionType',
+    value: actionType,
+    name: `操作類型: ${actionType}`
+  })
+}
+
+const drilldownToLevel = (level) => {
+  drilldownStack.value = drilldownStack.value.slice(0, level + 1)
+}
+
+const clearDrilldown = () => {
+  drilldownStack.value = []
+}
+
+// 其他方法
 const toggleCategory = (subcategory) => {
   if (expandedCategories.value.has(subcategory)) {
     expandedCategories.value.delete(subcategory)
@@ -344,8 +539,7 @@ const closeModal = () => {
   selectedProduct.value = null
 }
 </script>
-
-<style scoped>
+<style>
 .subcategory-classifier {
   max-width: 1200px;
   margin: 0 auto;
@@ -440,11 +634,6 @@ const closeModal = () => {
   font-weight: bold;
   color: var(--vp-c-brand);
 }
-
-/* 樹狀結構模式 
-.tree-view {
-  space-y: 15px;
-}*/
 
 .category-group {
   background: var(--vp-c-bg-soft);
@@ -762,8 +951,42 @@ const closeModal = () => {
 }
 
 .pdf-section h4 {
-  margin: 0 0 10px 0;
+  margin: 0 0 15px 0;
   color: var(--vp-c-text-1);
+}
+
+/* 手機版 PDF 處理 */
+.mobile-pdf-actions {
+  text-align: center;
+  padding: 20px;
+  background: var(--vp-c-bg-soft);
+  border-radius: 8px;
+  border: 1px solid var(--vp-c-border);
+}
+
+.pdf-download-btn {
+  display: inline-block;
+  background: var(--vp-c-brand);
+  color: rgb(0, 0, 0);
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+
+
+.pdf-notice {
+  color: var(--vp-c-text-2);
+  font-size: 14px;
+  margin: 10px 0 0 0;
+}
+
+/* 桌面版 PDF 檢視器 */
+.desktop-pdf-viewer {
+  margin-top: 10px;
 }
 
 .pdf-viewer {
@@ -771,6 +994,7 @@ const closeModal = () => {
   height: 400px;
   border: 1px solid var(--vp-c-border);
   border-radius: 8px;
+  margin-bottom: 10px;
 }
 
 .pdf-viewer iframe {
@@ -778,6 +1002,27 @@ const closeModal = () => {
   height: 100%;
   border: none;
   border-radius: 8px;
+}
+
+.pdf-actions {
+  text-align: center;
+}
+
+.pdf-open-btn {
+  display: inline-block;
+  background: var(--vp-c-bg-soft);
+  color: var(--vp-c-text-1);
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-size: 14px;
+  border: 1px solid var(--vp-c-border);
+  transition: all 0.3s ease;
+}
+
+.pdf-open-btn:hover {
+  background: var(--vp-c-bg-mute);
+  border-color: var(--vp-c-brand);
 }
 
 .no-data {
@@ -788,8 +1033,20 @@ const closeModal = () => {
 
 /* 響應式設計 */
 @media (max-width: 768px) {
+  .subcategory-classifier {
+    padding: 10px;
+  }
+  
+  .header-controls {
+    padding: 15px;
+  }
+  
   .view-controls {
     flex-direction: column;
+  }
+  
+  .view-btn {
+    width: 100%;
   }
   
   .statistics {
@@ -813,10 +1070,35 @@ const closeModal = () => {
   
   .modal-content {
     width: 95%;
+    max-height: 95vh;
+  }
+  
+  .modal-header {
+    padding: 15px;
+  }
+  
+  .modal-body {
+    padding: 15px;
   }
   
   .detail-grid {
     grid-template-columns: 1fr;
+  }
+  
+  .grid-view {
+    grid-template-columns: 1fr;
+  }
+  
+  .category-card {
+    padding: 15px;
+  }
+  
+  .card-actions {
+    flex-direction: column;
+  }
+  
+  .action-btn {
+    width: 100%;
   }
 }
 </style>
