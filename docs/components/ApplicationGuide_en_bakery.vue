@@ -182,7 +182,7 @@ const detailItem = ref(null)
 onMounted(async () => {
   try {
     console.log('🔄 Starting to load JSON...')
-    const res = await fetch('../../data/applications.json')
+    const res = await fetch('../data/applications.json')
     
     if (!res.ok) {
       throw new Error(`HTTP ${res.status}: ${res.statusText}`)
