@@ -61,8 +61,8 @@
     <div v-else class="main-view">
       <!-- 顯示當前篩選狀態 -->
       <div class="filter-status">
-        <h3>🥖 Bakery 產品專區</h3>
-        <p>目前顯示所有 Bakery 子分類的產品</p>
+        <h3>🥖 confectionery 產品專區</h3>
+        <p>目前顯示所有 confectionery 子分類的產品</p>
       </div>
 
       <!-- Debug Info -->
@@ -70,7 +70,7 @@
         <h4>Debug Info:</h4>
         <p>Data Load Status: {{ loading ? 'Loading...' : 'Loaded' }}</p>
         <p>Total Records: {{ data.length }}</p>
-        <p>Bakery Records: {{ filteredItems.length }}</p>
+        <p>confectionery Records: {{ filteredItems.length }}</p>
       </div>
 
       <!-- 搜尋框 -->
@@ -78,7 +78,7 @@
         <input
           v-model="searchText"
           type="text"
-          placeholder="🔍 搜尋 Bakery 產品名稱或分類..."
+          placeholder="🔍 搜尋 confectionery 產品名稱或分類..."
           class="search-input"
         />
       </div>
@@ -156,7 +156,7 @@
 
       <!-- 無匹配結果 -->
       <div v-if="!loading && data.length > 0 && filteredItems.length === 0" class="no-results-message">
-        <p>😔 找不到符合條件的 Bakery 產品</p>
+        <p>😔 找不到符合條件的 confectionery 產品</p>
       </div>
     </div>
   </div>
@@ -168,7 +168,7 @@ import { ref, computed, onMounted } from 'vue'
 const data = ref([])
 const searchText = ref('')
 const selectedCategory = ref('')
-const selectedSubcategory = ref('bakery') // 固定為 bakery
+const selectedSubcategory = ref('confectionery') // 固定為 confectionery
 const selectedSubclass = ref('')
 const selectedActionType = ref('')
 const loading = ref(true)
@@ -217,23 +217,23 @@ const subcategories = computed(() => {
   return [...new Set(data.value.map((item) => item.subcategory))].sort()
 })
 
-// 只顯示 bakery 類別的 subclasses
+// 只顯示 confectionery 類別的 subclasses
 const subclasses = computed(() => {
-  const bakeryItems = data.value.filter(item => 
-    item.subcategory && item.subcategory.toLowerCase() === 'bakery'
+  const confectioneryItems = data.value.filter(item => 
+    item.subcategory && item.subcategory.toLowerCase() === 'confectionery'
   )
-  return [...new Set(bakeryItems.map((item) => item.subclass))].sort()
+  return [...new Set(confectioneryItems.map((item) => item.subclass))].sort()
 })
 
-// 只顯示 bakery 類別的 actionTypes
+// 只顯示 confectionery 類別的 actionTypes
 const actionTypes = computed(() => {
-  const bakeryItems = data.value.filter(item => 
-    item.subcategory && item.subcategory.toLowerCase() === 'bakery'
+  const confectioneryItems = data.value.filter(item => 
+    item.subcategory && item.subcategory.toLowerCase() === 'confectionery'
   )
-  return [...new Set(bakeryItems.map((item) => item.actionType))].sort()
+  return [...new Set(confectioneryItems.map((item) => item.actionType))].sort()
 })
 
-// 修改篩選邏輯，強制只顯示 bakery
+// 修改篩選邏輯，強制只顯示 confectionery
 const filteredItems = computed(() => {
   return data.value.filter((item) => {
     const title = item.title || ''
@@ -243,8 +243,8 @@ const filteredItems = computed(() => {
     const actionType = item.actionType || ''
     const probe = item.probe || ''
     
-    // 強制只顯示 bakery 類別
-    if (subcategory.toLowerCase() !== 'bakery') {
+    // 強制只顯示 confectionery 類別
+    if (subcategory.toLowerCase() !== 'confectionery') {
       return false
     }
     

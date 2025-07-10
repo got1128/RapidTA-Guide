@@ -36,9 +36,9 @@ export default defineConfig({
         ],
 
         sidebar: {
-            '/guide/applications': [
+            '/guide/': [
                 {
-                    text: "RapidTA Guide",
+                    text: "",
                     items: [
                         { text: "ALL", link: "/guide/applications"},
                         { text: "Bakery", link: "/guide/Bakery"},
