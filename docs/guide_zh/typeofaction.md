@@ -1,4 +1,4 @@
-# typeofaction
+# 原理动画
 
 <ClientOnly>
   <ProductExplorer />

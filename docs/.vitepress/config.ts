@@ -7,11 +7,21 @@ export default defineConfig({
     base: "/RapidTA-Guide/",
 
     locales: {
-        root: {
-            label: 'English',
+        '/': {
             lang: 'en-US',
             title: 'RapidTA Application Guide',
-            description: 'Complete guide for texture analyzer applications'
+            description: ''
+        },
+
+        '/zh/': {
+            lang: 'zh-CN',
+            title: 'RapidTA Application Guide',
+            description: ''
+        },
+        '/cn/': {
+            lang: 'en-US',
+            title: 'RapidTA Application Guide',
+            description: ''
         }
         
     },
@@ -19,11 +29,12 @@ export default defineConfig({
     themeConfig: {
 
         localeLinks: {
-            text: '選擇語言',
+            text: 'Language',
 
             items: [
-                { text: '繁體中文', link: '/' },
-                { text: 'English', link: '/en/' }
+                { text: 'English', link: '/' },
+                { text: '繁體中文', link: '/zh/' },
+                { text: '简体中文', link: '/cn/' }
             ]
         },
 
@@ -52,6 +63,39 @@ export default defineConfig({
                                 { text: "Confectionery", link: "/guide/Confectionery"},
                                 { text: "Dairy", link: "/guide/Dairy"},
                                 { text: "Fruit & Vegetables", link: "/guide/Fruit & vegetables"},
+                            ]
+                        },
+                    ]
+                }
+            ],
+            '/guide_cn/': [
+                {
+                    text: "",
+                    items: [
+                        { text: "食品", link: "/guide_cn/applications",
+                            items: [
+                                { text: "Bakery", link: "/guide_cn/Bakery"},
+                                { text: "Cereal", link: "/guide_cn/Cereal"},
+                                { text: "Confectionery", link: "/guide_cn/Confectionery"},
+                                { text: "Dairy", link: "/guide_cn/Dairy"},
+                                { text: "Fruit & Vegetables", link: "/guide_cn/Fruit & vegetables"},
+                            ]
+                        },
+                        
+                    ]
+                }
+            ],
+            '/guide_zh/': [
+                {
+                    text: "",
+                    items: [
+                        { text: "食品", link: "/guide_zh/applications",
+                            items: [
+                                { text: "Bakery", link: "/guide_zh/Bakery"},
+                                { text: "Cereal", link: "/guide_zh/Cereal"},
+                                { text: "Confectionery", link: "/guide_zh/Confectionery"},
+                                { text: "Dairy", link: "/guide_zh/Dairy"},
+                                { text: "Fruit & Vegetables", link: "/guide_zh/Fruit & vegetables"},
                             ]
                         },
                     ]

@@ -1,6 +1,7 @@
 import DefaultTheme from 'vitepress/theme'
-import ApplicationGuide from '../../components/ApplicationGuide.vue'
+import ApplicationGuide_zh from '../../components/ApplicationGuide_zh.vue'
 import ApplicationGuide_en from '../../components/ApplicationGuide_en.vue'
+import ApplicationGuide_cn from '../../components/ApplicationGuide_cn.vue'
 import PasswordProtection from '../../components/PasswordProtection.vue'
 import ApplicationGuide_en_bakery from '../../components/ApplicationGuide_en_bakery.vue'
 import ApplicationGuide_en_cereal from '../../components/ApplicationGuide_en_Cereal.vue'
@@ -11,8 +12,9 @@ import ApplicationGuide_en_Fruitvegetables from '../../components/ApplicationGui
 export default {
     ...DefaultTheme,
     enhanceApp({ app }) {
-        app.component('ApplicationGuide', ApplicationGuide)
+        app.component('ApplicationGuide_zh', ApplicationGuide_zh)
         app.component('ApplicationGuide_en', ApplicationGuide_en)
+        app.component('ApplicationGuide_cn', ApplicationGuide_cn)
         app.component('PasswordProtection', PasswordProtection)
         app.component('ApplicationGuide_en_bakery', ApplicationGuide_en_bakery)
         app.component('ApplicationGuide_en_Cereal', ApplicationGuide_en_cereal)

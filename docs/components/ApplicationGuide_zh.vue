@@ -6,30 +6,31 @@
         <input
           v-model="searchText"
           type="text"
-          placeholder="🔍 Search by category or product..."
+          placeholder="🔍 搜尋分類或產品..."
           class="search-input"
         />
       </div>
+      
     </div>
 
     
     <!-- 載入狀態 -->
     <div v-if="loading" class="loading">
-      <p>Loading classified information...</p>
+      <p>載入分類資料中...</p>
     </div>
 
     <!-- 統計資訊 -->
     <div v-if="!loading" class="statistics">
       <div class="stat-item">
-        <span class="stat-label">Total number of categories:</span>
+        <span class="stat-label">總分類數:</span>
         <span class="stat-value">{{ currentGroups.length }}</span>
       </div>
       <div class="stat-item">
-        <span class="stat-label">Total number of products:</span>
+        <span class="stat-label">總產品數:</span>
         <span class="stat-value">{{ currentTotalProducts }}</span>
       </div>
       <div class="stat-item">
-        <span class="stat-label">Match search:</span>
+        <span class="stat-label">符合搜尋:</span>
         <span class="stat-value">{{ filteredGroups.length }}</span>
       </div>
     </div>
@@ -39,7 +40,7 @@
         @click="clearDrilldown"
         class="breadcrumb-btn"
       >
-        🏠 All categories
+        🏠 全部分類
       </button>
       <span class="breadcrumb-separator">▶</span>
       <span 
@@ -85,7 +86,7 @@
           <!-- 子分類統計 -->
           <div class="subcategory-stats">
             <div class="stat-row">
-              <span class="stat-label">subcategory:</span>
+              <span class="stat-label">子類別:</span>
               <span class="stat-tags">
                 <span 
                   v-for="subclass in group.subclasses" 
@@ -118,13 +119,14 @@
                 @click="showProductDetail(item)"
                 class="detail-btn"
               >
-                detailed
+                詳細
               </button>
             </div>
           </div>
         </div>
       </div>
     </div>
+
 
     <!-- 產品詳細彈窗 -->
     <div v-if="selectedProduct" class="modal-overlay" @click="closeModal">
@@ -137,33 +139,33 @@
         <div class="modal-body">
           <div class="detail-grid">
             <div class="detail-item">
-              <span class="detail-label">mainCategory:</span>
+              <span class="detail-label">主分類:</span>
               <span class="detail-value">{{ selectedProduct.mainCategory }}</span>
             </div>
             <div class="detail-item">
-              <span class="detail-label">subcategory:</span>
+              <span class="detail-label">子分類:</span>
               <span class="detail-value">{{ selectedProduct.subcategory }}</span>
             </div>
             <div class="detail-item">
-              <span class="detail-label">subclass:</span>
+              <span class="detail-label">子類別:</span>
               <span class="detail-value">{{ selectedProduct.subclass }}</span>
             </div>
             <div class="detail-item">
-              <span class="detail-label">testMode:</span>
+              <span class="detail-label">測試模式:</span>
               <span class="detail-value">{{ selectedProduct.testMode }}</span>
             </div>
             <div class="detail-item">
-              <span class="detail-label">actionTyp:</span>
+              <span class="detail-label">操作類型:</span>
               <span class="detail-value">{{ selectedProduct.actionType }}</span>
             </div>
             <div class="detail-item">
-              <span class="detail-label">probe:</span>
+              <span class="detail-label">探針/夾具:</span>
               <span class="detail-value">{{ selectedProduct.probe }}</span>
             </div>
           </div>
 
           <div class="pdf-section">
-            <h4>Experimental method documents</h4>
+            <h4>實驗方法文件</h4>
             
             <!-- 手機版：顯示下載連結 -->
             <div v-if="isMobile" class="mobile-pdf-actions">
@@ -172,10 +174,10 @@
                 target="_blank"
                 class="pdf-download-btn"
               >
-                📄 Open PDF file
+                📄 開啟PDF文件
               </a>
               <p class="pdf-notice">
-                💡 Click the button above to open the PDF file on your phone
+                💡 在手機上點擊上方按鈕開啟PDF文件
               </p>
             </div>
             
@@ -185,7 +187,7 @@
                 <iframe
                   :src="selectedProduct.file"
                   frameborder="0"
-                  :title="`${selectedProduct.title} Experimental method documents`"
+                  :title="`${selectedProduct.title} 實驗方法文件`"
                 ></iframe>
               </div>
               <div class="pdf-actions">
@@ -194,7 +196,7 @@
                   target="_blank"
                   class="pdf-open-btn"
                 >
-                  🔗 Opens in new window
+                  🔗 在新視窗開啟
                 </a>
               </div>
             </div>
@@ -205,9 +207,9 @@
 
     <!-- 無資料狀態 -->
     <div v-if="!loading && filteredGroups.length === 0" class="no-data">
-      <p>😔 No categories matching the criteria were found</p>
+      <p>😔 找不到符合條件的分類</p>
       <button v-if="drilldownStack.length > 0" @click="clearDrilldown" class="reset-btn">
-        🔄 Reset filter
+        🔄 重置篩選
       </button>
     </div>
   </div>
@@ -273,7 +275,7 @@ onMounted(async () => {
       file: item.file
     }))
   } catch (error) {
-    console.error('Failed to load data:', error)
+    console.error('載入資料失敗:', error)
   } finally {
     loading.value = false
   }
@@ -314,7 +316,7 @@ const subcategoryGroups = computed(() => {
   const groups = {}
   
   filteredData.value.forEach(item => {
-    const subcategory = item.subcategory || 'Uncategorized'
+    const subcategory = item.subcategory || '未分類'
     
     if (!groups[subcategory]) {
       groups[subcategory] = {
@@ -371,7 +373,7 @@ const drilldownByMainCategory = (mainCategory) => {
   drilldownStack.value.push({
     type: 'mainCategory',
     value: mainCategory,
-    name: `Main category: ${mainCategory}`
+    name: `主分類: ${mainCategory}`
   })
 }
 
@@ -379,7 +381,7 @@ const drilldownBySubclass = (subclass) => {
   drilldownStack.value.push({
     type: 'subclass',
     value: subclass,
-    name: `subcategory: ${subclass}`
+    name: `子類別: ${subclass}`
   })
 }
 
@@ -387,7 +389,7 @@ const drilldownByTestMode = (testMode) => {
   drilldownStack.value.push({
     type: 'testMode',
     value: testMode,
-    name: `test mode: ${testMode}`
+    name: `測試模式: ${testMode}`
   })
 }
 
@@ -395,7 +397,7 @@ const drilldownByActionType = (actionType) => {
   drilldownStack.value.push({
     type: 'actionType',
     value: actionType,
-    name: `Operation type: ${actionType}`
+    name: `操作類型: ${actionType}`
   })
 }
 

@@ -1,45 +1,46 @@
 <template>
   <div class="subcategory-classifier">
-    <!-- 頭部控制區 -->
+    <!-- 头部控制区 -->
     <div class="header-controls">
       <div class="search-section">
         <input
           v-model="searchText"
           type="text"
-          placeholder="🔍 Search by category or product..."
+          placeholder="🔍 搜索分类或产品..."
           class="search-input"
         />
       </div>
+      
     </div>
 
     
-    <!-- 載入狀態 -->
+    <!-- 加载状态 -->
     <div v-if="loading" class="loading">
-      <p>Loading classified information...</p>
+      <p>加载分类数据中...</p>
     </div>
 
-    <!-- 統計資訊 -->
+    <!-- 统计信息 -->
     <div v-if="!loading" class="statistics">
       <div class="stat-item">
-        <span class="stat-label">Total number of categories:</span>
+        <span class="stat-label">总分类数:</span>
         <span class="stat-value">{{ currentGroups.length }}</span>
       </div>
       <div class="stat-item">
-        <span class="stat-label">Total number of products:</span>
+        <span class="stat-label">总产品数:</span>
         <span class="stat-value">{{ currentTotalProducts }}</span>
       </div>
       <div class="stat-item">
-        <span class="stat-label">Match search:</span>
+        <span class="stat-label">符合搜索:</span>
         <span class="stat-value">{{ filteredGroups.length }}</span>
       </div>
     </div>
-<!-- 麵包屑導航 -->
+<!-- 面包屑导航 -->
     <div v-if="drilldownStack.length > 0" class="breadcrumb">
       <button 
         @click="clearDrilldown"
         class="breadcrumb-btn"
       >
-        🏠 All categories
+        🏠 全部分类
       </button>
       <span class="breadcrumb-separator">▶</span>
       <span 
@@ -57,7 +58,7 @@
       </span>
     </div>
 
-    <!-- 樹狀結構模式 -->
+    <!-- 树状结构模式 -->
     <div v-if="viewMode === 'tree' && !loading" class="tree-view">
       <div 
         v-for="group in filteredGroups" 
@@ -82,10 +83,10 @@
           v-if="expandedCategories.has(group.subcategory)"
           class="category-content"
         >
-          <!-- 子分類統計 -->
+          <!-- 子分类统计 -->
           <div class="subcategory-stats">
             <div class="stat-row">
-              <span class="stat-label">subcategory:</span>
+              <span class="stat-label">子类别:</span>
               <span class="stat-tags">
                 <span 
                   v-for="subclass in group.subclasses" 
@@ -99,7 +100,7 @@
             </div>
           </div>
 
-          <!-- 產品列表 -->
+          <!-- 产品列表 -->
           <div class="products-list">
             <div 
               v-for="item in group.items" 
@@ -118,7 +119,7 @@
                 @click="showProductDetail(item)"
                 class="detail-btn"
               >
-                detailed
+                详细
               </button>
             </div>
           </div>
@@ -126,7 +127,8 @@
       </div>
     </div>
 
-    <!-- 產品詳細彈窗 -->
+
+    <!-- 产品详细弹窗 -->
     <div v-if="selectedProduct" class="modal-overlay" @click="closeModal">
       <div class="modal-content" @click.stop>
         <div class="modal-header">
@@ -137,55 +139,55 @@
         <div class="modal-body">
           <div class="detail-grid">
             <div class="detail-item">
-              <span class="detail-label">mainCategory:</span>
+              <span class="detail-label">主分类:</span>
               <span class="detail-value">{{ selectedProduct.mainCategory }}</span>
             </div>
             <div class="detail-item">
-              <span class="detail-label">subcategory:</span>
+              <span class="detail-label">子分类:</span>
               <span class="detail-value">{{ selectedProduct.subcategory }}</span>
             </div>
             <div class="detail-item">
-              <span class="detail-label">subclass:</span>
+              <span class="detail-label">子类别:</span>
               <span class="detail-value">{{ selectedProduct.subclass }}</span>
             </div>
             <div class="detail-item">
-              <span class="detail-label">testMode:</span>
+              <span class="detail-label">测试模式:</span>
               <span class="detail-value">{{ selectedProduct.testMode }}</span>
             </div>
             <div class="detail-item">
-              <span class="detail-label">actionTyp:</span>
+              <span class="detail-label">操作类型:</span>
               <span class="detail-value">{{ selectedProduct.actionType }}</span>
             </div>
             <div class="detail-item">
-              <span class="detail-label">probe:</span>
+              <span class="detail-label">探针/夹具:</span>
               <span class="detail-value">{{ selectedProduct.probe }}</span>
             </div>
           </div>
 
           <div class="pdf-section">
-            <h4>Experimental method documents</h4>
+            <h4>实验方法文档</h4>
             
-            <!-- 手機版：顯示下載連結 -->
+            <!-- 手机版：显示下载链接 -->
             <div v-if="isMobile" class="mobile-pdf-actions">
               <a 
                 :href="selectedProduct.file" 
                 target="_blank"
                 class="pdf-download-btn"
               >
-                📄 Open PDF file
+                📄 打开PDF文档
               </a>
               <p class="pdf-notice">
-                💡 Click the button above to open the PDF file on your phone
+                💡 在手机上点击上方按钮打开PDF文档
               </p>
             </div>
             
-            <!-- 桌面版：顯示內嵌PDF -->
+            <!-- 桌面版：显示内嵌PDF -->
             <div v-else class="desktop-pdf-viewer">
               <div class="pdf-viewer">
                 <iframe
                   :src="selectedProduct.file"
                   frameborder="0"
-                  :title="`${selectedProduct.title} Experimental method documents`"
+                  :title="`${selectedProduct.title} 实验方法文档`"
                 ></iframe>
               </div>
               <div class="pdf-actions">
@@ -194,7 +196,7 @@
                   target="_blank"
                   class="pdf-open-btn"
                 >
-                  🔗 Opens in new window
+                  🔗 在新窗口打开
                 </a>
               </div>
             </div>
@@ -203,11 +205,11 @@
       </div>
     </div>
 
-    <!-- 無資料狀態 -->
+    <!-- 无数据状态 -->
     <div v-if="!loading && filteredGroups.length === 0" class="no-data">
-      <p>😔 No categories matching the criteria were found</p>
+      <p>😔 找不到符合条件的分类</p>
       <button v-if="drilldownStack.length > 0" @click="clearDrilldown" class="reset-btn">
-        🔄 Reset filter
+        🔄 重置筛选
       </button>
     </div>
   </div>
@@ -216,7 +218,7 @@
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 
-// 響應式數據
+// 响应式数据
 const data = ref([])
 const loading = ref(true)
 const searchText = ref('')
@@ -224,36 +226,36 @@ const viewMode = ref('tree')
 const expandedCategories = ref(new Set())
 const selectedProduct = ref(null)
 const isMobile = ref(false)
-const drilldownStack = ref([]) // 鑽取堆疊
+const drilldownStack = ref([]) // 钻取堆栈
 
-// 檢測是否為手機設備
+// 检测是否为手机设备
 const checkMobileDevice = () => {
   const userAgent = navigator.userAgent.toLowerCase()
   const mobileKeywords = ['mobile', 'android', 'iphone', 'ipad', 'ipod', 'blackberry', 'windows phone']
   
-  // 檢查用戶代理
+  // 检查用户代理
   const isMobileUA = mobileKeywords.some(keyword => userAgent.includes(keyword))
   
-  // 檢查螢幕寬度
+  // 检查屏幕宽度
   const isMobileWidth = window.innerWidth <= 768
   
-  // 檢查觸控支援
+  // 检查触控支持
   const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0
   
   return isMobileUA || (isMobileWidth && isTouchDevice)
 }
 
-// 監聽視窗大小變化
+// 监听窗口大小变化
 const handleResize = () => {
   isMobile.value = checkMobileDevice()
 }
 
-// 載入數據
+// 加载数据
 onMounted(async () => {
-  // 初始化手機檢測
+  // 初始化手机检测
   isMobile.value = checkMobileDevice()
   
-  // 監聽視窗大小變化
+  // 监听窗口大小变化
   window.addEventListener('resize', handleResize)
   
   try {
@@ -273,22 +275,22 @@ onMounted(async () => {
       file: item.file
     }))
   } catch (error) {
-    console.error('Failed to load data:', error)
+    console.error('加载数据失败:', error)
   } finally {
     loading.value = false
   }
 })
 
-// 清理事件監聽器
+// 清理事件监听器
 onUnmounted(() => {
   window.removeEventListener('resize', handleResize)
 })
 
-// 根據鑽取堆疊過濾數據
+// 根据钻取堆栈过滤数据
 const filteredData = computed(() => {
   let filtered = data.value
   
-  // 依據鑽取堆疊進行過濾
+  // 依据钻取堆栈进行过滤
   for (const filter of drilldownStack.value) {
     filtered = filtered.filter(item => {
       switch (filter.type) {
@@ -309,12 +311,12 @@ const filteredData = computed(() => {
   return filtered
 })
 
-// 按Subcategory分組（使用過濾後的數據）
+// 按Subcategory分组（使用过滤后的数据）
 const subcategoryGroups = computed(() => {
   const groups = {}
   
   filteredData.value.forEach(item => {
-    const subcategory = item.subcategory || 'Uncategorized'
+    const subcategory = item.subcategory || '未分类'
     
     if (!groups[subcategory]) {
       groups[subcategory] = {
@@ -343,13 +345,13 @@ const subcategoryGroups = computed(() => {
   }))
 })
 
-// 當前顯示的分組
+// 当前显示的分组
 const currentGroups = computed(() => subcategoryGroups.value)
 
-// 當前總產品數
+// 当前总产品数
 const currentTotalProducts = computed(() => filteredData.value.length)
 
-// 篩選後的分組（基於搜尋）
+// 筛选后的分组（基于搜索）
 const filteredGroups = computed(() => {
   if (!searchText.value) return currentGroups.value
   
@@ -366,12 +368,12 @@ const filteredGroups = computed(() => {
   })
 })
 
-// 鑽取方法
+// 钻取方法
 const drilldownByMainCategory = (mainCategory) => {
   drilldownStack.value.push({
     type: 'mainCategory',
     value: mainCategory,
-    name: `Main category: ${mainCategory}`
+    name: `主分类: ${mainCategory}`
   })
 }
 
@@ -379,7 +381,7 @@ const drilldownBySubclass = (subclass) => {
   drilldownStack.value.push({
     type: 'subclass',
     value: subclass,
-    name: `subcategory: ${subclass}`
+    name: `子类别: ${subclass}`
   })
 }
 
@@ -387,7 +389,7 @@ const drilldownByTestMode = (testMode) => {
   drilldownStack.value.push({
     type: 'testMode',
     value: testMode,
-    name: `test mode: ${testMode}`
+    name: `测试模式: ${testMode}`
   })
 }
 
@@ -395,7 +397,7 @@ const drilldownByActionType = (actionType) => {
   drilldownStack.value.push({
     type: 'actionType',
     value: actionType,
-    name: `Operation type: ${actionType}`
+    name: `操作类型: ${actionType}`
   })
 }
 
@@ -437,7 +439,7 @@ const closeModal = () => {
   max-width: 1200px;
   margin: 0 auto;
   padding: 20px;
-  font-family: 'Microsoft JhengHei', 'Segoe UI', Arial, sans-serif;
+  font-family: 'Microsoft YaHei', 'SimHei', 'Segoe UI', Arial, sans-serif;
 }
 
 /* 頭部控制區 */

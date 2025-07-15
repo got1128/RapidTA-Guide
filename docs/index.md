@@ -1,6 +1,6 @@
 <PasswordProtection>
-# 🚀 Welcome to RapidTA Application Guide
 
+# 🚀 Welcome to RapidTA Application Guide
 
 
 👉 Go to [Application Guide](/guide/applications) to view the complete list.
