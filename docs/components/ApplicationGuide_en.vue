@@ -108,6 +108,7 @@
             >
               <div class="product-info">
                 <h4 class="product-title">{{ item.title }}</h4>
+                <p class="product-description">{{ item.description }}</p>
                 <div class="product-meta">
                   <span class="meta-item">🏷️ {{ item.subclass }}</span>
                   <span class="meta-item">⚙️ {{ item.testMode }}</span>
@@ -159,6 +160,10 @@
             <div class="detail-item">
               <span class="detail-label">probe:</span>
               <span class="detail-value">{{ selectedProduct.probe }}</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">description:</span>
+              <span class="detail-value">{{ selectedProduct.description }}</span>
             </div>
           </div>
 
@@ -264,6 +269,7 @@ onMounted(async () => {
     data.value = json.map(item => ({
       id: item.ID,
       title: item.Products,
+      description: item.Tittle,
       mainCategory: item['Main Category'],
       subcategory: item.Subcategory,
       subclass: item.Subclass,
@@ -633,9 +639,15 @@ const closeModal = () => {
 }
 
 .product-title {
-  margin: 0 0 5px 0;
   color: var(--vp-c-text-1);
   font-size: 16px;
+}
+
+.product-description {
+  margin: 0px;
+  color: var(--vp-c-text-1);
+  font-size: 10px;
+  line-height: 0.5;
 }
 
 .product-meta {
