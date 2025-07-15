@@ -13,20 +13,25 @@ export default defineConfig({
             title: 'RapidTA Application Guide',
             description: 'Complete guide for texture analyzer applications'
         }
+        
     },
 
     themeConfig: {
+
+        localeLinks: {
+            text: '選擇語言',
+
+            items: [
+                { text: '繁體中文', link: '/' },
+                { text: 'English', link: '/en/' }
+            ]
+        },
 
         nav: [
             {
                 text: 'Application',
                 items: [
-                    { text: 'ALL', link: '/guide/applications' },
-                    { text: 'Bakery', link: '/guide/Bakery' },
-                    { text: 'Cereal', link: '/guide/Cereal' },
-                    { text: 'Confectionery', link: '/guide/Confectionery' },
-                    { text: 'Dairy', link: '/guide/Dairy' },
-                    { text: 'Fruit & Vegetables', link: '/guide/Fruit & vegetables' }
+                    { text: 'food', link: '/guide/applications' },
                 ]
             },
             { text: 'Accessories', link: '/guide/accessories' },
@@ -40,12 +45,15 @@ export default defineConfig({
                 {
                     text: "",
                     items: [
-                        { text: "ALL", link: "/guide/applications"},
-                        { text: "Bakery", link: "/guide/Bakery"},
-                        { text: "Cereal", link: "/guide/Cereal"},
-                        { text: "Confectionery", link: "/guide/Confectionery"},
-                        { text: "Dairy", link: "/guide/Dairy"},
-                        { text: "Fruit & Vegetables", link: "/guide/Fruit & vegetables"},
+                        { text: "food", link: "/guide/applications",
+                            items: [
+                                { text: "Bakery", link: "/guide/Bakery"},
+                                { text: "Cereal", link: "/guide/Cereal"},
+                                { text: "Confectionery", link: "/guide/Confectionery"},
+                                { text: "Dairy", link: "/guide/Dairy"},
+                                { text: "Fruit & Vegetables", link: "/guide/Fruit & vegetables"},
+                            ]
+                        },
                     ]
                 }
             ]
