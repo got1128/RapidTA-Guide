@@ -579,6 +579,43 @@ const closeModal = () => {
   padding: 0 20px 20px 20px;
 }
 
+.clickable-tag {
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid transparent;
+  position: relative;
+}
+
+.clickable-tag:hover {
+  background: var(--vp-c-brand);
+  color: white;
+  border-color: var(--vp-c-brand);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.clickable-tag:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.clickable-tag::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 6px;
+  background: transparent;
+  transition: all 0.3s ease;
+  z-index: -1;
+}
+
+.clickable-tag:hover::before {
+  background: rgba(100, 108, 255, 0.1);
+}
+
 .subcategory-stats {
   margin-bottom: 15px;
   padding: 15px;
