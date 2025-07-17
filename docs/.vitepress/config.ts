@@ -8,22 +8,20 @@ export default defineConfig({
 
     locales: {
         '/': {
-            lang: 'en-US',
-            title: 'RapidTA Application Guide',
-            description: ''
+        lang: 'en-US',
+        title: 'RapidTA Application Guide',
+        description: ''
         },
-
-        '/zh/': {
-            lang: 'zh-CN',
-            title: 'RapidTA Application Guide',
-            description: ''
+    '/zh/': {
+        lang: 'zh-Hant',
+        title: 'RapidTA 中文使用指南',
+        description: ''
         },
-        '/cn/': {
-            lang: 'en-US',
-            title: 'RapidTA Application Guide',
-            description: ''
+    '/cn/': {
+        lang: 'zh-CN',
+        title: 'RapidTA 简体中文指南',
+        description: ''
         }
-        
     },
 
     themeConfig: {

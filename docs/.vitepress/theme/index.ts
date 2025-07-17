@@ -8,6 +8,14 @@ import ApplicationGuide_en_cereal from '../../components/ApplicationGuide_en_Cer
 import ApplicationGuide_en_confectionery from '../../components/ApplicationGuide_en_confectionery.vue'
 import ApplicationGuide_en_dairy from '../../components/ApplicationGuide_en_dairy.vue'
 import ApplicationGuide_en_Fruitvegetables from '../../components/ApplicationGuide_en_fruitvegetables.vue'
+import { withBase } from 'vitepress'
+
+const links = [
+  { text: 'English', link: withBase('/') },
+  { text: '繁體中文', link: withBase('/zh/') },
+  { text: '简体中文', link: withBase('/cn/') },
+]
+
 
 export default {
     ...DefaultTheme,
