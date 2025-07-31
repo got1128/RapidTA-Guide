@@ -66,39 +66,7 @@ export default defineConfig({
                     ]
                 }
             ],
-            '/guide_cn/': [
-                {
-                    text: "",
-                    items: [
-                        { text: "食品", link: "/guide_cn/applications",
-                            items: [
-                                { text: "Bakery", link: "/guide_cn/Bakery"},
-                                { text: "Cereal", link: "/guide_cn/Cereal"},
-                                { text: "Confectionery", link: "/guide_cn/Confectionery"},
-                                { text: "Dairy", link: "/guide_cn/Dairy"},
-                                { text: "Fruit & Vegetables", link: "/guide_cn/Fruit & vegetables"},
-                            ]
-                        },
-                        
-                    ]
-                }
-            ],
-            '/guide_zh/': [
-                {
-                    text: "",
-                    items: [
-                        { text: "食品", link: "/guide_zh/applications",
-                            items: [
-                                { text: "Bakery", link: "/guide_zh/Bakery"},
-                                { text: "Cereal", link: "/guide_zh/Cereal"},
-                                { text: "Confectionery", link: "/guide_zh/Confectionery"},
-                                { text: "Dairy", link: "/guide_zh/Dairy"},
-                                { text: "Fruit & Vegetables", link: "/guide_zh/Fruit & vegetables"},
-                            ]
-                        },
-                    ]
-                }
-            ]
+            
         },
             
 

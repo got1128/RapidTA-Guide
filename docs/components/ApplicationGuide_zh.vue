@@ -218,7 +218,20 @@
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from 'vue'
 
-// 響應式數據
+// 新增 props 定義
+const props = defineProps({
+  dataSource: {
+    type: String,
+    default: '../../data/applications_zh.json'
+  },
+  // 可選：允許直接傳入資料
+  initialData: {
+    type: Array,
+    default: () => []
+  }
+})
+
+// 你的現有響應式數據
 const data = ref([])
 const loading = ref(true)
 const searchText = ref('')
@@ -226,54 +239,61 @@ const viewMode = ref('tree')
 const expandedCategories = ref(new Set())
 const selectedProduct = ref(null)
 const isMobile = ref(false)
-const drilldownStack = ref([]) // 鑽取堆疊
+const drilldownStack = ref([])
 
-// 檢測是否為手機設備
+// 檢測是否為手機設備（保持不變）
 const checkMobileDevice = () => {
   const userAgent = navigator.userAgent.toLowerCase()
   const mobileKeywords = ['mobile', 'android', 'iphone', 'ipad', 'ipod', 'blackberry', 'windows phone']
   
-  // 檢查用戶代理
   const isMobileUA = mobileKeywords.some(keyword => userAgent.includes(keyword))
-  
-  // 檢查螢幕寬度
   const isMobileWidth = window.innerWidth <= 768
-  
-  // 檢查觸控支援
   const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0
   
   return isMobileUA || (isMobileWidth && isTouchDevice)
 }
 
-// 監聽視窗大小變化
 const handleResize = () => {
   isMobile.value = checkMobileDevice()
 }
 
-// 載入數據
+// 修改載入數據的邏輯
 onMounted(async () => {
-  // 初始化手機檢測
   isMobile.value = checkMobileDevice()
-  
-  // 監聽視窗大小變化
   window.addEventListener('resize', handleResize)
   
   try {
-    const res = await fetch('../data/applications.json')
-    if (!res.ok) throw new Error(`HTTP ${res.status}`)
-    
-    const json = await res.json()
-    data.value = json.map(item => ({
-      id: item.ID,
-      title: item.Products,
-      mainCategory: item['Main Category'],
-      subcategory: item.Subcategory,
-      subclass: item.Subclass,
-      testMode: item['Test mode'],
-      actionType: item['Type of action'],
-      probe: item['Probe or Fixture'],
-      file: item.file
-    }))
+    // 如果有直接傳入的資料，使用它
+    if (props.initialData && props.initialData.length > 0) {
+      data.value = props.initialData.map(item => ({
+        id: item.ID || item.id,
+        title: item.Products || item.title,
+        mainCategory: item['Main Category'] || item.mainCategory,
+        subcategory: item.Subcategory || item.subcategory,
+        subclass: item.Subclass || item.subclass,
+        testMode: item['Test mode'] || item.testMode,
+        actionType: item['Type of action'] || item.actionType,
+        probe: item['Probe or Fixture'] || item.probe,
+        file: item.file
+      }))
+    } else {
+      // 否則從指定路徑載入
+      const res = await fetch(props.dataSource)
+      if (!res.ok) throw new Error(`HTTP ${res.status}`)
+      
+      const json = await res.json()
+      data.value = json.map(item => ({
+        id: item.ID,
+        title: item.Products,
+        mainCategory: item['Main Category'],
+        subcategory: item.Subcategory,
+        subclass: item.Subclass,
+        testMode: item['Test mode'],
+        actionType: item['Type of action'],
+        probe: item['Probe or Fixture'],
+        file: item.file
+      }))
+    }
   } catch (error) {
     console.error('載入資料失敗:', error)
   } finally {
@@ -286,11 +306,10 @@ onUnmounted(() => {
   window.removeEventListener('resize', handleResize)
 })
 
-// 根據鑽取堆疊過濾數據
+// 你的其他 computed 和方法保持不變
 const filteredData = computed(() => {
   let filtered = data.value
   
-  // 依據鑽取堆疊進行過濾
   for (const filter of drilldownStack.value) {
     filtered = filtered.filter(item => {
       switch (filter.type) {
@@ -311,7 +330,7 @@ const filteredData = computed(() => {
   return filtered
 })
 
-// 按Subcategory分組（使用過濾後的數據）
+// ... 其他現有的 computed 和方法保持不變
 const subcategoryGroups = computed(() => {
   const groups = {}
   
@@ -345,13 +364,9 @@ const subcategoryGroups = computed(() => {
   }))
 })
 
-// 當前顯示的分組
 const currentGroups = computed(() => subcategoryGroups.value)
-
-// 當前總產品數
 const currentTotalProducts = computed(() => filteredData.value.length)
 
-// 篩選後的分組（基於搜尋）
 const filteredGroups = computed(() => {
   if (!searchText.value) return currentGroups.value
   
@@ -368,7 +383,7 @@ const filteredGroups = computed(() => {
   })
 })
 
-// 鑽取方法
+// 你的其他方法保持不變...
 const drilldownByMainCategory = (mainCategory) => {
   drilldownStack.value.push({
     type: 'mainCategory',
@@ -409,7 +424,6 @@ const clearDrilldown = () => {
   drilldownStack.value = []
 }
 
-// 其他方法
 const toggleCategory = (subcategory) => {
   if (expandedCategories.value.has(subcategory)) {
     expandedCategories.value.delete(subcategory)
@@ -418,16 +432,8 @@ const toggleCategory = (subcategory) => {
   }
 }
 
-const expandCategory = (subcategory) => {
-  toggleCategory(subcategory)
-}
-
 const showProductDetail = (product) => {
   selectedProduct.value = product
-}
-
-const showCategoryDetail = (group) => {
-  toggleCategory(group.subcategory)
 }
 
 const closeModal = () => {
@@ -573,6 +579,43 @@ const closeModal = () => {
 
 .category-content {
   padding: 0 20px 20px 20px;
+}
+
+.clickable-tag {
+  cursor: pointer;
+  user-select: none;
+  border: 1px solid transparent;
+  position: relative;
+}
+
+.clickable-tag:hover {
+  background: var(--vp-c-brand);
+  color: white;
+  border-color: var(--vp-c-brand);
+  transform: translateY(-1px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.clickable-tag:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.clickable-tag::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 6px;
+  background: transparent;
+  transition: all 0.3s ease;
+  z-index: -1;
+}
+
+.clickable-tag:hover::before {
+  background: rgba(100, 108, 255, 0.1);
 }
 
 .subcategory-stats {

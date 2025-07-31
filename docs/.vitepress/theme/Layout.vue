@@ -1,0 +1,13 @@
+<!-- docs/.vitepress/theme/Layout.vue -->
+<script setup>
+import DefaultTheme from 'vitepress/theme'
+const { Layout } = DefaultTheme
+</script>
+
+<template>
+  <Layout>
+    <template #nav-bar-content-before>
+      <LanguageSwitch />
+    </template>
+  </Layout>
+</template>
