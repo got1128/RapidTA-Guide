@@ -7,9 +7,9 @@
    "Products": "人造奶油",
    "Test mode": "距離(壓)",
    "Type of action": "擠壓測試",
-   "Probe or Fixture": "Forward extrusion rig 正擠壓測試組",
+   "Probe or Fixture": "正擠壓測試組",
    "Tittle": "透過擠出3毫米孔的能力比較兩種人造奶油的塗抹性(硬度)",
-   "file": "../files/zhA001.pdf"
+   "file": "../files/M001.pdf"
  },
  {
    "ID": "A002",
@@ -19,9 +19,9 @@
    "Products": "餅乾",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "φ2 mm cylinder probe. 直徑2mm柱形探頭",
-   "Tittle": "用圓柱探針穿透酥餅和薑餅比較其硬度與易碎性",
-   "file": "../files/zhA002.pdf"
+   "Probe or Fixture": "直徑2mm柱形探頭",
+   "Tittle": "用圓柱探棒穿透酥餅和薑餅比較其硬度與易碎性",
+   "file": "../files/M002.pdf"
  },
  {
    "ID": "A003",
@@ -31,9 +31,9 @@
    "Products": "餅乾",
    "Test mode": "距離(壓)",
    "Type of action": "剪切測試",
-   "Probe or Fixture": "Blade of warner bratzler 華納-布拉茨勒切刀",
-   "Tittle": "透過切割測量餅乾的硬度",
-   "file": "../files/zhA003.pdf"
+   "Probe or Fixture": "華納-布拉茨勒切刀",
+   "Tittle": "透過剪切測量餅乾的硬度",
+   "file": "../files/M003.pdf"
  },
  {
    "ID": "A004",
@@ -43,9 +43,9 @@
    "Products": "巧克力威化餅乾",
    "Test mode": "距離(壓)",
    "Type of action": "剪切測試",
-   "Probe or Fixture": "Blade of warner bratzler 華納-布拉茨勒切刀",
-   "Tittle": "使用切刀比較兩個不同批次的巧克力威化餅乾的切割阻力",
-   "file": "../files/zhA004.pdf"
+   "Probe or Fixture": "華納-布拉茨勒切刀",
+   "Tittle": "使用切刀比較兩個不同批次的巧克力威化餅乾的剪接阻力",
+   "file": "../files/M004.pdf"
  },
  {
    "ID": "A005",
@@ -55,9 +55,9 @@
    "Products": "餅乾",
    "Test mode": "距離(壓)",
    "Type of action": "彎曲測試",
-   "Probe or Fixture": "Three-point bending rig 三點彎曲測試組",
+   "Probe or Fixture": "三點彎曲測試組",
    "Tittle": "測量餅乾的硬度和抗彎曲力(抗斷裂力)",
-   "file": "../files/zhA005.pdf"
+   "file": "../files/M005.pdf"
  },
  {
    "ID": "A006",
@@ -67,9 +67,9 @@
    "Products": "餅乾麵團",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "Dough hardness rig 麵團硬度測試組",
-   "Tittle": "用圓柱探針穿透測量餅乾麵團的硬度",
-   "file": "../files/zhA006.pdf"
+   "Probe or Fixture": "麵團硬度測試組",
+   "Tittle": "用圓柱探頭穿透測量餅乾麵團的硬度",
+   "file": "../files/M006.pdf"
  },
  {
    "ID": "A007",
@@ -78,10 +78,10 @@
    "Subclass": "麵包屑",
    "Products": "麵包屑",
    "Test mode": "距離(壓)",
-   "Type of action": "穿刺測試",
-   "Probe or Fixture": "φ36 mm cylinder probe. 直徑36mm柱形探頭",
+   "Type of action": "壓縮測試",
+   "Probe or Fixture": "直徑36mm柱形探頭",
    "Tittle": "使用圓柱探頭透過壓縮測量麵包屑的硬度",
-   "file": "../files/zhA007.pdf"
+   "file": "../files/M007.pdf"
  },
  {
    "ID": "A008",
@@ -91,9 +91,9 @@
    "Products": "麵包",
    "Test mode": "形變(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "φ36 mm cylinder probe. 直徑36mm柱形探頭",
+   "Probe or Fixture": "直徑36mm柱形探頭",
    "Tittle": "使用 AACC (74-09) 標準方法測定麵包硬度",
-   "file": "../files/zhA008.pdf"
+   "file": "../files/M008.pdf"
  },
  {
    "ID": "A009",
@@ -103,9 +103,9 @@
    "Products": "包裝好的切片麵包",
    "Test mode": "形變(壓)",
    "Type of action": "壓縮測試",
-   "Probe or Fixture": "V-shaped toast bread rig V型吐司麵包測試裝置",
+   "Probe or Fixture": "V型吐司麵包測試裝置",
    "Tittle": "比較兩種不同包裝的切片麵包的柔軟度和彈性",
-   "file": "../files/zhA009.pdf"
+   "file": "../files/M009.pdf"
  },
  {
    "ID": "A010",
@@ -115,9 +115,9 @@
    "Products": "麵團/麵筋",
    "Test mode": "距離(拉)",
    "Type of action": "拉伸測試",
-   "Probe or Fixture": "Dough extensibility rig 麵團拉伸性測試組",
+   "Probe or Fixture": "麵團拉伸性測試組",
    "Tittle": "測量麵團的延展性和麵筋品質",
-   "file": "../files/zhA010.pdf"
+   "file": "../files/M010.pdf"
  },
  {
    "ID": "A011",
@@ -127,9 +127,9 @@
    "Products": "麵團",
    "Test mode": "黏性",
    "Type of action": "黏性測試",
-   "Probe or Fixture": "Dough adhesion rig 麵團黏性測試組",
+   "Probe or Fixture": "麵團黏性測試組",
    "Tittle": "測量麵團的黏性",
-   "file": "../files/zhA011.pdf"
+   "file": "../files/M011.pdf"
  },
  {
    "ID": "A012",
@@ -139,9 +139,9 @@
    "Products": "麵團",
    "Test mode": "蠕變",
    "Type of action": "蠕變測試",
-   "Probe or Fixture": "Dough hardness rig 麵團硬度測試組",
+   "Probe or Fixture": "麵團硬度測試組",
    "Tittle": "使用圓柱探頭測量酵母對麵團發酵的影響力",
-   "file": "../files/zhA012.pdf"
+   "file": "../files/M012.pdf"
  },
  {
    "ID": "A013",
@@ -151,9 +151,9 @@
    "Products": "早餐帶餡餅乾",
    "Test mode": "距離(壓)",
    "Type of action": "剪切測試",
-   "Probe or Fixture": "Blade of warner bratzler 華納-布拉茨勒切刀",
+   "Probe or Fixture": "華納-布拉茨勒切刀",
    "Tittle": "用切刀比較兩種早餐帶餡餅乾的切割阻力(巧克力和草莓糖霜)",
-   "file": "../files/zhA013.pdf"
+   "file": "../files/M013.pdf"
  },
  {
    "ID": "A014",
@@ -163,9 +163,9 @@
    "Products": "海綿蛋糕",
    "Test mode": "形變(壓)",
    "Type of action": "鬆弛測試",
-   "Probe or Fixture": "φ36 mm cylinder probe. 直徑36mm柱形探頭",
+   "Probe or Fixture": "直徑36mm柱形探頭",
    "Tittle": "針對三種不同儲存時間的蛋糕量測硬度和彈性",
-   "file": "../files/zhA014.pdf"
+   "file": "../files/M014.pdf"
  },
  {
    "ID": "A015",
@@ -175,9 +175,9 @@
    "Products": "托尼甜麵包與海綿蛋糕",
    "Test mode": "形變(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "φ36 mm cylinder probe. 直徑36mm柱形探頭",
+   "Probe or Fixture": "直徑36mm柱形探頭",
    "Tittle": "使用 AACC (74-09) 標準方法測定托尼甜麵包與海綿蛋糕的柔軟度(硬度)",
-   "file": "../files/zhA015.pdf"
+   "file": "../files/M015.pdf"
  },
  {
    "ID": "A016",
@@ -187,9 +187,9 @@
    "Products": "羊角麵包(可頌)",
    "Test mode": "距離(壓)",
    "Type of action": "剪切測試",
-   "Probe or Fixture": "Blade of warner bratzler 華納-布拉茨勒切刀",
-   "Tittle": "透過切割的方式測量羊角麵包(可頌)硬度",
-   "file": "../files/zhA016.pdf"
+   "Probe or Fixture": "華納-布拉茨勒切刀",
+   "Tittle": "透過剪切的方式測量羊角麵包(可頌)硬度",
+   "file": "../files/M016.pdf"
  },
  {
    "ID": "A017",
@@ -199,9 +199,9 @@
    "Products": "麵包丁",
    "Test mode": "距離(壓)",
    "Type of action": "擠壓測試",
-   "Probe or Fixture": "Ottawa Cell 渥太華批量壓縮測試組",
+   "Probe or Fixture": "渥太華批量壓縮測試組",
    "Tittle": "在沸水中浸泡 3 分鐘後評估麵包丁的脆度",
-   "file": "../files/zhA017.pdf"
+   "file": "../files/M017.pdf"
  },
  {
    "ID": "A018",
@@ -211,9 +211,9 @@
    "Products": "麵團/麵筋",
    "Test mode": "距離(拉)",
    "Type of action": "拉伸測試",
-   "Probe or Fixture": "Dough extensibility rig 麵團拉伸性測試組",
+   "Probe or Fixture": "麵團拉伸性測試組",
    "Tittle": "麵團延展性和麵筋品質的測量",
-   "file": "../files/zhA018.pdf"
+   "file": "../files/M018.pdf"
  },
  {
    "ID": "A019",
@@ -223,9 +223,9 @@
    "Products": "杯子蛋糕(馬芬)",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "φ36 mm cylinder probe 直徑36mm柱形探頭",
+   "Probe or Fixture": "直徑36mm柱形探頭",
    "Tittle": "測量杯子蛋糕(馬芬)的硬度和彈性",
-   "file": "../files/zhA019.pdf"
+   "file": "../files/M019.pdf"
  },
  {
    "ID": "A020",
@@ -235,9 +235,9 @@
    "Products": "煎餅",
    "Test mode": "距離(壓)",
    "Type of action": "爆破測試",
-   "Probe or Fixture": "Dough Penetration rig 麵皮穿刺測試組",
+   "Probe or Fixture": "麵皮穿刺測試組(洞40mm)",
    "Tittle": "比較兩種煎餅的平面(雙軸)延展性",
-   "file": "../files/zhA020.pdf"
+   "file": "../files/M020.pdf"
  },
  {
    "ID": "A021",
@@ -247,9 +247,9 @@
    "Products": "糕點",
    "Test mode": "距離(壓)",
    "Type of action": "爆破測試",
-   "Probe or Fixture": "Dough Penetration rig 麵皮穿刺測試組",
+   "Probe or Fixture": "麵皮穿刺測試組(洞40mm)",
    "Tittle": "比較三種糕點的平面(雙軸)延展性",
-   "file": "../files/zhA021.pdf"
+   "file": "../files/M021.pdf"
  },
  {
    "ID": "A022",
@@ -259,9 +259,9 @@
    "Products": "米紙",
    "Test mode": "距離(壓)",
    "Type of action": "爆破測試",
-   "Probe or Fixture": "Film puncture (SP05) rig 薄膜穿刺(5mm球型探頭)測試組",
+   "Probe or Fixture": "薄膜穿刺(5mm球型探頭)測試組",
    "Tittle": "米紙的耐破強度測量",
-   "file": "../files/zhA022.pdf"
+   "file": "../files/M022.pdf"
  },
  {
    "ID": "A023",
@@ -271,9 +271,9 @@
    "Products": "玉米餅",
    "Test mode": "距離(拉)",
    "Type of action": "拉伸測試",
-   "Probe or Fixture": "Double c-clamp fixture 雙C型鉗夾具",
+   "Probe or Fixture": "雙C型鉗夾具",
    "Tittle": "比較兩種品牌小麥粉玉米餅的垂直(單軸)延展性",
-   "file": "../files/zhA023.pdf"
+   "file": "../files/M023.pdf"
  },
  {
    "ID": "A024",
@@ -283,9 +283,9 @@
    "Products": "玉米餅",
    "Test mode": "距離(壓)",
    "Type of action": "爆破測試",
-   "Probe or Fixture": "Dough Penetration rig 麵皮穿刺測試組",
+   "Probe or Fixture": "麵皮穿刺測試組",
    "Tittle": "比較兩種配方小麥粉玉米餅的平面(雙軸)延展性",
-   "file": "../files/zhA024.pdf"
+   "file": "../files/M024.pdf"
  },
  {
    "ID": "A025",
@@ -295,9 +295,9 @@
    "Products": "貝果",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "φ18 mm cylinder probe. 直徑18mm柱形探頭",
+   "Probe or Fixture": "直徑18mm柱形探頭",
    "Tittle": "使用探棒穿刺法測量貝果的硬度",
-   "file": "../files/zhA025.pdf"
+   "file": "../files/M025.pdf"
  },
  {
    "ID": "A026",
@@ -307,9 +307,9 @@
    "Products": "蛋糕",
    "Test mode": "TPA距離",
    "Type of action": "全質構測試",
-   "Probe or Fixture": "φ25 mm cylinder probe.Acrylic 直徑25mm柱形探頭(壓克力)",
+   "Probe or Fixture": "直徑25mm柱形探頭(壓克力)",
    "Tittle": "使用探棒全質構法來測量蛋糕的硬度、彈性等多個參數",
-   "file": "../files/zhA026.pdf"
+   "file": "../files/M026.pdf"
  },
  {
    "ID": "A027",
@@ -319,9 +319,9 @@
    "Products": "肉桂捲",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "φ25 mm cylinder probe.Acrylic 直徑25mm柱形探頭(壓克力)",
+   "Probe or Fixture": "直徑25mm柱形探頭(壓克力)",
    "Tittle": "用探棒穿刺測量肉桂捲(不加糖霜)的硬度",
-   "file": "../files/zhA027.pdf"
+   "file": "../files/M027.pdf"
  },
  {
    "ID": "A028",
@@ -331,9 +331,9 @@
    "Products": "餅乾",
    "Test mode": "距離(壓)",
    "Type of action": "彎曲測試",
-   "Probe or Fixture": "Three-point bending rig 三點彎曲測試組",
+   "Probe or Fixture": "三點彎曲測試組",
    "Tittle": "測量餅乾折斷力與彎曲度來評估保存期限",
-   "file": "../files/zhA028.pdf"
+   "file": "../files/M028.pdf"
  },
  {
    "ID": "A029",
@@ -343,9 +343,9 @@
    "Products": "玉米片",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "Potato chips crispness rig 薯片酥脆測試組",
+   "Probe or Fixture": "薯片酥脆測試組",
    "Tittle": "測量玉米片的破碎力",
-   "file": "../files/zhA029.pdf"
+   "file": "../files/M029.pdf"
  },
  {
    "ID": "A030",
@@ -355,9 +355,9 @@
    "Products": "麵粉玉米餅",
    "Test mode": "距離(壓)",
    "Type of action": "爆破測試",
-   "Probe or Fixture": "Middle hole fixing rig 麵皮中孔固定座(洞40mm)",
+   "Probe or Fixture": "麵皮穿刺測試組(洞40mm)",
    "Tittle": "測量玉米餅的拉伸性、斷裂點和硬度",
-   "file": "../files/zhA030.pdf"
+   "file": "../files/M030.pdf"
  },
  {
    "ID": "A031",
@@ -367,9 +367,9 @@
    "Products": "漢堡麵包",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "φ25 mm cylinder probe. Acrylic 直徑25mm柱形探頭(壓克力)",
+   "Probe or Fixture": "直徑25mm柱形探頭(壓克力)",
    "Tittle": "使用探棒透過穿刺測量麵包的硬度",
-   "file": "../files/zhA031.pdf"
+   "file": "../files/M031.pdf"
  },
  {
    "ID": "A032",
@@ -379,9 +379,9 @@
    "Products": "杯子蛋糕(馬芬)",
    "Test mode": "距離(壓)",
    "Type of action": "鬆弛測試",
-   "Probe or Fixture": "φ18 mm cylinder probe. 直徑18mm柱形探頭",
+   "Probe or Fixture": "直徑18mm柱形探頭",
    "Tittle": "杯子蛋糕(馬芬)的保存期限（Novo Nordisk（B974a-GB）改良版AACC方法74-09）",
-   "file": "../files/zhA032.pdf"
+   "file": "../files/M032.pdf"
  },
  {
    "ID": "A033",
@@ -391,9 +391,9 @@
    "Products": "麵包屑",
    "Test mode": "距離(壓)",
    "Type of action": "壓縮測試",
-   "Probe or Fixture": "φ25 mm cylinder probe. Acrylic 直徑25mm柱形探頭(壓克力)",
+   "Probe or Fixture": "直徑25mm柱形探頭(壓克力)",
    "Tittle": "使用探棒壓縮法測量麵包屑的硬度",
-   "file": "../files/zhA033.pdf"
+   "file": "../files/M033.pdf"
  },
  {
    "ID": "A034",
@@ -403,9 +403,9 @@
    "Products": "蛋糕",
    "Test mode": "TPA距離",
    "Type of action": "全質構測試",
-   "Probe or Fixture": "φ25 mm cylinder probe. Acrylic 直徑25mm柱形探頭(壓克力)",
+   "Probe or Fixture": "直徑25mm柱形探頭(壓克力)",
    "Tittle": "化學膨鬆劑對蛋糕質地的影響(AIB標準方法)",
-   "file": "../files/zhA034.pdf"
+   "file": "../files/M034.pdf"
  },
  {
    "ID": "A035",
@@ -415,9 +415,9 @@
    "Products": "穀物棒",
    "Test mode": "距離(壓)",
    "Type of action": "剪切測試",
-   "Probe or Fixture": "Kramer shear cell - 5 blades 五刃克萊默批量剪切測試組",
+   "Probe or Fixture": "五刃克萊默批量剪切測試組",
    "Tittle": "透過剪切法比較穀物棒的硬度",
-   "file": "../files/zhA035.pdf"
+   "file": "../files/M035.pdf"
  },
  {
    "ID": "A036",
@@ -427,9 +427,9 @@
    "Products": "穀物棒",
    "Test mode": "距離(壓)",
    "Type of action": "剪切測試",
-   "Probe or Fixture": "Kramer shear cell - 5 blades 五刃克萊默批量剪切測試組",
+   "Probe or Fixture": "五刃克萊默批量剪切測試組",
    "Tittle": "透過剪切法比較“脆”和“耐嚼”穀物棒的硬度",
-   "file": "../files/zhA036.pdf"
+   "file": "../files/M036.pdf"
  },
  {
    "ID": "A037",
@@ -439,9 +439,9 @@
    "Products": "膨化米粒",
    "Test mode": "距離(壓)",
    "Type of action": "擠壓測試",
-   "Probe or Fixture": "Ottawa Cell 渥太華批量壓縮測試組",
+   "Probe or Fixture": "渥太華批量壓縮測試組",
    "Tittle": "膨化米粒使用整體壓縮方法量測的硬度與脆度比較",
-   "file": "../files/zhA037.pdf"
+   "file": "../files/M037.pdf"
  },
  {
    "ID": "A038",
@@ -451,9 +451,9 @@
    "Products": "早餐麥片",
    "Test mode": "距離(壓)",
    "Type of action": "擠壓測試",
-   "Probe or Fixture": "Ottawa Cell 渥太華批量壓縮測試組",
+   "Probe or Fixture": "渥太華批量壓縮測試組",
    "Tittle": "三種早餐麥片浸泡牛奶後硬度和脆度的「保存期限」比較",
-   "file": "../files/zhA038.pdf"
+   "file": "../files/M038.pdf"
  },
  {
    "ID": "A039",
@@ -463,9 +463,9 @@
    "Products": "硬糖",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "φ2 mm cylinder probe 直徑2mm柱形探頭",
+   "Probe or Fixture": "直徑2mm柱形探頭",
    "Tittle": "用穿刺法測量硬糖的硬度和易碎性",
-   "file": "../files/zhA039.pdf"
+   "file": "../files/M039.pdf"
  },
  {
    "ID": "A040",
@@ -475,9 +475,9 @@
    "Products": "清涼薄荷口香片",
    "Test mode": "距離(壓)",
    "Type of action": "爆破測試",
-   "Probe or Fixture": "Film puncture (SP05) rig 薄膜穿刺(5mm球型探頭)測試組",
+   "Probe or Fixture": "薄膜穿刺(5mm球型探頭)測試組",
    "Tittle": "新鮮和放置13天的清涼薄荷口香片的破裂強度比較",
-   "file": "../files/zhA040.pdf"
+   "file": "../files/M040.pdf"
  },
  {
    "ID": "A041",
@@ -487,9 +487,9 @@
    "Products": "焦糖",
    "Test mode": "距離(壓)",
    "Type of action": "黏性測試",
-   "Probe or Fixture": "φ20 mm spherical probe 直徑20mm球形探頭",
+   "Probe or Fixture": "直徑20mm球形探頭",
    "Tittle": "使用0.75英吋球形探頭測量焦糖的硬度、黏性和拉絲性",
-   "file": "../files/zhA041.pdf"
+   "file": "../files/M041.pdf"
  },
  {
    "ID": "A042",
@@ -499,9 +499,9 @@
    "Products": "耐嚼糖果",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "φ6 mm cylinder probe 直徑6mm柱形探頭",
+   "Probe or Fixture": "直徑6mm柱形探頭",
    "Tittle": "透過穿刺模式測量耐嚼糖果的硬度和黏性",
-   "file": "../files/zhA042.pdf"
+   "file": "../files/M042.pdf"
  },
  {
    "ID": "A043",
@@ -511,9 +511,9 @@
    "Products": "巧克力",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "φ2 mm cylinder probe 直徑2mm柱形探頭",
+   "Probe or Fixture": "直徑2mm柱形探頭",
    "Tittle": "透過穿刺模式比較 4 種不同巧克力配方的硬度",
-   "file": "../files/zhA043.pdf"
+   "file": "../files/M043.pdf"
  },
  {
    "ID": "A044",
@@ -523,9 +523,9 @@
    "Products": "巧克力焦糖",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "φ2 mm cylinder probe 直徑2mm柱形探頭",
+   "Probe or Fixture": "直徑2mm柱形探頭",
    "Tittle": "使用穿刺模式比較5種不同焦糖配方的硬度",
-   "file": "../files/zhA044.pdf"
+   "file": "../files/M044.pdf"
  },
  {
    "ID": "A045",
@@ -535,9 +535,9 @@
    "Products": "巧克力抹醬",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "Butter spreadability rig 油脂塗佈性測試組",
+   "Probe or Fixture": "油脂塗佈性測試組",
    "Tittle": "比較5°C 和 20°C 兩種儲存溫度下巧克力醬的塗抹性(硬度)",
-   "file": "../files/zhA045.pdf"
+   "file": "../files/M045.pdf"
  },
  {
    "ID": "A046",
@@ -547,9 +547,9 @@
    "Products": "錠狀口香糖",
    "Test mode": "距離(壓)",
    "Type of action": "剪切測試",
-   "Probe or Fixture": "Sharpness knife rig 鋒利切刀",
+   "Probe or Fixture": "鋒利切刀",
    "Tittle": "使用鋒利切刀測量 3 種品牌口香糖錠的外部和內部硬度",
-   "file": "../files/zhA046.pdf"
+   "file": "../files/M046.pdf"
  },
  {
    "ID": "A047",
@@ -559,9 +559,9 @@
    "Products": "耐咀嚼糖果",
    "Test mode": "距離(拉)",
    "Type of action": "拉伸測試",
-   "Probe or Fixture": "Dough extensibility rig 麵團延展性測試組",
+   "Probe or Fixture": "麵團延展性測試組",
    "Tittle": "比較在不同溫度條件下口香糖的拉伸性能",
-   "file": "../files/zhA047.pdf"
+   "file": "../files/M047.pdf"
  },
  {
    "ID": "A048",
@@ -571,9 +571,9 @@
    "Products": "粒狀口香糖",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "φ2 mm cylinder probe 直徑2mm柱形探頭",
+   "Probe or Fixture": "直徑2mm柱形探頭",
    "Tittle": "使用2mm圓柱探棒進行穿刺比較兩種顆粒糖果的硬度",
-   "file": "../files/zhA048.pdf"
+   "file": "../files/M048.pdf"
  },
  {
    "ID": "A049",
@@ -583,9 +583,9 @@
    "Products": "錠狀口香糖",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "φ2 mm cylinder probe 直徑2mm柱形探頭",
+   "Probe or Fixture": "直徑2mm柱形探頭",
    "Tittle": "使用2mm圓柱探棒進行穿刺比較兩種口香糖顆粒（有塗層和無塗層）的硬度",
-   "file": "../files/zhA049.pdf"
+   "file": "../files/M049.pdf"
  },
  {
    "ID": "A050",
@@ -595,9 +595,9 @@
    "Products": "耐咀嚼糖果",
    "Test mode": "距離(拉)",
    "Type of action": "拉伸測試",
-   "Probe or Fixture": "Double c-clamp fixture 雙C型鉗夾具",
+   "Probe or Fixture": "雙C型鉗夾具",
    "Tittle": "耐咀嚼糖果的延伸性比較",
-   "file": "../files/zhA050.pdf"
+   "file": "../files/M050.pdf"
  },
  {
    "ID": "A051",
@@ -607,9 +607,9 @@
    "Products": "片狀口香糖",
    "Test mode": "距離(壓)",
    "Type of action": "彎曲測試",
-   "Probe or Fixture": "Three-point bending rig 三點彎曲測試組",
+   "Probe or Fixture": "三點彎曲測試組",
    "Tittle": "測量片狀口香糖的硬度和抗彎曲能力（抗彎曲部分）",
-   "file": "../files/zhA051.pdf"
+   "file": "../files/M051.pdf"
  },
  {
    "ID": "A052",
@@ -619,9 +619,9 @@
    "Products": "片狀口香糖",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "φ2 mm cylinder probe 直徑2mm柱形探頭",
+   "Probe or Fixture": "直徑2mm柱形探頭",
    "Tittle": "測量片狀口香糖的硬度和抗彎曲能力（硬度部分）",
-   "file": "../files/zhA052.pdf"
+   "file": "../files/M052.pdf"
  },
  {
    "ID": "A053",
@@ -631,9 +631,9 @@
    "Products": "翻糖",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "φ4 mm cylinder probe 直徑4mm柱形探頭",
+   "Probe or Fixture": "直徑4mm柱形探頭",
    "Tittle": "透過穿刺法比較四批翻糖的可接受性（硬度）",
-   "file": "../files/zhA053.pdf"
+   "file": "../files/M053.pdf"
  },
  {
    "ID": "A054",
@@ -643,9 +643,9 @@
    "Products": "軟糖",
    "Test mode": "形變(壓)",
    "Type of action": "壓縮測試",
-   "Probe or Fixture": "φ36 mm cylinder probe.直徑36mm柱形探頭",
+   "Probe or Fixture": "直徑36mm柱形探頭",
    "Tittle": "探究軟糖的硬度和彈性",
-   "file": "../files/zhA054.pdf"
+   "file": "../files/M054.pdf"
  },
  {
    "ID": "A055",
@@ -655,9 +655,9 @@
    "Products": "哈爾瓦酥糖",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "1cm^2 Cylinder probe 面積1cm^2柱形探頭",
+   "Probe or Fixture": "面積1cm^2柱形探頭",
    "Tittle": "使用圓柱型探頭測量兩種哈爾瓦酥糖的硬度",
-   "file": "../files/zhA055.pdf"
+   "file": "../files/M055.pdf"
  },
  {
    "ID": "A056",
@@ -667,9 +667,9 @@
    "Products": "檸檬凝乳",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "Butter spreadability rig 油脂塗佈性測試組",
+   "Probe or Fixture": "油脂塗佈性測試組",
    "Tittle": "比較豪華型和經濟型兩種檸檬醬的塗抹性(硬度)",
-   "file": "../files/zhA056.pdf"
+   "file": "../files/M056.pdf"
  },
  {
    "ID": "A057",
@@ -679,9 +679,9 @@
    "Products": "果醬",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "φ25 mm cylinder probe 直徑25mm柱形探頭(鋁合金)",
+   "Probe or Fixture": "直徑25mm柱形探頭(鋁合金)",
    "Tittle": "測量不同配方果醬的凝膠強度、破裂力、脆性/彈性和黏著性",
-   "file": "../files/zhA057.pdf"
+   "file": "../files/M057.pdf"
  },
  {
    "ID": "A058",
@@ -691,9 +691,9 @@
    "Products": "扁桃仁膏",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "φ6 mm cylinder probe 直徑6mm柱形探頭",
+   "Probe or Fixture": "直徑6mm柱形探頭",
    "Tittle": "用穿刺法測量金色杏仁糖的硬度和黏性",
-   "file": "../files/zhA058.pdf"
+   "file": "../files/M058.pdf"
  },
  {
    "ID": "A059",
@@ -703,9 +703,9 @@
    "Products": "糖漿、蜂蜜和糖蜜",
    "Test mode": "黏性",
    "Type of action": "黏性測試",
-   "Probe or Fixture": "φ36 mm cylinder probe. 直徑36mm柱形探頭",
+   "Probe or Fixture": "直徑36mm柱形探頭",
    "Tittle": "糖漿、蜂蜜和糖蜜的表面黏性和黏稠度比較",
-   "file": "../files/zhA059.pdf"
+   "file": "../files/M059.pdf"
  },
  {
    "ID": "A060",
@@ -715,9 +715,9 @@
    "Products": "奶油與人造奶油",
    "Test mode": "距離(壓)",
    "Type of action": "剪切測試",
-   "Probe or Fixture": "Wire butter cutter 鋼線奶油切刀",
+   "Probe or Fixture": "鋼線奶油切刀",
    "Tittle": "使用線切刀切割奶油與人造奶油比較其切割力",
-   "file": "../files/zhA060.pdf"
+   "file": "../files/M060.pdf"
  },
  {
    "ID": "A061",
@@ -727,9 +727,9 @@
    "Products": "人造奶油",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "φ5 mm cylinder probe 直徑5mm柱形探頭",
+   "Probe or Fixture": "直徑5mm柱形探頭",
    "Tittle": "人造奶油硬度的測量",
-   "file": "../files/zhA061.pdf"
+   "file": "../files/M061.pdf"
  },
  {
    "ID": "A062",
@@ -739,9 +739,9 @@
    "Products": "人造奶油",
    "Test mode": "距離(壓)",
    "Type of action": "蠕變測試",
-   "Probe or Fixture": "45°Conical probe_acrylic 錐形45°探頭_壓克力",
+   "Probe or Fixture": "錐形45°探頭_壓克力",
    "Tittle": "人造奶油硬度測量（使用傳統針入度計測試）",
-   "file": "../files/zhA062.pdf"
+   "file": "../files/M062.pdf"
  },
  {
    "ID": "A063",
@@ -751,9 +751,9 @@
    "Products": "人造奶油",
    "Test mode": "距離(壓)",
    "Type of action": "擠壓測試",
-   "Probe or Fixture": "Forward extrusion rig 正擠壓測試組",
+   "Probe or Fixture": "正擠壓測試組",
    "Tittle": "透過擠出3毫米孔的能力比較兩種人造奶油的塗抹性(硬度)",
-   "file": "../files/zhA063.pdf"
+   "file": "../files/M063.pdf"
  },
  {
    "ID": "A064",
@@ -763,9 +763,9 @@
    "Products": "人造奶油",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "Butter spreadability rig 油脂塗佈性測試組",
+   "Probe or Fixture": "油脂塗佈性測試組",
    "Tittle": "人造奶油的塗抹性量測(柔軟度)",
-   "file": "../files/zhA064.pdf"
+   "file": "../files/M064.pdf"
  },
  {
    "ID": "A065",
@@ -775,9 +775,9 @@
    "Products": "奶油乳酪",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "φ5 mm cylinder probe 直徑5mm柱形探頭",
+   "Probe or Fixture": "直徑5mm柱形探頭",
    "Tittle": "全脂和低脂奶油乳酪的柔軟度比較",
-   "file": "../files/zhA065.pdf"
+   "file": "../files/M065.pdf"
  },
  {
    "ID": "A066",
@@ -787,9 +787,9 @@
    "Products": "起司抹醬",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "Butter spreadability rig 油脂塗佈性測試組",
+   "Probe or Fixture": "油脂塗佈性測試組",
    "Tittle": "乳酪的可塗抹性量測(柔軟度)",
-   "file": "../files/zhA066.pdf"
+   "file": "../files/M066.pdf"
  },
  {
    "ID": "A067",
@@ -799,9 +799,9 @@
    "Products": "三角形起司",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "φ1 inch spherical probe_stainless 直徑1英吋球形探頭_不鏽鋼",
+   "Probe or Fixture": "直徑1英吋球形探頭_不鏽鋼",
    "Tittle": "兩種品牌三角形起司醬的硬度和黏性比較",
-   "file": "../files/zhA067.pdf"
+   "file": "../files/M067.pdf"
  },
  {
    "ID": "A068",
@@ -811,9 +811,9 @@
    "Products": "起司",
    "Test mode": "距離(壓)",
    "Type of action": "剪切測試",
-   "Probe or Fixture": "Dual wedge rig 雙楔型測試組",
+   "Probe or Fixture": "雙楔型測試組",
    "Tittle": "使用楔形切刀比較四種硬質起司的硬度和脆度",
-   "file": "../files/zhA068.pdf"
+   "file": "../files/M068.pdf"
  },
  {
    "ID": "A069",
@@ -823,9 +823,9 @@
    "Products": "加工切達乾酪",
    "Test mode": "距離(壓)",
    "Type of action": "剪切測試",
-   "Probe or Fixture": "Wire butter cutter 鋼線奶油切刀",
+   "Probe or Fixture": "鋼線奶油切刀",
    "Tittle": "使用線切刀測量加工切達乾酪的切割力",
-   "file": "../files/zhA069.pdf"
+   "file": "../files/M069.pdf"
  },
  {
    "ID": "A070",
@@ -835,9 +835,9 @@
    "Products": "軟乳酪",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "φ1 inch spherical probe_stainless 直徑1英吋球形探頭_不鏽鋼",
+   "Probe or Fixture": "直徑1英吋球形探頭_不鏽鋼",
    "Tittle": "全脂塗抹醬、奶油乳酪塗抹醬、起司三角和加工切達起司的硬度和黏性比較",
-   "file": "../files/zhA070.pdf"
+   "file": "../files/M070.pdf"
  },
  {
    "ID": "A071",
@@ -847,9 +847,9 @@
    "Products": "起司",
    "Test mode": "距離(拉)",
    "Type of action": "拉伸測試",
-   "Probe or Fixture": "Cheese string rig 起司拉絲測試組",
+   "Probe or Fixture": "起司拉絲測試組",
    "Tittle": "兩種融化起司的延伸性（拉伸品質）評估",
-   "file": "../files/zhA071.pdf"
+   "file": "../files/M071.pdf"
  },
  {
    "ID": "A072",
@@ -859,9 +859,9 @@
    "Products": "鮮奶油",
    "Test mode": "距離(壓)",
    "Type of action": "擠壓測試",
-   "Probe or Fixture": "Back extrusion rig 反擠壓測試組",
+   "Probe or Fixture": "反擠壓測試組",
    "Tittle": "透過反向擠壓法比較全脂、半脂和有機鮮奶油的濃稠度",
-   "file": "../files/zhA072.pdf"
+   "file": "../files/M072.pdf"
  },
  {
    "ID": "A073",
@@ -871,9 +871,9 @@
    "Products": "鮮乳酪",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "φ25 mm cylinder probe. 直徑25mm柱形探頭(鋁合金)",
+   "Probe or Fixture": "直徑25mm柱形探頭(鋁合金)",
    "Tittle": "使用圓柱探頭比較三種品牌的鮮乳酪的穿透力和稠度",
-   "file": "../files/zhA073.pdf"
+   "file": "../files/M073.pdf"
  },
  {
    "ID": "A074",
@@ -883,9 +883,9 @@
    "Products": "冰淇淋",
    "Test mode": "距離(壓)",
    "Type of action": "剪切測試",
-   "Probe or Fixture": "Blade of warner bratzler 華納-布拉茨勒切刀",
+   "Probe or Fixture": "華納-布拉茨勒切刀",
    "Tittle": "使用切刀對兩種不同品牌冰淇淋的剪切力進行比較",
-   "file": "../files/zhA074.pdf"
+   "file": "../files/M074.pdf"
  },
  {
    "ID": "A075",
@@ -895,9 +895,9 @@
    "Products": "冰淇淋",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "Multi-puncture needle 多針穿刺探頭",
+   "Probe or Fixture": "多針穿刺探頭",
    "Tittle": "使用多穿刺探頭測量含顆粒冰淇淋的硬度",
-   "file": "../files/zhA075.pdf"
+   "file": "../files/M075.pdf"
  },
  {
    "ID": "A076",
@@ -907,9 +907,9 @@
    "Products": "美乃滋",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "φ25 mm cylinder probe. 直徑25mm柱形探頭(鋁合金)",
+   "Probe or Fixture": "直徑25mm柱形探頭(鋁合金)",
    "Tittle": "使用圓柱探頭比較全脂和低脂蛋黃醬的滲透力和濃稠度",
-   "file": "../files/zhA076.pdf"
+   "file": "../files/M076.pdf"
  },
  {
    "ID": "A077",
@@ -919,9 +919,9 @@
    "Products": "美乃滋",
    "Test mode": "距離(壓)",
    "Type of action": "擠壓測試",
-   "Probe or Fixture": "Back extrusion rig 反擠壓測試組",
+   "Probe or Fixture": "反擠壓測試組",
    "Tittle": "透過反向擠壓法比較全脂和低脂蛋黃醬的稠度",
-   "file": "../files/zhA077.pdf"
+   "file": "../files/M077.pdf"
  },
  {
    "ID": "A078",
@@ -931,9 +931,9 @@
    "Products": "慕斯(泡沫奶油)",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "φ25 mm cylinder probe. Aluminum 直徑25mm柱形探頭(鋁合金)",
+   "Probe or Fixture": "直徑25mm柱形探頭(鋁合金)",
    "Tittle": "使用圓柱探頭比較全脂和低脂巧克力慕斯的滲透力",
-   "file": "../files/zhA078.pdf"
+   "file": "../files/M078.pdf"
  },
  {
    "ID": "A079",
@@ -943,9 +943,9 @@
    "Products": "優格",
    "Test mode": "距離(壓)",
    "Type of action": "擠壓測試",
-   "Probe or Fixture": "Back extrusion rig 反擠壓測試組",
+   "Probe or Fixture": "反擠壓測試組",
    "Tittle": "反擠壓法比較全脂優格和低脂優格稠度",
-   "file": "../files/zhA079.pdf"
+   "file": "../files/M079.pdf"
  },
  {
    "ID": "A080",
@@ -955,9 +955,9 @@
    "Products": "蘋果",
    "Test mode": "距離(壓)",
    "Type of action": "壓縮測試",
-   "Probe or Fixture": "φ 75 mm compression plate 直徑75mm壓板",
+   "Probe or Fixture": "直徑75mm壓板",
    "Tittle": "透過連續靜態壓縮法評估蘋果的擦傷可能性",
-   "file": "../files/zhA080.pdf"
+   "file": "../files/M080.pdf"
  },
  {
    "ID": "A081",
@@ -967,9 +967,9 @@
    "Products": "焗豆",
    "Test mode": "距離(壓)",
    "Type of action": "擠壓測試",
-   "Probe or Fixture": "Ottawa Cell 渥太華批量壓縮測試組",
+   "Probe or Fixture": "渥太華批量壓縮測試組",
    "Tittle": "烘焙豆的批量壓縮法量測硬度與總擠壓力",
-   "file": "../files/zhA081.pdf"
+   "file": "../files/M081.pdf"
  },
  {
    "ID": "A082",
@@ -979,9 +979,9 @@
    "Products": "脫水玉米粒",
    "Test mode": "距離(壓)",
    "Type of action": "剪切測試",
-   "Probe or Fixture": "Kramer shear cell - 10 blades 十刃克萊默批量剪切測試組",
+   "Probe or Fixture": "十刃克萊默批量剪切測試組",
    "Tittle": "兩種罐頭甜玉米的剪切效果比較",
-   "file": "../files/zhA082.pdf"
+   "file": "../files/M082.pdf"
  },
  {
    "ID": "A083",
@@ -991,9 +991,9 @@
    "Products": "脫水玉米粒",
    "Test mode": "形變(壓)",
    "Type of action": "剪切測試",
-   "Probe or Fixture": "Simulated incisors rig 模擬門齒測試組",
+   "Probe or Fixture": "模擬門齒測試組",
    "Tittle": "水合甜玉米的硬度",
-   "file": "../files/zhA083.pdf"
+   "file": "../files/M083.pdf"
  },
  {
    "ID": "A084",
@@ -1003,9 +1003,9 @@
    "Products": "去核乾棗",
    "Test mode": "距離(壓)",
    "Type of action": "剪切測試",
-   "Probe or Fixture": "Extended Craft Knife 加長型鋒利切刀",
+   "Probe or Fixture": "加長型鋒利切刀",
    "Tittle": "去核乾棗和水果條的韌性和剪切功評估",
-   "file": "../files/zhA084.pdf"
+   "file": "../files/M084.pdf"
  },
  {
    "ID": "A085",
@@ -1015,9 +1015,9 @@
    "Products": "葡萄",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "φ 2 mm cylinder probe 直徑2mm柱形探頭",
+   "Probe or Fixture": "直徑2mm柱形探頭",
    "Tittle": "用直徑2mm圓柱探頭穿刺葡萄皮測量其穿刺強度",
-   "file": "../files/zhA085.pdf"
+   "file": "../files/M085.pdf"
  },
  {
    "ID": "A086",
@@ -1027,9 +1027,9 @@
    "Products": "內含水果顆粒果醬",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "Multi-Penetration fixture (needle) 多針穿刺探頭",
+   "Probe or Fixture": "多針穿刺探頭",
    "Tittle": "使用多穿刺探頭比較水果蜜餞與果醬的硬度",
-   "file": "../files/zhA086.pdf"
+   "file": "../files/M086.pdf"
  },
  {
    "ID": "A087",
@@ -1039,9 +1039,9 @@
    "Products": "柑橘醬",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "φ 25 mm cylinder probe. Aluminum 直徑25mm柱形探頭(鋁合金)",
+   "Probe or Fixture": "直徑25mm柱形探頭(鋁合金)",
    "Tittle": "測量果醬配方的凝膠強度、破裂力、脆性、彈性和黏著性",
-   "file": "../files/zhA087.pdf"
+   "file": "../files/M087.pdf"
  },
  {
    "ID": "A088",
@@ -1051,9 +1051,9 @@
    "Products": "海苔",
    "Test mode": "距離(壓)",
    "Type of action": "爆破測試",
-   "Probe or Fixture": "Film puncture (SP05) rig 薄膜穿刺(5mm球型探頭)測試組",
+   "Probe or Fixture": "薄膜穿刺(5mm球型探頭)測試組",
    "Tittle": "紫菜（壽司用乾海藻片）耐穿破強度的測量",
-   "file": "../files/zhA088.pdf"
+   "file": "../files/M088.pdf"
  },
  {
    "ID": "A089",
@@ -1063,9 +1063,9 @@
    "Products": "去核橄欖",
    "Test mode": "距離(壓)",
    "Type of action": "剪切測試",
-   "Probe or Fixture": "Kramer shear cell - 5 blades 五刃克萊默批量剪切測試組",
+   "Probe or Fixture": "五刃克萊默批量剪切測試組",
    "Tittle": "使用五刃克萊默批量剪切測試組測量去核橄欖的硬度",
-   "file": "../files/zhA089.pdf"
+   "file": "../files/M089.pdf"
  },
  {
    "ID": "A090",
@@ -1075,9 +1075,9 @@
    "Products": "桃子",
    "Test mode": "距離(壓)",
    "Type of action": "剪切測試",
-   "Probe or Fixture": "Blade of warner bratzler 華納-布拉茨勒切刀",
+   "Probe or Fixture": "華納-布拉茨勒切刀",
    "Tittle": "透過剪切法測量桃子的硬度",
-   "file": "../files/zhA090.pdf"
+   "file": "../files/M090.pdf"
  },
  {
    "ID": "A091",
@@ -1087,9 +1087,9 @@
    "Products": "豌豆",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "Multiple Pea Test Rig 多探針豌豆穿刺測試組",
+   "Probe or Fixture": "多探針豌豆穿刺測試組",
    "Tittle": "豌豆硬度的測量",
-   "file": "../files/zhA091.pdf"
+   "file": "../files/M091.pdf"
  },
  {
    "ID": "A092",
@@ -1099,9 +1099,9 @@
    "Products": "豌豆",
    "Test mode": "距離(壓)",
    "Type of action": "剪切測試",
-   "Probe or Fixture": "Kramer shear cell - 10 blades 十刃克萊默批量剪切測試組",
+   "Probe or Fixture": "十刃克萊默批量剪切測試組",
    "Tittle": "兩種罐頭豌豆的剪切比較",
-   "file": "../files/zhA092.pdf"
+   "file": "../files/M092.pdf"
  },
  {
    "ID": "A093",
@@ -1111,9 +1111,9 @@
    "Products": "梨",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "φ 2 mm cylinder probe 直徑2mm柱形探頭",
+   "Probe or Fixture": "直徑2mm柱形探頭",
    "Tittle": "透過穿刺法測量梨子的硬度或“生物屈服點”",
-   "file": "../files/zhA093.pdf"
+   "file": "../files/M093.pdf"
  },
  {
    "ID": "A094",
@@ -1123,9 +1123,9 @@
    "Products": "辣椒",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "φ 3 mm cylinder probe 直徑3mm柱形探頭",
+   "Probe or Fixture": "直徑3mm柱形探頭",
    "Tittle": "使用圓柱探頭測量不同顏色辣椒皮的穿刺強度",
-   "file": "../files/zhA094.pdf"
+   "file": "../files/M094.pdf"
  },
  {
    "ID": "A095",
@@ -1135,9 +1135,9 @@
    "Products": "馬鈴薯",
    "Test mode": "距離(壓)",
    "Type of action": "剪切測試",
-   "Probe or Fixture": "Blade of warner bratzler 華納-布拉茨勒切刀",
+   "Probe or Fixture": "華納-布拉茨勒切刀",
    "Tittle": "用刀片測量經過不同烹飪時間後馬鈴薯樣品的剪切力",
-   "file": "../files/zhA095.pdf"
+   "file": "../files/M095.pdf"
  },
  {
    "ID": "A096",
@@ -1147,9 +1147,9 @@
    "Products": "馬鈴薯沙拉",
    "Test mode": "距離(壓)",
    "Type of action": "擠壓測試",
-   "Probe or Fixture": "Ottawa Cell 渥太華批量壓縮測試組",
+   "Probe or Fixture": "渥太華批量壓縮測試組",
    "Tittle": "比較四種馬鈴薯沙拉以批量壓縮法進行的總擠壓力",
-   "file": "../files/zhA096.pdf"
+   "file": "../files/M096.pdf"
  },
  {
    "ID": "A097",
@@ -1159,9 +1159,9 @@
    "Products": "即溶馬鈴薯泥",
    "Test mode": "距離(壓)",
    "Type of action": "擠壓測試",
-   "Probe or Fixture": "Ottawa Cell 渥太華批量壓縮測試組",
+   "Probe or Fixture": "渥太華批量壓縮測試組",
    "Tittle": "批量壓縮法測定速溶馬鈴薯泥的硬度和總擠壓壓力",
-   "file": "../files/zhA097.pdf"
+   "file": "../files/M097.pdf"
  },
  {
    "ID": "A098",
@@ -1171,9 +1171,9 @@
    "Products": "薯條",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "Fires Multi-Penetration rig 多探針薯條穿刺測試組",
+   "Probe or Fixture": "多探針薯條穿刺測試組",
    "Tittle": "使用多探針薯條穿刺治具測量薯條(薯片)的硬度",
-   "file": "../files/zhA098.pdf"
+   "file": "../files/M098.pdf"
  },
  {
    "ID": "A099",
@@ -1183,9 +1183,9 @@
    "Products": "覆盆子",
    "Test mode": "距離(壓)",
    "Type of action": "擠壓測試",
-   "Probe or Fixture": "Ottawa Cell 渥太華批量壓縮測試組",
+   "Probe or Fixture": "渥太華批量壓縮測試組",
    "Tittle": "透過批量壓縮法比較新鮮與速凍覆盆子的硬度和總擠壓壓力",
-   "file": "../files/zhA099.pdf"
+   "file": "../files/M099.pdf"
  },
  {
    "ID": "A100",
@@ -1195,9 +1195,9 @@
    "Products": "葉菠菜",
    "Test mode": "距離(壓)",
    "Type of action": "爆破測試",
-   "Probe or Fixture": "Film Penetration (SP05) rig 薄膜穿刺(5mm球型探頭)測試組",
+   "Probe or Fixture": "薄膜穿刺(5mm球型探頭)測試組",
    "Tittle": "菠菜葉耐穿破強度測定",
-   "file": "../files/zhA100.pdf"
+   "file": "../files/M100.pdf"
  },
  {
    "ID": "A101",
@@ -1207,9 +1207,9 @@
    "Products": "草莓",
    "Test mode": "距離(壓)",
    "Type of action": "擠壓測試",
-   "Probe or Fixture": "Ottawa Cell 渥太華批量壓縮測試組",
+   "Probe or Fixture": "渥太華批量壓縮測試組",
    "Tittle": "透過批量壓縮比較新鮮和罐裝草莓的硬度和總擠壓壓力",
-   "file": "../files/zhA101.pdf"
+   "file": "../files/M101.pdf"
  },
  {
    "ID": "A102",
@@ -1219,9 +1219,9 @@
    "Products": "豆腐",
    "Test mode": "距離(壓)",
    "Type of action": "剪切測試",
-   "Probe or Fixture": "Extended Craft Knife 加長型鋒利切刀",
+   "Probe or Fixture": "加長型鋒利切刀",
    "Tittle": "使用加長型鋒利切刀對四種不同豆腐的剪切力進行比較",
-   "file": "../files/zhA102.pdf"
+   "file": "../files/M102.pdf"
  },
  {
    "ID": "A103",
@@ -1231,9 +1231,9 @@
    "Products": "番茄丁",
    "Test mode": "距離(壓)",
    "Type of action": "剪切測試",
-   "Probe or Fixture": "Kramer shear cell - 5 blades 五刃克萊默批量剪切測試組",
+   "Probe or Fixture": "五刃克萊默批量剪切測試組",
    "Tittle": "使用五刃克萊默批量剪切測試組對5種罐裝番茄丁的硬度進行比較",
-   "file": "../files/zhA103.pdf"
+   "file": "../files/M103.pdf"
  },
  {
    "ID": "A104",
@@ -1243,9 +1243,9 @@
    "Products": "生啤酒",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "φ 75 mm compression plate 直徑75mm壓板",
+   "Probe or Fixture": "直徑75mm壓板",
    "Tittle": "三種生啤酒泡沫強度的比較",
-   "file": "../files/zhA104.pdf"
+   "file": "../files/M104.pdf"
  },
  {
    "ID": "A105",
@@ -1255,9 +1255,9 @@
    "Products": "明膠",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "φ 1/2 inch cylinder probe_PP 直徑1/2英吋柱形探頭_聚酯纖維",
+   "Probe or Fixture": "直徑1/2英吋柱形探頭_聚酯纖維",
    "Tittle": "測定布魯姆強度(bloom strength)作為監測明膠質量、濃度和加工方法影響的一種手段",
-   "file": "../files/zhA105.pdf"
+   "file": "../files/M105.pdf"
  },
  {
    "ID": "A106",
@@ -1267,9 +1267,9 @@
    "Products": "明膠",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "φ 1/2 inch cylinder probe_PP 直徑1/2英吋柱形探頭_聚酯纖維",
+   "Probe or Fixture": "直徑1/2英吋柱形探頭_聚酯纖維",
    "Tittle": "根據國際標準（ISO 9665 黏合劑 - 動物膠 - 取樣和測試方法）測定明膠的布魯姆強度(Bloom strength)。",
-   "file": "../files/zhA106.pdf"
+   "file": "../files/M106.pdf"
  },
  {
    "ID": "A107",
@@ -1279,9 +1279,9 @@
    "Products": "明膠",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "φ 1/2 inch cylinder probe_PP 直徑1/2英吋柱形探頭_聚酯纖維",
+   "Probe or Fixture": "直徑1/2英吋柱形探頭_聚酯纖維",
    "Tittle": "根據美國明膠製造商協會 (GMIA) 測試標準測定明膠的凝膠強度 (Bloom Value)",
-   "file": "../files/zhA107.pdf"
+   "file": "../files/M107.pdf"
  },
  {
    "ID": "A108",
@@ -1291,9 +1291,9 @@
    "Products": "吉利丁片",
    "Test mode": "距離(壓)",
    "Type of action": "爆破測試",
-   "Probe or Fixture": "Film Penetration (SP05) rig 薄膜穿刺(5mm球型探頭)測試組",
+   "Probe or Fixture": "薄膜穿刺(5mm球型探頭)測試組",
    "Tittle": "比較乾葉明膠和浸泡葉明膠的穿破強度",
-   "file": "../files/zhA108.pdf"
+   "file": "../files/M108.pdf"
  },
  {
    "ID": "A109",
@@ -1303,9 +1303,9 @@
    "Products": "麵筋",
    "Test mode": "距離(拉)",
    "Type of action": "拉伸測試",
-   "Probe or Fixture": "Dough extensibility rig 麵團拉伸性測試組",
+   "Probe or Fixture": "麵團拉伸性測試組",
    "Tittle": "麵團延展性和麵筋品質的測量",
-   "file": "../files/zhA109.pdf"
+   "file": "../files/M109.pdf"
  },
  {
    "ID": "A110",
@@ -1315,9 +1315,9 @@
    "Products": "乳糖凝聚物",
    "Test mode": "距離(壓)",
    "Type of action": "壓縮測試",
-   "Probe or Fixture": "φ 25 mm cylinder probe. Aluminum 直徑25mm柱形探頭(鋁合金)",
+   "Probe or Fixture": "直徑25mm柱形探頭(鋁合金)",
    "Tittle": "使用圓柱探頭壓縮測量乳糖團塊的硬度",
-   "file": "../files/zhA110.pdf"
+   "file": "../files/M110.pdf"
  },
  {
    "ID": "A111",
@@ -1327,9 +1327,9 @@
    "Products": "果膠",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "φ 1/2 inch cylinder probe_PP 直徑1/2英吋柱形探頭_聚酯纖維",
+   "Probe or Fixture": "直徑1/2英吋柱形探頭_聚酯纖維",
    "Tittle": "比較三種凝膠的破裂力和脆性(彈性)，以監測品質、濃度和加工效果",
-   "file": "../files/zhA111.pdf"
+   "file": "../files/M111.pdf"
  },
  {
    "ID": "A112",
@@ -1339,9 +1339,9 @@
    "Products": "米紙",
    "Test mode": "距離(壓)",
    "Type of action": "爆破測試",
-   "Probe or Fixture": "Film Penetration (SP05) rig 薄膜穿刺(5mm球型探頭)測試組",
+   "Probe or Fixture": "薄膜穿刺(5mm球型探頭)測試組",
    "Tittle": "米紙耐穿刺強度的測量",
-   "file": "../files/zhA112.pdf"
+   "file": "../files/M112.pdf"
  },
  {
    "ID": "A113",
@@ -1351,9 +1351,9 @@
    "Products": "煮熟的雞胸肉",
    "Test mode": "距離(壓)",
    "Type of action": "剪切測試",
-   "Probe or Fixture": "Kramer shear cell - 5 blades 五刃克萊默批量剪切測試組",
+   "Probe or Fixture": "五刃克萊默批量剪切測試組",
    "Tittle": "五刃克萊默批量剪切測試組對雞胸肉丁和雞胸肉片進行剪切力比較",
-   "file": "../files/zhA113.pdf"
+   "file": "../files/M113.pdf"
  },
  {
    "ID": "A114",
@@ -1363,9 +1363,9 @@
    "Products": "雞塊",
    "Test mode": "距離(壓)",
    "Type of action": "剪切測試",
-   "Probe or Fixture": "Kramer shear cell - 5 blades 五刃克萊默批量剪切測試組",
+   "Probe or Fixture": "五刃克萊默批量剪切測試組",
    "Tittle": "雞塊硬度(韌性)的測量",
-   "file": "../files/zhA114.pdf"
+   "file": "../files/M114.pdf"
  },
  {
    "ID": "A115",
@@ -1375,9 +1375,9 @@
    "Products": "火腿",
    "Test mode": "距離(壓)",
    "Type of action": "剪切測試",
-   "Probe or Fixture": "Kramer shear cell - 5 blades 五刃克萊默批量剪切測試組",
+   "Probe or Fixture": "五刃克萊默批量剪切測試組",
    "Tittle": "使用五刃克萊默批量剪切測試組對罐裝成型火腿和再成型火腿的剪切力進行比較",
-   "file": "../files/zhA115.pdf"
+   "file": "../files/M115.pdf"
  },
  {
    "ID": "A116",
@@ -1387,9 +1387,9 @@
    "Products": "肉醬",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "φ 10 mm cylinder probe 直徑10mm柱形探頭_聚酯纖維",
+   "Probe or Fixture": "直徑10mm柱形探頭_聚酯纖維",
    "Tittle": "比較全脂、低脂肉醬的硬度",
-   "file": "../files/zhA116.pdf"
+   "file": "../files/M116.pdf"
  },
  {
    "ID": "A117",
@@ -1399,9 +1399,9 @@
    "Products": "蝦",
    "Test mode": "距離(壓)",
    "Type of action": "剪切測試",
-   "Probe or Fixture": "Kramer shear cell - 5 blades 五刃克萊默批量剪切測試組",
+   "Probe or Fixture": "五刃克萊默批量剪切測試組",
    "Tittle": "測量蝦子的硬度",
-   "file": "../files/zhA117.pdf"
+   "file": "../files/M117.pdf"
  },
  {
    "ID": "A118",
@@ -1411,9 +1411,9 @@
    "Products": "熱狗",
    "Test mode": "距離(壓)",
    "Type of action": "剪切測試",
-   "Probe or Fixture": "Blade of warner bratzler 華納-布拉茨勒切刀",
+   "Probe or Fixture": "華納-布拉茨勒切刀",
    "Tittle": "使用華納-布拉茨勒切刀量測熱狗的切割力",
-   "file": "../files/zhA118.pdf"
+   "file": "../files/M118.pdf"
  },
  {
    "ID": "A119",
@@ -1423,9 +1423,9 @@
    "Products": "香腸",
    "Test mode": "距離(壓)",
    "Type of action": "剪切測試",
-   "Probe or Fixture": "Blade of warner bratzler 華納-布拉茨勒切刀",
+   "Probe or Fixture": "華納-布拉茨勒切刀",
    "Tittle": "使用華納-布拉茨勒切刀量測比較法蘭克福香腸和西班牙辣香腸的切割力",
-   "file": "../files/zhA119.pdf"
+   "file": "../files/M119.pdf"
  },
  {
    "ID": "A120",
@@ -1435,9 +1435,9 @@
    "Products": "魚糜",
    "Test mode": "距離(壓)",
    "Type of action": "剪切測試",
-   "Probe or Fixture": "Blade of warner bratzler 華納-布拉茨勒切刀",
+   "Probe or Fixture": "華納-布拉茨勒切刀",
    "Tittle": "使用切割法比較兩種不同魚糜的強度",
-   "file": "../files/zhA120.pdf"
+   "file": "../files/M120.pdf"
  },
  {
    "ID": "A121",
@@ -1447,9 +1447,9 @@
    "Products": "魚糜",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "φ5 mm spherical probe 直徑5mm球形探頭",
+   "Probe or Fixture": "直徑5mm球形探頭",
    "Tittle": "使用球形探頭比較不同類型魚糜的硬度",
-   "file": "../files/zhA121.pdf"
+   "file": "../files/M121.pdf"
  },
  {
    "ID": "A122",
@@ -1459,9 +1459,9 @@
    "Products": "玉棋(湯糰)",
    "Test mode": "距離(壓)",
    "Type of action": "壓縮測試",
-   "Probe or Fixture": "φ100 mm compression plate 直徑100mm壓板",
+   "Probe or Fixture": "直徑100mm壓板",
    "Tittle": "兩種品牌玉棋(湯糰)使用壓縮法比較其硬度",
-   "file": "../files/zhA122.pdf"
+   "file": "../files/M122.pdf"
  },
  {
    "ID": "A123",
@@ -1471,9 +1471,9 @@
    "Products": "乾千層麵",
    "Test mode": "距離(壓)",
    "Type of action": "彎曲測試",
-   "Probe or Fixture": "Three-point bending rig 三點彎曲測試組",
+   "Probe or Fixture": "三點彎曲測試組",
    "Tittle": "使用三點彎曲測試組比較三種乾千層麵的斷裂應力(強度)",
-   "file": "../files/zhA123.pdf"
+   "file": "../files/M123.pdf"
  },
  {
    "ID": "A124",
@@ -1483,9 +1483,9 @@
    "Products": "煮熟的義大利麵",
    "Test mode": "黏性",
    "Type of action": "黏性測試",
-   "Probe or Fixture": "Noodle stickiness rig 麵條黏性測試組",
+   "Probe or Fixture": "麵條黏性測試組",
    "Tittle": "硬水和軟水煮義大利麵的黏性比較",
-   "file": "../files/zhA124.pdf"
+   "file": "../files/M124.pdf"
  },
  {
    "ID": "A125",
@@ -1495,9 +1495,9 @@
    "Products": "千層麵",
    "Test mode": "距離(拉)",
    "Type of action": "拉伸測試",
-   "Probe or Fixture": "Noodle stretching rig 麵條拉伸測試組",
+   "Probe or Fixture": "麵條拉伸測試組",
    "Tittle": "三種熟千層面的拉伸強度和延展性的評估",
-   "file": "../files/zhA125.pdf"
+   "file": "../files/M125.pdf"
  },
  {
    "ID": "A126",
@@ -1507,9 +1507,9 @@
    "Products": "麵條",
    "Test mode": "距離(拉)",
    "Type of action": "拉伸測試",
-   "Probe or Fixture": "Noodle stretching rig 麵條拉伸測試組",
+   "Probe or Fixture": "麵條拉伸測試組",
    "Tittle": "麵條的延伸性（或稱“抗拉強度”）比較",
-   "file": "../files/zhA126.pdf"
+   "file": "../files/M126.pdf"
  },
  {
    "ID": "A127",
@@ -1519,9 +1519,9 @@
    "Products": "麵條",
    "Test mode": "形變(壓)",
    "Type of action": "壓縮測試",
-   "Probe or Fixture": "φ 36 mm cylinder probe. 直徑36mm柱形探頭",
+   "Probe or Fixture": "直徑36mm柱形探頭",
    "Tittle": "使用圓柱探頭比較麵條的硬度和黏性",
-   "file": "../files/zhA127.pdf"
+   "file": "../files/M127.pdf"
  },
  {
    "ID": "A128",
@@ -1531,9 +1531,9 @@
    "Products": "造型義大利麵",
    "Test mode": "距離(壓)",
    "Type of action": "剪切測試",
-   "Probe or Fixture": "Kramer shear cell - 5 blades 五刃克萊默批量剪切測試組",
+   "Probe or Fixture": "五刃克萊默批量剪切測試組",
    "Tittle": "四種義大利麵的硬度比較",
-   "file": "../files/zhA128.pdf"
+   "file": "../files/M128.pdf"
  },
  {
    "ID": "A129",
@@ -1543,9 +1543,9 @@
    "Products": "飯",
    "Test mode": "形變(壓)",
    "Type of action": "壓縮測試",
-   "Probe or Fixture": "φ 36 mm cylinder probe. 直徑36mm柱形探頭",
+   "Probe or Fixture": "直徑36mm柱形探頭",
    "Tittle": "四種米飯硬度、黏性比較",
-   "file": "../files/zhA129.pdf"
+   "file": "../files/M129.pdf"
  },
  {
    "ID": "A130",
@@ -1555,9 +1555,9 @@
    "Products": "米布丁",
    "Test mode": "形變(壓)",
    "Type of action": "壓縮測試",
-   "Probe or Fixture": "φ 40 mm cylinder probe. 直徑40mm柱形探頭",
+   "Probe or Fixture": "直徑40mm柱形探頭",
    "Tittle": "兩種米布丁的米粒硬度比較",
-   "file": "../files/zhA130.pdf"
+   "file": "../files/M130.pdf"
  },
  {
    "ID": "A131",
@@ -1567,9 +1567,9 @@
    "Products": "乾義大利麵條",
    "Test mode": "距離(壓)",
    "Type of action": "壓縮測試",
-   "Probe or Fixture": "Spaghetti bending rig 麵條折斷測試組",
+   "Probe or Fixture": "麵條折斷測試組",
    "Tittle": "使用麵條折斷測試組測定乾義大利麵的斷裂強度",
-   "file": "../files/zhA131.pdf"
+   "file": "../files/M131.pdf"
  },
  {
    "ID": "A132",
@@ -1579,9 +1579,9 @@
    "Products": "煮熟的義大利麵",
    "Test mode": "距離(壓)",
    "Type of action": "剪切測試",
-   "Probe or Fixture": "Blade of acrylic 壓克力切刀組",
+   "Probe or Fixture": "壓克力切刀組",
    "Tittle": "使用 AACC（16-50）標準方法測定義大利麵硬度",
-   "file": "../files/zhA132.pdf"
+   "file": "../files/M132.pdf"
  },
  {
    "ID": "A133",
@@ -1591,9 +1591,9 @@
    "Products": "洋芋片",
    "Test mode": "距離(壓)",
    "Type of action": "擠壓測試",
-   "Probe or Fixture": "Ottawa Cell 渥太華批量壓縮測試組",
+   "Probe or Fixture": "渥太華批量壓縮測試組",
    "Tittle": "使用渥太華批量壓縮治具對脆性樣品的質地品質進行比較",
-   "file": "../files/zhA133.pdf"
+   "file": "../files/M133.pdf"
  },
  {
    "ID": "A134",
@@ -1603,9 +1603,9 @@
    "Products": "玉米片",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "Potato chips crispness rig 薯片酥脆測試組",
+   "Probe or Fixture": "薯片酥脆測試組",
    "Tittle": "玉米片的易碎性",
-   "file": "../files/zhA134.pdf"
+   "file": "../files/M134.pdf"
  },
  {
    "ID": "A135",
@@ -1615,9 +1615,9 @@
    "Products": "擠出澎發零食",
    "Test mode": "距離(壓)",
    "Type of action": "剪切測試",
-   "Probe or Fixture": "Kramer shear cell - 5 blades 五刃克萊默批量剪切測試組",
+   "Probe or Fixture": "五刃克萊默批量剪切測試組",
    "Tittle": "五刃克萊默批量剪切測試組測量擠壓零食樣品的易碎性",
-   "file": "../files/zhA135.pdf"
+   "file": "../files/M135.pdf"
  },
  {
    "ID": "A136",
@@ -1627,9 +1627,9 @@
    "Products": "薯條",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "Fires Multi-puncture rig 多探針薯條穿刺測試組",
+   "Probe or Fixture": "多探針薯條穿刺測試組",
    "Tittle": "使用多探針薯條穿刺治具測量薯條(薯片)的硬度",
-   "file": "../files/zhA136.pdf"
+   "file": "../files/M136.pdf"
  },
  {
    "ID": "A137",
@@ -1639,9 +1639,9 @@
    "Products": "沾醬",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "φ 25 mm cylinder probe.Aluminum 直徑25mm柱形探頭(鋁合金)",
+   "Probe or Fixture": "直徑25mm柱形探頭(鋁合金)",
    "Tittle": "使用圓柱探頭比較3種沾醬的穿透力和一致性",
-   "file": "../files/zhA137.pdf"
+   "file": "../files/M137.pdf"
  },
  {
    "ID": "A138",
@@ -1651,9 +1651,9 @@
    "Products": "鷹嘴豆泥",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "φ 25 mm cylinder probe.Aluminum 直徑25mm柱形探頭(鋁合金)",
+   "Probe or Fixture": "直徑25mm柱形探頭(鋁合金)",
    "Tittle": "使用圓柱探頭比較全脂和低脂鷹嘴豆泥的滲透力和濃稠度",
-   "file": "../files/zhA138.pdf"
+   "file": "../files/M138.pdf"
  },
  {
    "ID": "A139",
@@ -1663,9 +1663,9 @@
    "Products": "酸奶黃瓜醬",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "φ 25 mm cylinder probe.Aluminum 直徑25mm柱形探頭(鋁合金)",
+   "Probe or Fixture": "直徑25mm柱形探頭(鋁合金)",
    "Tittle": "使用圓柱探頭比較全脂和低脂優格黃瓜醬的穿透力和濃稠度",
-   "file": "../files/zhA139.pdf"
+   "file": "../files/M139.pdf"
  },
  {
    "ID": "A140",
@@ -1675,9 +1675,9 @@
    "Products": "番茄醬",
    "Test mode": "距離(壓)",
    "Type of action": "擠壓測試",
-   "Probe or Fixture": "Back extrusion rig 反擠壓測試組",
+   "Probe or Fixture": "反擠壓測試組",
    "Tittle": "透過反擠壓法比較兩種品牌番茄醬的濃稠度",
-   "file": "../files/zhA140.pdf"
+   "file": "../files/M140.pdf"
  },
  {
    "ID": "A141",
@@ -1687,9 +1687,9 @@
    "Products": "巧克力營養棒",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "φ 4 mm cylinder probe 直徑4mm柱形探頭",
+   "Probe or Fixture": "直徑4mm柱形探頭",
    "Tittle": "巧克力營養棒在不同保存期限的抗穿透性",
-   "file": "../files/zhA141.pdf"
+   "file": "../files/M141.pdf"
  },
  {
    "ID": "A142",
@@ -1699,9 +1699,9 @@
    "Products": "杏仁",
    "Test mode": "距離(壓)",
    "Type of action": "剪切測試",
-   "Probe or Fixture": "Sharpness knife rig 鋒利切刀測試組",
+   "Probe or Fixture": "鋒利切刀測試組",
    "Tittle": "用鋒利切刀測量杏仁的外部和內部硬度",
-   "file": "../files/zhA142.pdf"
+   "file": "../files/M142.pdf"
  },
  {
    "ID": "A143",
@@ -1711,9 +1711,9 @@
    "Products": "泡菜",
    "Test mode": "距離(壓)",
    "Type of action": "剪切測試",
-   "Probe or Fixture": "Kramer shear cell - 10 blades 十刃克萊默批量剪切測試組",
+   "Probe or Fixture": "十刃克萊默批量剪切測試組",
    "Tittle": "泡菜硬度的測量",
-   "file": "../files/zhA143.pdf"
+   "file": "../files/M143.pdf"
  },
  {
    "ID": "A144",
@@ -1723,9 +1723,9 @@
    "Products": "披薩",
    "Test mode": "距離(拉)",
    "Type of action": "拉伸測試",
-   "Probe or Fixture": "Pizza Tensile Rig 披薩拉伸測試組",
+   "Probe or Fixture": "披薩拉伸測試組",
    "Tittle": "比較烤箱烤製和微波爐烤製的披薩拉伸韌性",
-   "file": "../files/zhA144.pdf"
+   "file": "../files/M144.pdf"
  },
  {
    "ID": "A145",
@@ -1735,9 +1735,9 @@
    "Products": "迷你印度薄脆",
    "Test mode": "距離(壓)",
    "Type of action": "擠壓測試",
-   "Probe or Fixture": "Ottawa Cell 渥太華批量壓縮測試組",
+   "Probe or Fixture": "渥太華批量壓縮測試組",
    "Tittle": "使用渥太華批量壓縮治具對兩種品牌迷你薄脆的質感品質進行比較",
-   "file": "../files/zhA145.pdf"
+   "file": "../files/M145.pdf"
  },
  {
    "ID": "A146",
@@ -1747,9 +1747,9 @@
    "Products": "蝦餅",
    "Test mode": "距離(壓)",
    "Type of action": "擠壓測試",
-   "Probe or Fixture": "Ottawa Cell 渥太華批量壓縮測試組",
+   "Probe or Fixture": "渥太華批量壓縮測試組",
    "Tittle": "使用渥太華批量壓縮治具對兩種品牌蝦餅的質地品質進行比較",
-   "file": "../files/zhA146.pdf"
+   "file": "../files/M146.pdf"
  },
  {
    "ID": "A147",
@@ -1759,9 +1759,9 @@
    "Products": "椒鹽脆餅棒",
    "Test mode": "距離(壓)",
    "Type of action": "彎曲測試",
-   "Probe or Fixture": "Three-point bending rig 三點彎曲測試組",
+   "Probe or Fixture": "三點彎曲測試組",
    "Tittle": "椒鹽脆餅棒的硬度和易碎性的測量",
-   "file": "../files/zhA147.pdf"
+   "file": "../files/M147.pdf"
  },
  {
    "ID": "A148",
@@ -1771,9 +1771,9 @@
    "Products": "植物萃取物塗抹醬",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "Butter spreadability rig 油脂塗佈性測試組",
+   "Probe or Fixture": "油脂塗佈性測試組",
    "Tittle": "測量植物萃取抹醬的塗抹性(硬度)",
-   "file": "../files/zhA148.pdf"
+   "file": "../files/M148.pdf"
  },
  {
    "ID": "A149",
@@ -1783,9 +1783,9 @@
    "Products": "巧克力抹醬",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "Butter spreadability rig 油脂塗佈性測試組",
+   "Probe or Fixture": "油脂塗佈性測試組",
    "Tittle": "比較5°C 和 20°C 儲存溫度下巧克力醬的塗抹性(硬度)",
-   "file": "../files/zhA149.pdf"
+   "file": "../files/M149.pdf"
  },
  {
    "ID": "A150",
@@ -1795,9 +1795,9 @@
    "Products": "檸檬凝乳",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "Butter spreadability rig 油脂塗佈性測試組",
+   "Probe or Fixture": "油脂塗佈性測試組",
    "Tittle": "比較豪華型和經濟型檸檬醬的塗抹性(硬度)",
-   "file": "../files/zhA150.pdf"
+   "file": "../files/M150.pdf"
  },
  {
    "ID": "A151",
@@ -1807,9 +1807,9 @@
    "Products": "花生醬（滑順）",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "Butter spreadability rig 油脂塗佈性測試組",
+   "Probe or Fixture": "油脂塗佈性測試組",
    "Tittle": "測量花生醬的塗抹性(硬度或柔順度）",
-   "file": "../files/zhA151.pdf"
+   "file": "../files/M151.pdf"
  },
  {
    "ID": "A152",
@@ -1819,9 +1819,9 @@
    "Products": "柑橘醬",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "1\" Radius Cylinder (P/1R) 直徑1英吋柱形探頭帶R2角",
+   "Probe or Fixture": "直徑1英吋柱形探頭帶R2角",
    "Tittle": "測量果醬的凝膠強度、破裂力、脆性、彈性和黏著性",
-   "file": "../files/zhA152.pdf"
+   "file": "../files/M152.pdf"
  },
  {
    "ID": "A153",
@@ -1831,8 +1831,8 @@
    "Products": "起司醬",
    "Test mode": "距離(壓)",
    "Type of action": "穿刺測試",
-   "Probe or Fixture": "Butter spreadability rig 油脂塗佈性測試組",
+   "Probe or Fixture": "油脂塗佈性測試組",
    "Tittle": "起司醬的可塗抹性(柔軟度)量測",
-   "file": "../files/zhA153.pdf"
+   "file": "../files/M153.pdf"
  }
 ]
