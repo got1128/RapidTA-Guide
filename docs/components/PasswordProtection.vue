@@ -1,9 +1,39 @@
 <template>
   <div v-if="!isAuthenticated" class="password-overlay">
     <div class="password-container">
-      <div class="password-box">
-        <h2>🔒 Content protection</h2>
-        <p>Please enter 4 numbers that sum to the same amount*</p>
+      <!-- 語言選擇步驟 -->
+      <div v-if="!languageSelected" class="language-box">
+        <h2>🌐 {{ defaultText.selectLanguage }}</h2>
+        <p>{{ defaultText.chooseLanguage }}</p>
+        
+        <div class="language-options">
+          <button 
+            v-for="(lang, code) in languages" 
+            :key="code"
+            @click="selectLanguage(code)"
+            class="language-btn"
+          >
+            <span class="flag">{{ lang.flag }}</span>
+            <span class="name">{{ lang.name }}</span>
+            <span class="path">{{ lang.path }}</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 密碼輸入步驟 -->
+      <div v-else-if="!isValidating" class="password-box">
+        <div class="language-switcher">
+          <button @click="goBackToLanguageSelection" class="back-btn">
+            ← {{ text.back }}
+          </button>
+          <div class="current-language">
+            <span>{{ languages[selectedLanguage].flag }}</span>
+            <span>{{ languages[selectedLanguage].name }}</span>
+          </div>
+        </div>
+
+        <h2>🔒 {{ text.title }}</h2>
+        <p>{{ text.description }}</p>
         
         <div class="input-group">
           <input 
@@ -24,11 +54,11 @@
         </div>
         
         <div v-if="hasError" class="error-message">
-          The total must be equal to *, please re-enter
+          {{ text.errorMessage }}
         </div>
         
         <div class="sum-display">
-          Current total: {{ currentSum }}
+          {{ text.currentTotal }}: {{ currentSum }}
         </div>
         
         <button 
@@ -37,8 +67,24 @@
           class="submit-btn"
           :class="{ 'disabled': !allDigitsFilled }"
         >
-          Confirm
+          {{ text.confirm }}
         </button>
+      </div>
+
+      <!-- 驗證成功提示 -->
+      <div v-else class="success-box">
+        <div class="success-animation">
+          <div class="checkmark">✓</div>
+        </div>
+        <h2>{{ text.success }}</h2>
+        <p>{{ text.redirecting }}</p>
+        <div class="target-info">
+          <span class="flag">{{ languages[selectedLanguage].flag }}</span>
+          <span class="path">{{ languages[selectedLanguage].path }}</span>
+        </div>
+        <div class="loading-bar">
+          <div class="loading-progress"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -54,15 +100,97 @@ import { ref, computed, onMounted, nextTick } from 'vue'
 const digits = ref(['', '', '', ''])
 const hasError = ref(false)
 const isAuthenticated = ref(false)
+const languageSelected = ref(false)
+const selectedLanguage = ref('en')
+const isValidating = ref(false)
 const inputRefs = ref([])
 
-// 檢查是否已經通過驗證（從 sessionStorage 讀取）
+// 預設語言文字（用於語言選擇頁面）
+const defaultText = {
+  selectLanguage: 'Select Language',
+  chooseLanguage: 'Please choose your preferred language to continue'
+}
+
+// 多語言配置
+const languages = {
+  'en': {
+    flag: '🇺🇸',
+    name: 'English',
+    path: '/RapidTA-Guide/',  // 你的英文頁面路徑
+    texts: {
+      title: 'Content Protection',
+      description: 'Please enter 4 numbers that sum to the same amount*',
+      errorMessage: 'The total must be equal to *, please re-enter',
+      currentTotal: 'Current total',
+      confirm: 'Confirm',
+      back: 'Back',
+      success: 'Access Granted!',
+      redirecting: 'Redirecting to English content...'
+    }
+  },
+  'zh-CN': {
+    flag: '🇨🇳',
+    name: '简体中文',
+    path: '/RapidTA-Guide/cn/',  // 你的簡體中文頁面路徑
+    texts: {
+      title: '内容保护',
+      description: '请输入四个数字，总和必须等于指定数值*',
+      errorMessage: '总和必须等于 *，请重新输入',
+      currentTotal: '当前总和',
+      confirm: '确认',
+      back: '返回',
+      success: '验证成功！',
+      redirecting: '正在跳转到简体中文内容...'
+    }
+  },
+  'zh-TW': {
+    flag: '🇹🇼',
+    name: '繁體中文',
+    path: '/RapidTA-Guide/zh/',  // 你的繁體中文頁面路徑
+    texts: {
+      title: '內容保護',
+      description: '請輸入四個數字，總和必須等於指定數值*',
+      errorMessage: '總和必須等於 *，請重新輸入',
+      currentTotal: '目前總和',
+      confirm: '確認',
+      back: '返回',
+      success: '驗證成功！',
+      redirecting: '正在跳轉到繁體中文內容...'
+    }
+  }
+}
+
+// 當前語言文字
+const text = computed(() => {
+  return languages[selectedLanguage.value].texts
+})
+
+// 檢查是否已經通過驗證和語言選擇
 onMounted(() => {
   const authStatus = sessionStorage.getItem('vitepress-auth')
+  const savedLanguage = sessionStorage.getItem('vitepress-language')
+  
   if (authStatus === 'true') {
     isAuthenticated.value = true
   }
+  
+  if (savedLanguage && languages[savedLanguage]) {
+    selectedLanguage.value = savedLanguage
+    languageSelected.value = true
+  }
 })
+
+const selectLanguage = (languageCode) => {
+  selectedLanguage.value = languageCode
+  languageSelected.value = true
+  sessionStorage.setItem('vitepress-language', languageCode)
+}
+
+const goBackToLanguageSelection = () => {
+  languageSelected.value = false
+  digits.value = ['', '', '', '']
+  hasError.value = false
+}
 
 const currentSum = computed(() => {
   return digits.value.reduce((sum, digit) => {
@@ -122,9 +250,22 @@ const validatePassword = () => {
   if (!allDigitsFilled.value) return
   
   if (currentSum.value === 16) {
-    isAuthenticated.value = true
-    sessionStorage.setItem('vitepress-auth', 'true')
+    // 顯示驗證成功畫面
+    isValidating.value = true
     hasError.value = false
+    
+    // 儲存驗證狀態
+    sessionStorage.setItem('vitepress-auth', 'true')
+    
+    // 延遲跳轉，讓用戶看到成功動畫
+    setTimeout(() => {
+      const targetPath = languages[selectedLanguage.value].path
+      if (targetPath) {
+        // 如果是當前頁面的子路徑，使用相對路徑
+        window.location.href = targetPath
+      }
+    }, 1000) // 2秒後跳轉
+    
   } else {
     hasError.value = true
     // 清空輸入並重新聚焦第一個輸入框
@@ -133,7 +274,7 @@ const validatePassword = () => {
       nextTick(() => {
         inputRefs.value[0]?.focus()
       })
-    }, 1000)
+    }, 500)
   }
 }
 </script>
@@ -161,7 +302,9 @@ const validatePassword = () => {
   padding: 20px;
 }
 
-.password-box {
+.language-box,
+.password-box,
+.success-box {
   background: white;
   padding: 40px;
   border-radius: 16px;
@@ -169,20 +312,192 @@ const validatePassword = () => {
   text-align: center;
   max-width: 400px;
   width: 100%;
+  animation: fadeIn 0.5s ease;
 }
 
-.password-box h2 {
+.language-box h2,
+.password-box h2,
+.success-box h2 {
   margin-bottom: 10px;
   color: #333;
   font-size: 24px;
 }
 
-.password-box p {
+.language-box p,
+.password-box p,
+.success-box p {
   margin-bottom: 30px;
   color: #666;
   font-size: 16px;
 }
 
+/* 語言選擇樣式 */
+.language-options {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.language-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 15px 20px;
+  border: 2px solid #e1e8ed;
+  border-radius: 12px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 16px;
+}
+
+.language-btn:hover {
+  border-color: #667eea;
+  background: #f8f9ff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+}
+
+.language-btn .flag {
+  font-size: 24px;
+}
+
+.language-btn .name {
+  font-weight: 500;
+  color: #333;
+  flex: 1;
+  text-align: left;
+}
+
+.language-btn .path {
+  font-size: 12px;
+  color: #999;
+  background: #f5f5f5;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+/* 語言切換器 */
+.language-switcher {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.back-btn {
+  background: none;
+  border: none;
+  color: #667eea;
+  cursor: pointer;
+  font-size: 14px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+  background: #f0f4ff;
+}
+
+.current-language {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #666;
+}
+
+/* 成功提示樣式 */
+.success-box {
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
+  color: white;
+  text-align: center;
+}
+
+.success-box h2,
+.success-box p {
+  color: white;
+}
+
+.success-animation {
+  margin-bottom: 20px;
+}
+
+.checkmark {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 40px;
+  margin: 0 auto 20px;
+  animation: checkmarkAnimation 0.6s ease-in-out;
+}
+
+@keyframes checkmarkAnimation {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.target-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+  padding: 10px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+}
+
+.target-info .flag {
+  font-size: 20px;
+}
+
+.target-info .path {
+  font-family: monospace;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.loading-bar {
+  width: 100%;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.loading-progress {
+  height: 100%;
+  background: white;
+  border-radius: 2px;
+  animation: loading 2s linear forwards;
+}
+
+@keyframes loading {
+  from { width: 0%; }
+  to { width: 100%; }
+}
+
+/* 密碼輸入樣式 */
 .input-group {
   display: flex;
   justify-content: center;
@@ -278,7 +593,9 @@ const validatePassword = () => {
 
 /* 響應式設計 */
 @media (max-width: 768px) {
-  .password-box {
+  .language-box,
+  .password-box,
+  .success-box {
     padding: 30px 20px;
     margin: 20px;
   }
@@ -292,10 +609,16 @@ const validatePassword = () => {
   .input-group {
     gap: 10px;
   }
+  
+  .language-btn {
+    padding: 12px 15px;
+  }
 }
 
 @media (max-width: 480px) {
-  .password-box {
+  .language-box,
+  .password-box,
+  .success-box {
     padding: 25px 15px;
     margin: 15px;
   }
@@ -309,23 +632,18 @@ const validatePassword = () => {
   .input-group {
     gap: 8px;
   }
-}
-
-/* 確保在所有設備上都能正常顯示 */
-@media (min-width: 769px) {
-  .password-overlay {
-    display: flex !important;
+  
+  .language-btn {
+    padding: 10px 12px;
+    font-size: 14px;
+    flex-direction: column;
+    text-align: center;
   }
   
-  .password-box {
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-  }
-  
-  .digit-input {
-    display: inline-block !important;
-    visibility: visible !important;
+  .language-switcher {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
   }
 }
 </style>

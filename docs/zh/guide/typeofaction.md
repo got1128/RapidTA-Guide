@@ -1,5 +1,1 @@
-# 原理动画
-
-<ClientOnly>
-  <ProductExplorer />
-</ClientOnly>
+# 原理動畫
