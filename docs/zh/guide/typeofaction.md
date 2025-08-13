@@ -175,7 +175,7 @@
 11. TPA Test 全質構測試
 <div class="test-container">
   <div class="test-gif">
-    <img src="../gifs/zh_11_TPA.gif" alt="食物TPA測試動畫" />
+    <img src="/gifs/zh_11_TPA.gif" alt="食物TPA測試動畫" />
   </div>
   <div class="test-description">
     <h3>測試目的</h3>
