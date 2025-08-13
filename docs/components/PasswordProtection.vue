@@ -57,9 +57,7 @@
           {{ text.errorMessage }}
         </div>
         
-        <div class="sum-display">
-          {{ text.currentTotal }}: {{ currentSum }}
-        </div>
+
         
         <button 
           @click="validatePassword" 
@@ -119,9 +117,6 @@ const languages = {
     path: '/RapidTA-Guide/',  // 你的英文頁面路徑
     texts: {
       title: 'Content Protection',
-      description: 'Please enter 4 numbers that sum to the same amount*',
-      errorMessage: 'The total must be equal to *, please re-enter',
-      currentTotal: 'Current total',
       confirm: 'Confirm',
       back: 'Back',
       success: 'Access Granted!',
@@ -134,9 +129,6 @@ const languages = {
     path: '/RapidTA-Guide/cn/',  // 你的簡體中文頁面路徑
     texts: {
       title: '内容保护',
-      description: '请输入四个数字，总和必须等于指定数值*',
-      errorMessage: '总和必须等于 *，请重新输入',
-      currentTotal: '当前总和',
       confirm: '确认',
       back: '返回',
       success: '验证成功！',
@@ -149,9 +141,6 @@ const languages = {
     path: '/RapidTA-Guide/zh/',  // 你的繁體中文頁面路徑
     texts: {
       title: '內容保護',
-      description: '請輸入四個數字，總和必須等於指定數值*',
-      errorMessage: '總和必須等於 *，請重新輸入',
-      currentTotal: '目前總和',
       confirm: '確認',
       back: '返回',
       success: '驗證成功！',
