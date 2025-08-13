@@ -106,7 +106,7 @@ const inputRefs = ref([])
 // 預設語言文字（用於語言選擇頁面）
 const defaultText = {
   selectLanguage: 'Select Language',
-  chooseLanguage: 'Please choose your preferred language to continue'
+
 }
 
 // 多語言配置
@@ -281,6 +281,8 @@ const validatePassword = () => {
   justify-content: center;
   z-index: 9999;
   overflow: hidden;
+  /* 強制使用淺色主題，避免受系統黑暗模式影響 */
+  color-scheme: light !important;
 }
 
 .password-container {
@@ -294,7 +296,9 @@ const validatePassword = () => {
 .language-box,
 .password-box,
 .success-box {
-  background: white;
+  /* 強制背景為白色，不受黑暗模式影響 */
+  background: #ffffff !important;
+  color: #333333 !important;
   padding: 40px;
   border-radius: 16px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
@@ -302,29 +306,30 @@ const validatePassword = () => {
   max-width: 400px;
   width: 100%;
   animation: fadeIn 0.5s ease;
+  /* 確保所有子元素也使用淺色主題 */
+  color-scheme: light !important;
 }
 
 .language-box h2,
-.password-box h2,
-.success-box h2 {
+.password-box h2 {
   margin-bottom: 10px;
-  color: #333;
+  color: #333333 !important;
   font-size: 24px;
 }
 
 .language-box p,
-.password-box p,
-.success-box p {
+.password-box p {
   margin-bottom: 30px;
-  color: #666;
+  color: #666666 !important;
   font-size: 16px;
 }
 
-/* 語言選擇樣式 */
+/* 語言選擇樣式 - 強制白色主題 */
 .language-options {
   display: flex;
   flex-direction: column;
-  gap: 12px;
+  gap: 16px;
+  padding: 4px 0;
 }
 
 .language-btn {
@@ -333,19 +338,21 @@ const validatePassword = () => {
   justify-content: space-between;
   gap: 15px;
   padding: 15px 20px;
-  border: 2px solid #e1e8ed;
+  border: 2px solid #e1e8ed !important;
   border-radius: 12px;
-  background: white;
+  background: #ffffff !important;
+  color: #333333 !important;
   cursor: pointer;
   transition: all 0.3s ease;
   font-size: 16px;
+  margin: 2px 0;
 }
 
 .language-btn:hover {
-  border-color: #667eea;
-  background: #f8f9ff;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.15);
+  border-color: #667eea !important;
+  background: #f8f9ff !important;
+  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.15);
+  transform: translateY(-2px)
 }
 
 .language-btn .flag {
@@ -354,15 +361,15 @@ const validatePassword = () => {
 
 .language-btn .name {
   font-weight: 500;
-  color: #333;
+  color: #333333 !important;
   flex: 1;
   text-align: left;
 }
 
 .language-btn .path {
   font-size: 12px;
-  color: #999;
-  background: #f5f5f5;
+  color: #999999 !important;
+  background: #f5f5f5 !important;
   padding: 2px 8px;
   border-radius: 4px;
 }
@@ -374,13 +381,13 @@ const validatePassword = () => {
   align-items: center;
   margin-bottom: 20px;
   padding-bottom: 15px;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid #eeeeee !important;
 }
 
 .back-btn {
-  background: none;
-  border: none;
-  color: #667eea;
+  background: none !important;
+  border: none !important;
+  color: #667eea !important;
   cursor: pointer;
   font-size: 14px;
   padding: 5px 10px;
@@ -389,7 +396,7 @@ const validatePassword = () => {
 }
 
 .back-btn:hover {
-  background: #f0f4ff;
+  background: #f0f4ff !important;
 }
 
 .current-language {
@@ -397,19 +404,19 @@ const validatePassword = () => {
   align-items: center;
   gap: 8px;
   font-size: 14px;
-  color: #666;
+  color: #666666 !important;
 }
 
 /* 成功提示樣式 */
 .success-box {
-  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%);
-  color: white;
+  background: linear-gradient(135deg, #4CAF50 0%, #45a049 100%) !important;
+  color: #ffffff !important;
   text-align: center;
 }
 
 .success-box h2,
 .success-box p {
-  color: white;
+  color: #ffffff !important;
 }
 
 .success-animation {
@@ -427,6 +434,7 @@ const validatePassword = () => {
   font-size: 40px;
   margin: 0 auto 20px;
   animation: checkmarkAnimation 0.6s ease-in-out;
+  color: #ffffff !important;
 }
 
 @keyframes checkmarkAnimation {
@@ -463,6 +471,7 @@ const validatePassword = () => {
   background: rgba(255, 255, 255, 0.2);
   padding: 4px 8px;
   border-radius: 4px;
+  color: #ffffff !important;
 }
 
 .loading-bar {
@@ -476,7 +485,7 @@ const validatePassword = () => {
 
 .loading-progress {
   height: 100%;
-  background: white;
+  background: #ffffff !important;
   border-radius: 2px;
   animation: loading 2s linear forwards;
 }
@@ -497,14 +506,14 @@ const validatePassword = () => {
 .digit-input {
   width: 60px;
   height: 60px;
-  border: 2px solid #ddd;
+  border: 2px solid #dddddd !important;
   border-radius: 8px;
   text-align: center;
   font-size: 24px;
   font-weight: bold;
   transition: all 0.3s ease;
-  background: white;
-  color: #333;
+  background: #ffffff !important;
+  color: #333333 !important;
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: textfield;
@@ -518,13 +527,13 @@ const validatePassword = () => {
 
 .digit-input:focus {
   outline: none;
-  border-color: #667eea;
+  border-color: #667eea !important;
   box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-  background: white;
+  background: #ffffff !important;
 }
 
 .digit-input.error {
-  border-color: #ff4757;
+  border-color: #ff4757 !important;
   animation: shake 0.5s ease-in-out;
 }
 
@@ -535,7 +544,7 @@ const validatePassword = () => {
 }
 
 .error-message {
-  color: #ff4757;
+  color: #ff4757 !important;
   font-size: 14px;
   margin-bottom: 15px;
   animation: fadeIn 0.3s ease;
@@ -548,22 +557,22 @@ const validatePassword = () => {
 
 .sum-display {
   font-size: 18px;
-  color: #333;
+  color: #333333 !important;
   margin-bottom: 25px;
   font-weight: 500;
 }
 
 .submit-btn {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  color: white;
-  border: none;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
+  color: #ffffff !important;
+  border: none !important;
   padding: 12px 30px;
   border-radius: 25px;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  min-width: 100px;
+  min-width: 80px;
 }
 
 .submit-btn:hover:not(.disabled) {
@@ -572,7 +581,7 @@ const validatePassword = () => {
 }
 
 .submit-btn.disabled {
-  background: #ccc;
+  background: #cccccc !important;
   cursor: not-allowed;
 }
 
@@ -633,6 +642,57 @@ const validatePassword = () => {
     flex-direction: column;
     gap: 10px;
     text-align: center;
+  }
+}
+
+/* 強制覆蓋黑暗模式的媒體查詢 */
+@media (prefers-color-scheme: dark) {
+  .password-overlay {
+    color-scheme: light !important;
+  }
+  
+  .language-box,
+  .password-box {
+    background: #ffffff !important;
+    color: #333333 !important;
+  }
+  
+  .language-box h2,
+  .password-box h2,
+  .language-box p,
+  .password-box p {
+    color: #333333 !important;
+  }
+  
+  .language-btn {
+    background: #ffffff !important;
+    color: #333333 !important;
+    border-color: #e1e8ed !important;
+  }
+  
+  .language-btn:hover {
+    background: #f8f9ff !important;
+    border-color: #667eea !important;
+  }
+  
+  .language-btn .name {
+    color: #333333 !important;
+  }
+  
+  .language-btn .path {
+    color: #999999 !important;
+    background: #f5f5f5 !important;
+  }
+  
+  .digit-input {
+    background: #ffffff !important;
+    color: #333333 !important;
+    border-color: #dddddd !important;
+  }
+  
+  .digit-input:focus {
+    background: #ffffff !important;
+    border-color: #667eea !important;
   }
 }
 </style>
