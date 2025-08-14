@@ -360,11 +360,15 @@ const validatePassword = () => {
   padding: 4px 0;
   flex: 1;
   justify-content: center;
+  background: #ffffff !important;
+  border-radius: 8px;
+  margin: 10px 0;
 }
 
 @media (max-width: 480px) {
   .language-options {
     gap: 10px;
+    margin: 8px 0;
   }
 }
 
@@ -457,23 +461,45 @@ const validatePassword = () => {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 20px;
-  padding-bottom: 15px;
+  padding: 15px;
+  margin: -40px -40px 20px -40px;
+  background: #ffffff !important;
   border-bottom: 1px solid #eeeeee !important;
+  border-radius: 16px 16px 0 0;
+  color-scheme: light !important;
+}
+
+/* 手機版語言切換器調整 */
+@media (max-width: 480px) {
+  .language-switcher {
+    margin: -30px -20px 20px -20px;
+    padding: 12px 20px;
+  }
+}
+
+@media (max-width: 360px) {
+  .language-switcher {
+    margin: -20px -15px 20px -15px;
+    padding: 10px 15px;
+  }
 }
 
 .back-btn {
-  background: none !important;
-  border: none !important;
+  background: #ffffff !important;
+  border: 1px solid #e1e8ed !important;
   color: #667eea !important;
   cursor: pointer;
   font-size: clamp(12px, 3vw, 14px);
-  padding: 5px 10px;
+  padding: 8px 12px;
   border-radius: 6px;
   transition: all 0.3s ease;
+  font-weight: 500;
 }
 
 .back-btn:hover {
-  background: #f0f4ff !important;
+  background: #f8f9ff !important;
+  border-color: #667eea !important;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.1);
 }
 
 .current-language {
