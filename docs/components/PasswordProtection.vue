@@ -18,6 +18,9 @@
             <span class="path">{{ lang.path }}</span>
           </button>
         </div>
+        
+        <!-- 添加底部空間以匹配密碼框高度 -->
+        <div class="spacer"></div>
       </div>
 
       <!-- 密碼輸入步驟 -->
@@ -56,8 +59,6 @@
         <div v-if="hasError" class="error-message">
           {{ text.errorMessage }}
         </div>
-        
-
         
         <button 
           @click="validatePassword" 
@@ -106,7 +107,7 @@ const inputRefs = ref([])
 // 預設語言文字（用於語言選擇頁面）
 const defaultText = {
   selectLanguage: 'Select Language',
-
+  chooseLanguage: 'Please choose your preferred language'
 }
 
 // 多語言配置
@@ -117,10 +118,12 @@ const languages = {
     path: '/RapidTA-Guide/',  // 你的英文頁面路徑
     texts: {
       title: 'Content Protection',
+      description: 'Enter the 4-digit access code',
       confirm: 'Confirm',
       back: 'Back',
       success: 'Access Granted!',
-      redirecting: 'Redirecting to English content...'
+      redirecting: 'Redirecting to English content...',
+      errorMessage: 'Invalid code. Please try again.'
     }
   },
   'zh-CN': {
@@ -129,10 +132,12 @@ const languages = {
     path: '/RapidTA-Guide/cn/',  // 你的簡體中文頁面路徑
     texts: {
       title: '内容保护',
+      description: '请输入4位数字访问码',
       confirm: '确认',
       back: '返回',
       success: '验证成功！',
-      redirecting: '正在跳转到简体中文内容...'
+      redirecting: '正在跳转到简体中文内容...',
+      errorMessage: '访问码错误，请重试。'
     }
   },
   'zh-TW': {
@@ -141,10 +146,12 @@ const languages = {
     path: '/RapidTA-Guide/zh/',  // 你的繁體中文頁面路徑
     texts: {
       title: '內容保護',
+      description: '請輸入4位數字存取碼',
       confirm: '確認',
       back: '返回',
       success: '驗證成功！',
-      redirecting: '正在跳轉到繁體中文內容...'
+      redirecting: '正在跳轉到繁體中文內容...',
+      errorMessage: '存取碼錯誤，請重試。'
     }
   }
 }
@@ -253,7 +260,7 @@ const validatePassword = () => {
         // 如果是當前頁面的子路徑，使用相對路徑
         window.location.href = targetPath
       }
-    }, 1000) // 2秒後跳轉
+    }, 1000) // 1秒後跳轉
     
   } else {
     hasError.value = true
@@ -291,8 +298,10 @@ const validatePassword = () => {
   justify-content: center;
   min-height: 100vh;
   padding: 20px;
+  width: 100%;
 }
 
+/* 統一容器樣式 - 確保相同高度和白色背景 */
 .language-box,
 .password-box,
 .success-box {
@@ -305,54 +314,109 @@ const validatePassword = () => {
   text-align: center;
   max-width: 400px;
   width: 100%;
+  min-height: 500px; /* 設置最小高度確保一致性 */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   animation: fadeIn 0.5s ease;
   /* 確保所有子元素也使用淺色主題 */
   color-scheme: light !important;
+}
+
+/* 手機響應式優化 */
+@media (max-width: 480px) {
+  .password-container {
+    padding: 15px;
+  }
+  
+  .language-box,
+  .password-box,
+  .success-box {
+    padding: 30px 20px;
+    min-height: 450px;
+    max-width: 100%;
+  }
 }
 
 .language-box h2,
 .password-box h2 {
   margin-bottom: 10px;
   color: #333333 !important;
-  font-size: 24px;
+  font-size: clamp(20px, 4vw, 24px);
 }
 
 .language-box p,
 .password-box p {
   margin-bottom: 30px;
   color: #666666 !important;
-  font-size: 16px;
+  font-size: clamp(14px, 3vw, 16px);
 }
 
-/* 語言選擇樣式 - 強制白色主題 */
+/* 語言選擇樣式 - 手機優化 */
 .language-options {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 12px;
   padding: 4px 0;
+  flex: 1;
+  justify-content: center;
+}
+
+@media (max-width: 480px) {
+  .language-options {
+    gap: 10px;
+  }
 }
 
 .language-btn {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 15px;
-  padding: 15px 20px;
+  gap: 10px;
+  padding: 14px 16px;
   border: 2px solid #e1e8ed !important;
   border-radius: 12px;
   background: #ffffff !important;
   color: #333333 !important;
   cursor: pointer;
   transition: all 0.3s ease;
-  font-size: 16px;
-  margin: 2px 0;
+  font-size: clamp(14px, 3vw, 16px);
+  min-height: 60px;
+}
+
+/* 手機版語言按鈕優化 */
+@media (max-width: 480px) {
+  .language-btn {
+    padding: 12px 14px;
+    min-height: 55px;
+    gap: 8px;
+  }
+  
+  .language-btn .flag {
+    font-size: 20px;
+  }
+  
+  .language-btn .name {
+    font-size: 14px;
+  }
+  
+  .language-btn .path {
+    font-size: 10px;
+    padding: 2px 6px;
+  }
 }
 
 .language-btn:hover {
   border-color: #667eea !important;
   background: #f8f9ff !important;
   box-shadow: 0 6px 20px rgba(102, 126, 234, 0.15);
-  transform: translateY(-2px)
+  transform: translateY(-2px);
+}
+
+@media (max-width: 480px) {
+  .language-btn:hover {
+    transform: translateY(-1px);
+  }
 }
 
 .language-btn .flag {
@@ -372,6 +436,19 @@ const validatePassword = () => {
   background: #f5f5f5 !important;
   padding: 2px 8px;
   border-radius: 4px;
+  white-space: nowrap;
+}
+
+/* 底部空間填充器 */
+.spacer {
+  height: 60px;
+  flex-shrink: 0;
+}
+
+@media (max-width: 480px) {
+  .spacer {
+    height: 40px;
+  }
 }
 
 /* 語言切換器 */
@@ -389,7 +466,7 @@ const validatePassword = () => {
   border: none !important;
   color: #667eea !important;
   cursor: pointer;
-  font-size: 14px;
+  font-size: clamp(12px, 3vw, 14px);
   padding: 5px 10px;
   border-radius: 6px;
   transition: all 0.3s ease;
@@ -403,7 +480,7 @@ const validatePassword = () => {
   display: flex;
   align-items: center;
   gap: 8px;
-  font-size: 14px;
+  font-size: clamp(12px, 3vw, 14px);
   color: #666666 !important;
 }
 
@@ -435,6 +512,14 @@ const validatePassword = () => {
   margin: 0 auto 20px;
   animation: checkmarkAnimation 0.6s ease-in-out;
   color: #ffffff !important;
+}
+
+@media (max-width: 480px) {
+  .checkmark {
+    width: 60px;
+    height: 60px;
+    font-size: 30px;
+  }
 }
 
 @keyframes checkmarkAnimation {
@@ -472,6 +557,7 @@ const validatePassword = () => {
   padding: 4px 8px;
   border-radius: 4px;
   color: #ffffff !important;
+  font-size: clamp(10px, 2.5vw, 12px);
 }
 
 .loading-bar {
@@ -495,12 +581,20 @@ const validatePassword = () => {
   to { width: 100%; }
 }
 
-/* 密碼輸入樣式 */
+/* 密碼輸入樣式 - 響應式優化 */
 .input-group {
   display: flex;
   justify-content: center;
   gap: 15px;
   margin-bottom: 20px;
+  flex: 1;
+  align-items: center;
+}
+
+@media (max-width: 480px) {
+  .input-group {
+    gap: 10px;
+  }
 }
 
 .digit-input {
@@ -517,6 +611,14 @@ const validatePassword = () => {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: textfield;
+}
+
+@media (max-width: 480px) {
+  .digit-input {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
 }
 
 .digit-input::-webkit-outer-spin-button,
@@ -545,7 +647,7 @@ const validatePassword = () => {
 
 .error-message {
   color: #ff4757 !important;
-  font-size: 14px;
+  font-size: clamp(12px, 3vw, 14px);
   margin-bottom: 15px;
   animation: fadeIn 0.3s ease;
 }
@@ -555,20 +657,13 @@ const validatePassword = () => {
   to { opacity: 1; transform: translateY(0); }
 }
 
-.sum-display {
-  font-size: 18px;
-  color: #333333 !important;
-  margin-bottom: 25px;
-  font-weight: 500;
-}
-
 .submit-btn {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%) !important;
   color: #ffffff !important;
   border: none !important;
   padding: 12px 30px;
   border-radius: 25px;
-  font-size: 16px;
+  font-size: clamp(14px, 3vw, 16px);
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
@@ -580,6 +675,12 @@ const validatePassword = () => {
   box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
 }
 
+@media (max-width: 480px) {
+  .submit-btn:hover:not(.disabled) {
+    transform: translateY(-1px);
+  }
+}
+
 .submit-btn.disabled {
   background: #cccccc !important;
   cursor: not-allowed;
@@ -589,110 +690,28 @@ const validatePassword = () => {
   animation: fadeIn 0.5s ease;
 }
 
-/* 響應式設計 */
-@media (max-width: 768px) {
+/* 確保在極小螢幕上的可用性 */
+@media (max-width: 360px) {
   .language-box,
   .password-box,
   .success-box {
-    padding: 30px 20px;
-    margin: 20px;
-  }
-  
-  .digit-input {
-    width: 50px;
-    height: 50px;
-    font-size: 20px;
-  }
-  
-  .input-group {
-    gap: 10px;
+    padding: 20px 15px;
+    min-height: 400px;
   }
   
   .language-btn {
-    padding: 12px 15px;
-  }
-}
-
-@media (max-width: 480px) {
-  .language-box,
-  .password-box,
-  .success-box {
-    padding: 25px 15px;
-    margin: 15px;
-  }
-  
-  .digit-input {
-    width: 45px;
-    height: 45px;
-    font-size: 18px;
+    padding: 10px 12px;
+    min-height: 50px;
   }
   
   .input-group {
     gap: 8px;
   }
   
-  .language-btn {
-    padding: 10px 12px;
-    font-size: 14px;
-    flex-direction: column;
-    text-align: center;
-  }
-  
-  .language-switcher {
-    flex-direction: column;
-    gap: 10px;
-    text-align: center;
-  }
-}
-
-/* 強制覆蓋黑暗模式的媒體查詢 */
-@media (prefers-color-scheme: dark) {
-  .password-overlay {
-    color-scheme: light !important;
-  }
-  
-  .language-box,
-  .password-box {
-    background: #ffffff !important;
-    color: #333333 !important;
-  }
-  
-  .language-box h2,
-  .password-box h2,
-  .language-box p,
-  .password-box p {
-    color: #333333 !important;
-  }
-  
-  .language-btn {
-    background: #ffffff !important;
-    color: #333333 !important;
-    border-color: #e1e8ed !important;
-  }
-  
-  .language-btn:hover {
-    background: #f8f9ff !important;
-    border-color: #667eea !important;
-  }
-  
-  .language-btn .name {
-    color: #333333 !important;
-  }
-  
-  .language-btn .path {
-    color: #999999 !important;
-    background: #f5f5f5 !important;
-  }
-  
   .digit-input {
-    background: #ffffff !important;
-    color: #333333 !important;
-    border-color: #dddddd !important;
-  }
-  
-  .digit-input:focus {
-    background: #ffffff !important;
-    border-color: #667eea !important;
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
   }
 }
 </style>
