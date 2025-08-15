@@ -28,13 +28,13 @@ export default defineConfig({
                 ],
 
                 sidebar: {
-                    '/guide/': [
+                    '/typeofaction': [
                         {
-                            text: "Applications",
+                            text: "typeofaction",
                             items: [
                                 { 
-                                    text: "Food", 
-                                    link: "/guide/applications",
+                                    text: "", 
+                                    link: "/typeofaction",
                                     items: [
                                         { text: "Bakery", link: "/guide/bakery"},
                                         { text: "Cereal", link: "/guide/cereal"},
@@ -70,19 +70,23 @@ export default defineConfig({
                 ],
 
                 sidebar: {
-                    '/zh/guide/': [
+                    '/zh/typeofaction': [
                         {
-                            text: "應用領域",
                             items: [
                                 { 
-                                    text: "食品", 
-                                    link: "/zh/guide/applications",
+                                    text: '質構測試動作說明',
                                     items: [
-                                        { text: "烘焙", link: "/zh/guide/bakery"},
-                                        { text: "穀物", link: "/zh/guide/cereal"},
-                                        { text: "糖果", link: "/zh/guide/confectionery"},
-                                        { text: "乳製品", link: "/zh/guide/dairy"},
-                                        { text: "果蔬", link: "/zh/guide/fruit-vegetables"},
+                                        { text: '1. 黏性測試 (Adhesion)', link: '#_1-adhesion-test-黏性測試' },
+                                        { text: '2. 彎曲測試 (Bending)', link: '#_2-bending-test-彎曲測試' },
+                                        { text: '3. 爆破測試 (Burst)', link: '#_3-burst-test-爆破測試' },
+                                        { text: '4. 壓縮測試 (Compression)', link: '#_4-compression-test-壓縮測試' },
+                                        { text: '5. 蠕變測試 (Creep)', link: '#_5-creep-test-蠕變測試' },
+                                        { text: '6. 剪切測試 (Cutting)', link: '#_6-cutting-test-剪切測試' },
+                                        { text: '7. 擠壓測試 (Extrusion)', link: '#_7-extrusion-test-擠壓測試' },
+                                        { text: '8. 穿刺測試 (Penetration)', link: '#_8-penetration-test-穿刺測試' },
+                                        { text: '9. 鬆弛測試 (Relaxation)', link: '#_9-relaxation-test-鬆弛測試' },
+                                        { text: '10. 拉伸測試 (Tension)', link: '#_10-tension-test-拉伸測試' },
+                                        { text: '11. TPA測試', link: '#_11-tpa-test-全質構測試' }
                                     ]
                                 },
                             ]
