@@ -21,14 +21,14 @@ export default defineConfig({
                             { text: 'Food', link: '/guide/applications' },
                         ]
                     },
-                    { text: 'Accessories', link: '/guide/accessories' },
-                    { text: 'Video', link: '/guide/video' },
-                    { text: 'Type of Action', link: '/guide/typeofaction' },
+                    { text: 'Accessories', link: '/accessories' },
+                    { text: 'Video', link: '/video' },
+                    { text: 'Type of Action', link: '/typeofaction' },
                     { text: 'GitHub', link: 'https://github.com/got1128/RapidTA-Guide.git' }
                 ],
 
                 sidebar: {
-                    '/guide/applications': [
+                    '/guide/': [
                         {
                             text: "Applications",
                             items: [
@@ -63,14 +63,14 @@ export default defineConfig({
                             { text: '食品', link: '/zh/guide/applications' },
                         ]
                     },
-                    { text: '配件', link: '/zh/guide/accessories' },
-                    { text: '影片', link: '/zh/guide/video' },
-                    { text: '動作類型', link: '/zh/guide/typeofaction' },
+                    { text: '配件', link: '/zh/accessories' },
+                    { text: '影片', link: '/zh/video' },
+                    { text: '動作類型', link: '/zh/typeofaction' },
                     { text: 'GitHub', link: 'https://github.com/got1128/RapidTA-Guide.git' }
                 ],
 
                 sidebar: {
-                    '/zh/guide/applications': [
+                    '/zh/guide/': [
                         {
                             text: "應用領域",
                             items: [
@@ -105,14 +105,14 @@ export default defineConfig({
                             { text: '食品', link: '/cn/guide/applications' },
                         ]
                     },
-                    { text: '配件', link: '/cn/guide/accessories' },
-                    { text: '视频', link: '/cn/guide/video' },
-                    { text: '动作类型', link: '/cn/guide/typeofaction' },
+                    { text: '配件', link: '/cn/accessories' },
+                    { text: '视频', link: '/cn/video' },
+                    { text: '动作类型', link: '/cn/typeofaction' },
                     { text: 'GitHub', link: 'https://github.com/got1128/RapidTA-Guide.git' }
                 ],
 
                 sidebar: {
-                    '/cn/guide/applications': [
+                    '/cn/guide/': [
                         {
                             text: "应用领域",
                             items: [
