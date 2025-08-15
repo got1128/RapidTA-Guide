@@ -109,6 +109,7 @@
             >
               <div class="product-info">
                 <h4 class="product-title">{{ item.title }}</h4>
+                <p class="product-description">{{ item.description }}</p>
                 <div class="product-meta">
                   <span class="meta-item">🏷️ {{ item.subclass }}</span>
                   <span class="meta-item">⚙️ {{ item.testMode }}</span>
@@ -161,6 +162,10 @@
             <div class="detail-item">
               <span class="detail-label">探针/夹具:</span>
               <span class="detail-value">{{ selectedProduct.probe }}</span>
+            </div>
+            <div class="detail-item">
+              <span class="detail-label">标题:</span>
+              <span class="detail-value">{{ selectedProduct.description }}</span>
             </div>
           </div>
 
@@ -259,13 +264,14 @@ onMounted(async () => {
   window.addEventListener('resize', handleResize)
   
   try {
-    const res = await fetch('../data/applications.json')
+    const res = await fetch('../../data/applications_cn.json')
     if (!res.ok) throw new Error(`HTTP ${res.status}`)
     
     const json = await res.json()
     data.value = json.map(item => ({
       id: item.ID,
       title: item.Products,
+      description: item.Tittle,
       mainCategory: item['Main Category'],
       subcategory: item.Subcategory,
       subclass: item.Subclass,

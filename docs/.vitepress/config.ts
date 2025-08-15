@@ -32,18 +32,23 @@ export default defineConfig({
                         {
                             text: "typeofaction",
                             items: [
-                                { 
-                                    text: "", 
-                                    link: "/typeofaction",
-                                    items: [
-                                        { text: "Bakery", link: "/guide/bakery"},
-                                        { text: "Cereal", link: "/guide/cereal"},
-                                        { text: "Confectionery", link: "/guide/confectionery"},
-                                        { text: "Dairy", link: "/guide/dairy"},
-                                        { text: "Fruit & Vegetables", link: "/guide/fruit-vegetables"},
+                                        { 
+                                            text: 'Texture Testing Method Descriptions',
+                                            items: [
+                                                { text: '1. Adhesion Test', link: '#_1-adhesion-test' },
+                                                { text: '2. Bending Test', link: '#_2-bending-test' },
+                                                { text: '3. Burst Test', link: '#_3-burst-test' },
+                                                { text: '4. Compression Test', link: '#_4-compression-test' },
+                                                { text: '5. Creep Test', link: '#_5-creep-test' },
+                                                { text: '6. Cutting Test', link: '#_6-cutting-test' },
+                                                { text: '7. Extrusion Test', link: '#_7-extrusion-test' },
+                                                { text: '8. Penetration Test', link: '#_8-penetration-test' },
+                                                { text: '9. Relaxation Test', link: '#_9-relaxation-test' },
+                                                { text: '10. Tension Test', link: '#_10-tension-test' },
+                                                { text: '11. TPA Test', link: '#_11-tpa-test-texture-profile-analysis' }
+                                            ]
+                                        },
                                     ]
-                                },
-                            ]
                         }
                     ]
                 }
@@ -116,22 +121,26 @@ export default defineConfig({
                 ],
 
                 sidebar: {
-                    '/cn/guide/': [
+                    '/cn/typeofaction': [
                         {
-                            text: "应用领域",
                             items: [
-                                { 
-                                    text: "食品", 
-                                    link: "/cn/guide/applications",
-                                    items: [
-                                        { text: "烘焙", link: "/cn/guide/bakery"},
-                                        { text: "谷物", link: "/cn/guide/cereal"},
-                                        { text: "糖果", link: "/cn/guide/confectionery"},
-                                        { text: "乳制品", link: "/cn/guide/dairy"},
-                                        { text: "果蔬", link: "/cn/guide/fruit-vegetables"},
+                                        { 
+                                            text: '质构测试动作说明',
+                                            items: [
+                                                { text: '1. 黏性测试 (Adhesion)', link: '#_1-adhesion-test-黏性测试' },
+                                                { text: '2. 弯曲测试 (Bending)', link: '#_2-bending-test-弯曲测试' },
+                                                { text: '3. 爆破测试 (Burst)', link: '#_3-burst-test-爆破测试' },
+                                                { text: '4. 压缩测试 (Compression)', link: '#_4-compression-test-压缩测试' },
+                                                { text: '5. 蠕变测试 (Creep)', link: '#_5-creep-test-蠕变测试' },
+                                                { text: '6. 剪切测试 (Cutting)', link: '#_6-cutting-test-剪切测试' },
+                                                { text: '7. 挤压测试 (Extrusion)', link: '#_7-extrusion-test-挤压测试' },
+                                                { text: '8. 穿刺测试 (Penetration)', link: '#_8-penetration-test-穿刺测试' },
+                                                { text: '9. 松弛测试 (Relaxation)', link: '#_9-relaxation-test-松弛测试' },
+                                                { text: '10. 拉伸测试 (Tension)', link: '#_10-tension-test-拉伸测试' },
+                                                { text: '11. TPA测试', link: '#_11-tpa-test-全质构测试' }
+                                            ]
+                                        },
                                     ]
-                                },
-                            ]
                         }
                     ]
                 }
