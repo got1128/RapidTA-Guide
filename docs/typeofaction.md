@@ -19,7 +19,7 @@ Food Texture Analysis is a science that studies the physical properties of food.
 
 ### 1. Adhesion Test
 
-![Adhesion Test Animation](/gifs/zh_1_Adhesion.gif)
+![Adhesion Test Animation](/gifs/en_1_Adhesion.gif)
 
 **Test Purpose**
 
@@ -43,7 +43,7 @@ A probe is pressed into the food sample surface, then pulled upward at a constan
 
 ### 2. Bending Test
 
-![Bending Test Animation](/gifs/zh_2_Bending.gif)
+![Bending Test Animation](/gifs/en_2_Bending.gif)
 
 **Test Purpose**
 
@@ -67,7 +67,7 @@ Strip-shaped or sheet-shaped food samples are fixed on support points, with down
 
 ### 3. Burst Test
 
-![Burst Test Animation](/gifs/zh_3_Burst.gif)
+![Burst Test Animation](/gifs/en_3_Burst.gif)
 
 **Test Purpose**
 
@@ -91,7 +91,7 @@ A spherical probe applies vertical pressure to foods with membrane structures un
 
 ### 4. Compression Test
 
-![Compression Test Animation](/gifs/zh_4_compress.gif)
+![Compression Test Animation](/gifs/en_4_compress.gif)
 
 **Test Purpose**
 
@@ -115,7 +115,7 @@ A flat probe applies vertical downward pressure to food samples, measuring the r
 
 ### 5. Creep Test
 
-![Creep Test Animation](/gifs/zh_5_creep.gif)
+![Creep Test Animation](/gifs/en_5_creep.gif)
 
 **Test Purpose**
 
@@ -139,7 +139,7 @@ Apply constant pressure to food samples, observe and record the deformation the 
 
 ### 6. Cutting Test
 
-![Cutting Test Animation](/gifs/zh_6_cutting.gif)
+![Cutting Test Animation](/gifs/en_6_cutting.gif)
 
 **Test Purpose**
 
@@ -163,7 +163,7 @@ A blade-shaped probe cuts into food samples at constant speed, measuring resista
 
 ### 7. Extrusion Test
 
-![Extrusion Test Animation](/gifs/zh_11_TPA.gif)
+![Extrusion Test Animation](/gifs/en_7_Extrusion.gif)
 
 **Test Purpose**
 
@@ -187,7 +187,7 @@ Food samples are placed in a perforated container, and a piston compresses downw
 
 ### 8. Penetration Test
 
-![Penetration Test Animation](/gifs/zh_11_TPA.gif)
+![Penetration Test Animation](/gifs/en_8_Penetration.gif)
 
 **Test Purpose**
 
@@ -211,7 +211,7 @@ A sharp probe (needle-shaped or cone-shaped) penetrates food samples at constant
 
 ### 9. Relaxation Test
 
-![Relaxation Test Animation](/gifs/zh_11_TPA.gif)
+![Relaxation Test Animation](/gifs/en_9_relaxation.gif)
 
 **Test Purpose**
 
@@ -235,7 +235,7 @@ Quickly compress food samples to a specific deformation amount and maintain it c
 
 ### 10. Tension Test
 
-![Tension Test Animation](/gifs/zh_11_TPA.gif)
+![Tension Test Animation](/gifs/en_10_Tension.gif)
 
 **Test Purpose**
 
@@ -259,7 +259,7 @@ Both ends of food samples are fixed in clamps and stretched in opposite directio
 
 ### 11. TPA Test (Texture Profile Analysis)
 
-![TPA Test Animation](/gifs/zh_11_TPA.gif)
+![TPA Test Animation](/gifs/en_11_TPA.gif)
 
 **Test Purpose**
 

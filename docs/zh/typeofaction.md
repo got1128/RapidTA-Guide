@@ -163,7 +163,7 @@
 
 ### 7. Extrusion Test 擠壓測試
 
-![擠壓測試動畫](/gifs/zh_11_TPA.gif)
+![擠壓測試動畫](/gifs/zh_7_Extrusion.gif)
 
 **測試目的**
 
@@ -187,7 +187,7 @@
 
 ### 8. Penetration Test 穿刺測試
 
-![穿刺測試動畫](/gifs/zh_11_TPA.gif)
+![穿刺測試動畫](/gifs/zh_8_Penetration.gif)
 
 **測試目的**
 
@@ -211,7 +211,7 @@
 
 ### 9. Relaxation Test 鬆弛測試
 
-![鬆弛測試動畫](/gifs/zh_11_TPA.gif)
+![鬆弛測試動畫](/gifs/zh_9_relaxation.gif)
 
 **測試目的**
 
@@ -235,7 +235,7 @@
 
 ### 10. Tension Test 拉伸測試
 
-![拉伸測試動畫](/gifs/zh_11_TPA.gif)
+![拉伸測試動畫](/gifs/zh_10_Tension.gif)
 
 **測試目的**
 

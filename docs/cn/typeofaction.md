@@ -19,7 +19,7 @@
 
 ### 1. Adhesion Test 黏性测试
 
-![黏性测试动画](/gifs/zh_1_Adhesion.gif)
+![黏性测试动画](/gifs/cn_1_Adhesion.gif)
 
 **测试目的**
 
@@ -43,7 +43,7 @@
 
 ### 2. Bending Test 弯曲测试
 
-![弯曲测试动画](/gifs/zh_2_Bending.gif)
+![弯曲测试动画](/gifs/cn_2_Bending.gif)
 
 **测试目的**
 
@@ -67,7 +67,7 @@
 
 ### 3. Burst Test 爆破测试
 
-![爆破测试动画](/gifs/zh_3_Burst.gif)
+![爆破测试动画](/gifs/cn_3_Burst.gif)
 
 **测试目的**
 
@@ -91,7 +91,7 @@
 
 ### 4. Compression Test 压缩测试
 
-![压缩测试动画](/gifs/zh_4_compress.gif)
+![压缩测试动画](/gifs/cn_4_compress.gif)
 
 **测试目的**
 
@@ -115,7 +115,7 @@
 
 ### 5. Creep Test 蠕变测试
 
-![蠕变测试动画](/gifs/zh_5_creep.gif)
+![蠕变测试动画](/gifs/cn_5_creep.gif)
 
 **测试目的**
 
@@ -139,7 +139,7 @@
 
 ### 6. Cutting Test 剪切测试
 
-![剪切测试动画](/gifs/zh_6_cutting.gif)
+![剪切测试动画](/gifs/cn_6_cutting.gif)
 
 **测试目的**
 
@@ -163,7 +163,7 @@
 
 ### 7. Extrusion Test 挤压测试
 
-![挤压测试动画](/gifs/zh_11_TPA.gif)
+![挤压测试动画](/gifs/cn_7_Extrusion.gif)
 
 **测试目的**
 
@@ -187,7 +187,7 @@
 
 ### 8. Penetration Test 穿刺测试
 
-![穿刺测试动画](/gifs/zh_11_TPA.gif)
+![穿刺测试动画](/gifs/cn_8_Penetration.gif)
 
 **测试目的**
 
@@ -211,7 +211,7 @@
 
 ### 9. Relaxation Test 松弛测试
 
-![松弛测试动画](/gifs/zh_11_TPA.gif)
+![松弛测试动画](/gifs/cn_9_relaxation.gif)
 
 **测试目的**
 
@@ -235,7 +235,7 @@
 
 ### 10. Tension Test 拉伸测试
 
-![拉伸测试动画](/gifs/zh_11_TPA.gif)
+![拉伸测试动画](/gifs/cn_10_Tension.gif)
 
 **测试目的**
 
@@ -259,7 +259,7 @@
 
 ### 11. TPA Test 全质构测试
 
-![TPA测试动画](/gifs/zh_11_TPA.gif)
+![TPA测试动画](/gifs/cn_11_TPA.gif)
 
 **测试目的**
 

@@ -13,7 +13,7 @@
             @click="selectLanguage(code)"
             class="language-btn"
           >
-            <span class="flag">{{ lang.flag }}</span>
+           
             <span class="name">{{ lang.name }}</span>
             <span class="path">{{ lang.path }}</span>
           </button>
@@ -472,6 +472,7 @@ const validatePassword = () => {
 /* 手機版語言切換器調整 */
 @media (max-width: 480px) {
   .language-switcher {
+    max-width: 480px;
     margin: -30px -20px 20px -20px;
     padding: 12px 20px;
   }
@@ -479,6 +480,7 @@ const validatePassword = () => {
 
 @media (max-width: 360px) {
   .language-switcher {
+    max-width: 360px;
     margin: -20px -15px 20px -15px;
     padding: 10px 15px;
   }
